@@ -41,6 +41,16 @@
     </div>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html#avantages">Avantages</a>
+    <a href="index.html#projets">Projets</a>
+    <a href="index.html#apropos">À propos</a>
+    <a href="index.html#tarifs">Tarifs</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+  </div>
+
   <!-- HERO PROJET -->
   <header class="projet-hero">
     <div class="projet-hero__inner">
@@ -168,6 +178,22 @@
       }
     }
     loadGallery();
+
+    // Mobile menu
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
   </script>
 
 </body>

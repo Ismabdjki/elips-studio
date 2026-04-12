@@ -34,6 +34,16 @@
     </div>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="#avantages" class="nav__mobile-link">Avantages</a>
+    <a href="#projets" class="nav__mobile-link">Projets</a>
+    <a href="#apropos" class="nav__mobile-link">À propos</a>
+    <a href="#tarifs" class="nav__mobile-link">Tarifs</a>
+    <a href="#faq" class="nav__mobile-link">FAQ</a>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+  </div>
+
   <!-- ========== HERO ========== -->
   <section class="hero">
     <div class="hero__content">
@@ -386,6 +396,25 @@
     const SUPABASE_URL = 'https://nxdsnklqnahmifyptgmm.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54ZHNua2xxbmFobWlmeXB0Z21tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNDk4MjUsImV4cCI6MjA5MDYyNTgyNX0.kJJcouEPDujWHKKNlG-aJDt_8M1zCKZMAMuatbi3OXA';
     const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // === MOBILE MENU ===
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+
+    // Fermer le menu au clic sur un lien
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
 
     // === NAV DARK MODE ===
     const nav = document.querySelector('.nav');
