@@ -166,7 +166,7 @@ img { display: block; max-width: 100%; }
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 1300px;
   margin: 0 auto;
   padding-top: calc(var(--nav-height) + 48px);
   padding-left: 32px;
@@ -207,6 +207,7 @@ img { display: block; max-width: 100%; }
 .hero__title {
   margin-bottom: var(--space-md);
   color: var(--color-white);
+  font-size: clamp(var(--text-2xl), 4.5vw, var(--text-3xl));
 }
 
 .hero__btn {
@@ -1199,7 +1200,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: background var(--duration) ease, transform var(--duration) ease;
+  transition: background 0.4s ease, transform 0.5s var(--ease-out);
 }
 
 .faq__icon::before,
@@ -1208,6 +1209,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   background: var(--color-white);
   border-radius: 2px;
+  transition: transform 0.5s var(--ease-out);
 }
 
 .faq__icon::before {
@@ -1218,16 +1220,26 @@ img { display: block; max-width: 100%; }
 .faq__icon::after {
   width: 2px;
   height: 14px;
-  transition: transform var(--duration) ease;
 }
 
 /* Open state */
-.faq__item[open] .faq__icon {
+.faq__item[open] .faq__icon,
+.faq__item.is-open .faq__icon {
   background: var(--color-accent);
-  transform: rotate(45deg);
 }
 
-.faq__item[open] .faq__question {
+.faq__item[open] .faq__icon::before,
+.faq__item.is-open .faq__icon::before {
+  transform: rotate(90deg);
+}
+
+.faq__item[open] .faq__icon::after,
+.faq__item.is-open .faq__icon::after {
+  transform: rotate(90deg);
+}
+
+.faq__item[open] .faq__question,
+.faq__item.is-open .faq__question {
   color: var(--color-accent);
 }
 
@@ -1238,6 +1250,16 @@ img { display: block; max-width: 100%; }
   color: var(--color-gray-600);
   padding-top: var(--space-sm);
   max-width: 90%;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.4s var(--ease-out), opacity 0.3s ease, padding-top 0.4s var(--ease-out);
+  padding-top: 0;
+}
+
+.faq__item.is-open .faq__answer {
+  opacity: 1;
+  padding-top: var(--space-sm);
 }
 
 /* Contact */
