@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elips Studio — Visuels & Vidéos IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav">
+    <div class="nav__bar">
+      <a href="#" class="nav__logo"><em>elips</em></a>
+
+      <ul class="nav__links">
+        <li><a href="#avantages" class="nav__link">Avantages</a></li>
+        <li><a href="#projets" class="nav__link">Projets</a></li>
+        <li><a href="#apropos" class="nav__link">À propos</a></li>
+        <li><a href="#tarifs" class="nav__link">Tarifs</a></li>
+        <li><a href="#faq" class="nav__link">FAQ</a></li>
+      </ul>
+
+      <a href="#" class="nav__cta">Je suis intéressé</a>
+
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero__content">
+      <span class="hero__status glow-green">
+        <span class="hero__status-dot"></span>
+        Disponible pour travailler
+      </span>
+      <h1 class="hero__title">
+        Des campagnes e-commerce générées par <em>IA,</em> livrées en <strong>7 JOURS.</strong>
+      </h1>
+      <a href="#" class="hero__btn">Je suis intéressé</a>
+    </div>
+  </section>
+
+  <!-- ========== BENTO ========== -->
+  <section class="bento" id="avantages">
+    <div class="bento__inner">
+      <div class="bento__header">
+        <span class="bento__label glow-orange">Nos avantages</span>
+        <h2 class="bento__title">Pourquoi choisir <em class="accent">Elips Studio</em> ?</h2>
+        <p class="bento__subtitle">Des visuels IA haut de gamme, livrés rapidement,<br>avec une créativité sans limite.</p>
+      </div>
+
+      <div class="bento__grid">
+        <!-- Left column: image + text + button -->
+        <div class="bento__left">
+          <div class="bento__card bento__card--img bento__card--main">
+            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&q=80" alt="Campagne e-commerce">
+          </div>
+          <p class="bento__left-text">Pas de shooting, pas de mannequin, pas de logistique. Juste des visuels premium générés par IA, livrés clé en main.</p>
+          <a href="#contact" class="bento__card-btn">Démarrer un projet →</a>
+        </div>
+
+        <!-- Right column: 2 small top + 1 wide bottom -->
+        <div class="bento__right">
+          <div class="bento__right-top">
+            <div class="bento__card bento__card--text bento__card--sm">
+              <span class="bento__card-emoji">⚡</span>
+              <h3 class="bento__card-title">Rapidité</h3>
+              <p class="bento__card-desc">Vos campagnes livrées en 7 jours. Là où un shooting prend des semaines, l'IA livre en quelques jours.</p>
+            </div>
+            <div class="bento__card bento__card--text bento__card--sm">
+              <span class="bento__card-emoji">✦</span>
+              <h3 class="bento__card-title">Qualité</h3>
+              <p class="bento__card-desc">Des visuels photoréalistes indiscernables d'une vraie photo. Chaque rendu est affiné à la main.</p>
+            </div>
+          </div>
+          <div class="bento__right-bottom">
+            <div class="bento__card bento__card--text bento__card--half">
+              <span class="bento__card-emoji">🎨</span>
+              <h3 class="bento__card-title">Sans limite</h3>
+              <p class="bento__card-desc">Si vous l'imaginez, l'IA le génère. Aucune contrainte de décor, de modèle ou de lieu.</p>
+            </div>
+            <div class="bento__card bento__card--text bento__card--half">
+              <span class="bento__card-emoji">💰</span>
+              <h3 class="bento__card-title">Économique</h3>
+              <p class="bento__card-desc">Jusqu'à 5x moins cher qu'un shooting classique. Plus de budget pour votre croissance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projets">
+    <div class="projects__inner">
+      <div class="projects__header">
+        <span class="projects__label glow-orange">Projets</span>
+        <h2 class="projects__title">Nos dernières créations<br>qui font la <em>différence.</em></h2>
+      </div>
+
+      <div class="projects__grid" id="projects-grid">
+        <!-- Chargé dynamiquement depuis Supabase -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee marquee--dark">
+    <div class="marquee__track">
+      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Montage Vidéo</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Montage Vidéo</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Montage Vidéo</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__dot">●</span>
+      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__dot">●</span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="apropos">
+    <div class="about__inner">
+      <div class="about__image">
+        <picture>
+          <source srcset="portrait.avif" type="image/avif">
+          <img src="portrait.jpg" alt="Ismaël — Fondateur Elips Studio">
+        </picture>
+      </div>
+
+      <div class="about__content">
+        <span class="about__label glow-orange">À propos</span>
+        <h2 class="about__title">Ismaël, fondateur<br>d'<em>Elips Studio</em></h2>
+        <p class="about__text-lead">
+          Passionné par l'intelligence artificielle et la création visuelle, j'ai fondé Elips Studio pour aider les marques e-commerce à se démarquer.
+        </p>
+        <p class="about__text">
+          Je crée des visuels et vidéos générés par IA qui captent l'attention, racontent une histoire et convertissent. Chaque projet est une collaboration sur mesure où technologie et créativité se rencontrent.
+        </p>
+        <div class="about__stats">
+          <div class="about__stat">
+            <div class="about__stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="about__stat-title">50+ Projets</span>
+            <span class="about__stat-label">Visuels et vidéos livrés clé en main</span>
+          </div>
+          <div class="about__stat">
+            <div class="about__stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="about__stat-title">20+ Clients</span>
+            <span class="about__stat-label">Marques e-commerce accompagnées</span>
+          </div>
+          <div class="about__stat">
+            <div class="about__stat-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <span class="about__stat-title">100% Satisfaits</span>
+            <span class="about__stat-label">Clients qui recommandent nos services</span>
+          </div>
+        </div>
+        <a href="#contact" class="about__btn">Me contacter →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="pricing" id="tarifs">
+    <div class="pricing__inner">
+      <div class="pricing__header">
+        <span class="pricing__label glow-orange">Tarifs</span>
+        <h2 class="pricing__title">Des offres claires,<br>sans <em>surprise</em></h2>
+        <p class="pricing__subtitle">Choisissez la formule qui correspond à vos besoins. Chaque projet est livré clé en main.</p>
+      </div>
+
+      <div class="pricing__grid">
+        <!-- Card 1 -->
+        <div class="pricing__card">
+          <div class="pricing__card-top">
+            <span class="pricing__card-name">Essentiel</span>
+            <p class="pricing__card-desc">Idéal pour tester la puissance des visuels IA sur vos produits.</p>
+            <div class="pricing__card-price">
+              <span class="pricing__card-amount">490€</span>
+              <span class="pricing__card-period">/ projet</span>
+            </div>
+          </div>
+          <ul class="pricing__card-features">
+            <li>5 visuels IA haute qualité</li>
+            <li>1 direction artistique</li>
+            <li>2 révisions incluses</li>
+            <li>Livraison en 5 jours</li>
+            <li>Fichiers HD prêts à publier</li>
+          </ul>
+          <a href="#contact" class="pricing__card-btn pricing__card-btn--ghost">Démarrer →</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pricing__card pricing__card--featured">
+          <div class="pricing__card-badge">Populaire</div>
+          <div class="pricing__card-top">
+            <span class="pricing__card-name">Studio</span>
+            <p class="pricing__card-desc">La formule complète pour les marques qui veulent se démarquer.</p>
+            <div class="pricing__card-price">
+              <span class="pricing__card-amount">990€</span>
+              <span class="pricing__card-period">/ projet</span>
+            </div>
+          </div>
+          <ul class="pricing__card-features">
+            <li>15 visuels IA haute qualité</li>
+            <li>1 vidéo IA courte (15-30s)</li>
+            <li>Direction artistique sur mesure</li>
+            <li>Révisions illimitées</li>
+            <li>Livraison en 7 jours</li>
+            <li>Déclinaisons réseaux sociaux</li>
+          </ul>
+          <a href="#contact" class="pricing__card-btn">Démarrer →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="faq__inner">
+      <div class="faq__header">
+        <span class="faq__label">FAQ</span>
+        <h2 class="faq__title">Frequently Asked<br><em>Questions</em></h2>
+      </div>
+
+      <div class="faq__grid">
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Comment l'IA génère mes visuels ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">Nous utilisons des modèles d'IA de dernière génération que nous paramétrons selon votre identité de marque. À partir de vos produits et de votre direction artistique, l'IA génère des visuels uniques et cohérents avec votre univers.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Les visuels sont-ils réalistes ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">Oui, les technologies actuelles permettent de produire des visuels photoréalistes. Nous affinons chaque rendu manuellement pour garantir un résultat professionnel indiscernable d'une photo traditionnelle.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Quels sont les délais de livraison ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">En moyenne, un projet de visuels IA est livré en 7 jours ouvrés. Les vidéos IA peuvent prendre jusqu'à 14 jours selon la complexité. Nous proposons aussi des options express.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Dois-je fournir des photos ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">Idéalement oui, quelques photos de référence suffisent. Mais nous pouvons aussi travailler à partir de moodboards, de descriptions ou même de croquis pour générer vos visuels.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Les visuels sont-ils libres de droits ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">Absolument. Tous les visuels que nous créons vous appartiennent entièrement. Vous pouvez les utiliser sur vos réseaux, votre site, vos publicités et vos supports print sans restriction.</p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">
+            <span>Quelle différence avec un shooting ?</span>
+            <span class="faq__icon"></span>
+          </summary>
+          <p class="faq__answer">Pas de studio, pas de mannequin, pas de logistique. L'IA permet de produire plus de visuels, plus vite et jusqu'à 5x moins cher, tout en gardant une qualité premium et une créativité sans limite.</p>
+        </details>
+      </div>
+
+      <p class="faq__contact">Contact us: <a href="mailto:contact@elipsstudio.com">contact@elipsstudio.com</a></p>
+    </div>
+  </section>
+
+
+  <!-- ========== PROJECT MODAL ========== -->
+  <div class="modal" id="project-modal">
+    <div class="modal__overlay" id="modal-overlay"></div>
+    <div class="modal__container">
+      <button class="modal__close" id="modal-close">✕</button>
+      <div class="modal__content">
+        <div class="modal__gallery" id="modal-gallery"></div>
+        <div class="modal__info">
+          <span class="modal__category" id="modal-category"></span>
+          <h2 class="modal__title" id="modal-title"></h2>
+          <span class="modal__tag" id="modal-tag"></span>
+          <div class="modal__article" id="modal-article"></div>
+          <a href="#" class="modal__cta" id="modal-cta" target="_blank">Lire l'étude de cas complète →</a>
+          <span class="modal__author">by Elips Studio</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== WHATSAPP STICKY ========== -->
+  <a href="https://wa.me/33600000000" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <div class="footer__status">
+          <span class="footer__status-dot"></span>
+          Disponible pour travailler
+        </div>
+        <div class="footer__socials">
+          <a href="#" class="footer__social" aria-label="Instagram">IG</a>
+          <a href="#" class="footer__social" aria-label="LinkedIn">LI</a>
+          <a href="#" class="footer__social" aria-label="Behance">BE</a>
+        </div>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Navigation</h4>
+          <a href="#">Accueil</a>
+          <a href="#projets">Projets</a>
+          <a href="#apropos">À propos</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <a href="#">Visuels IA</a>
+          <a href="#">Vidéos IA</a>
+          <a href="#">Montage Vidéo</a>
+          <a href="#">Direction Artistique</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Légal</h4>
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+          <a href="#">CGV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2025 Elips Studio. Tous droits réservés.</span>
+    </div>
+  </footer>
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    // === SUPABASE CONFIG ===
+    const SUPABASE_URL = 'https://nxdsnklqnahmifyptgmm.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54ZHNua2xxbmFobWlmeXB0Z21tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNDk4MjUsImV4cCI6MjA5MDYyNTgyNX0.kJJcouEPDujWHKKNlG-aJDt_8M1zCKZMAMuatbi3OXA';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // === NAV DARK MODE ===
+    const nav = document.querySelector('.nav');
+    const heroEl = document.querySelector('.hero');
+
+    // === SCROLL HANDLER ===
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+
+      // Nav dark mode
+      const heroBottom = heroEl.offsetHeight - 100;
+      if (scrollY > heroBottom) {
+        nav.classList.add('nav--dark');
+      } else {
+        nav.classList.remove('nav--dark');
+      }
+
+      // Hero parallax
+      heroEl.style.setProperty('--parallax-y', scrollY * 0.4 + 'px');
+
+      // Images parallax
+      document.querySelectorAll('.bento__card--img img, .projects__featured-img img, .about__image img').forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const offset = (center - window.innerHeight / 2) * 0.05;
+        img.style.transform = 'translateY(' + offset + 'px) scale(1.06)';
+      });
+    });
+
+    // === SMOOTH SCROLL WITH OFFSET ===
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 100;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // === COUNTER ANIMATION ===
+    const counters = document.querySelectorAll('.about__stat-title');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const text = el.textContent;
+          const match = text.match(/(\d+)/);
+          if (match) {
+            const target = parseInt(match[0]);
+            const suffix = text.replace(match[0], '').trim();
+            let current = 0;
+            const increment = Math.max(1, Math.floor(target / 40));
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              el.textContent = current + (suffix ? ' ' + suffix : '');
+            }, 30);
+          }
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    // === REVEAL ON SCROLL ===
+    const reveals = document.querySelectorAll(
+      '.bento__header, .bento__left, .bento__right-top, .bento__right-bottom, .bento__card--wide,' +
+      '.projects__header, .projects__featured, .projects__card,' +
+      '.about__image, .about__content,' +
+      '.pricing__header, .pricing__card,' +
+      '.faq__header, .faq__item,' +
+      '.marquee--dark,' +
+      '.footer__inner'
+    );
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => {
+      el.classList.add('reveal-on-scroll');
+      revealObserver.observe(el);
+    });
+
+    // === LOAD PROJECTS FROM SUPABASE ===
+    async function loadProjects() {
+      console.log('Chargement des projets...');
+      const { data: projects, error } = await db
+        .from('projects')
+        .select('*')
+        .order('id');
+
+      console.log('Projets reçus:', projects);
+      console.log('Erreur:', error);
+
+      if (error) {
+        console.error('Erreur chargement projets:', error);
+        return;
+      }
+
+      if (!projects || projects.length === 0) {
+        console.warn('Aucun projet trouvé');
+        return;
+      }
+
+      const grid = document.getElementById('projects-grid');
+      // Si pas de colonne featured, prend le premier projet comme featured
+      const featured = projects.find(p => p.featured === true) || projects[0];
+      const others = projects.filter(p => p.id !== featured.id);
+
+      let html = '';
+
+      // Projet mis en avant (featured)
+      if (featured) {
+        html += `
+          <article class="projects__featured" data-project-id="${featured.id}">
+            <div class="projects__featured-img">
+              <img src="${featured.image_url}" alt="Visuels IA ${featured.category} pour ${featured.title} — ${featured.tag} par Elips Studio">
+              <span class="projects__tag">${featured.tag}</span>
+            </div>
+            <div class="projects__featured-content">
+              <span class="projects__cat">${featured.category}</span>
+              <h3 class="projects__featured-title">${featured.title}</h3>
+              <p class="projects__featured-text">${featured.description || ''}</p>
+              <div class="projects__featured-footer">
+                <span class="projects__author">by Elips Studio</span>
+                <span class="projects__view-btn">Voir le projet →</span>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // Autres projets (petites cartes)
+      if (others.length > 0) {
+        html += '<div class="projects__small-grid">';
+        others.forEach(project => {
+          html += `
+            <article class="projects__card" data-project-id="${project.id}">
+              <div class="projects__card-img">
+                <img src="${project.image_url}" alt="Visuels IA ${project.category} pour ${project.title} — ${project.tag} par Elips Studio">
+                <span class="projects__card-cat">${project.category}</span>
+              </div>
+              <div class="projects__card-content">
+                <h4 class="projects__card-title">${project.title}</h4>
+                <p class="projects__card-text">${project.description || ''}</p>
+                <span class="projects__view-btn projects__view-btn--sm">Voir le projet →</span>
+              </div>
+            </article>
+          `;
+        });
+        html += '</div>';
+      }
+
+      grid.innerHTML = html;
+
+      // Réappliquer les animations reveal sur les nouveaux éléments
+      grid.querySelectorAll('.projects__featured, .projects__card').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        revealObserver.observe(el);
+      });
+
+      // Rendre les cartes cliquables
+      grid.querySelectorAll('[data-project-id]').forEach(el => {
+        el.style.cursor = 'pointer';
+        el.addEventListener('click', () => {
+          const id = parseInt(el.dataset.projectId);
+          const project = projects.find(p => p.id === id);
+          if (project) openProject(id, project);
+        });
+      });
+    }
+
+    loadProjects();
+
+    // === PROJECT MODAL ===
+    const modal = document.getElementById('project-modal');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalClose = document.getElementById('modal-close');
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    modalOverlay.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    async function openProject(projectId, project) {
+      // Remplir les infos
+      document.getElementById('modal-category').textContent = project.category;
+      document.getElementById('modal-title').textContent = project.title;
+      document.getElementById('modal-tag').textContent = project.tag;
+
+      // Article avec nom de marque cliquable vers Instagram
+      const articleEl = document.getElementById('modal-article');
+      if (project.article) {
+        const paragraphs = project.article.split('\n\n');
+        let articleHtml = paragraphs.map(p => {
+          // Remplacer le nom de la marque par un lien Instagram
+          if (project.instagram) {
+            const name = project.title.trim();
+            const regex = new RegExp(name, 'g');
+            p = p.replace(regex, `<a href="${project.instagram}" target="_blank" rel="noopener" class="modal__brand-link">${name}</a>`);
+          }
+          return `<p>${p}</p>`;
+        }).join('');
+        articleEl.innerHTML = articleHtml;
+      } else {
+        articleEl.innerHTML = `<p>${project.description || ''}</p>`;
+      }
+
+      // Charger les images depuis project_images
+      const gallery = document.getElementById('modal-gallery');
+      gallery.innerHTML = '<p style="padding:40px;text-align:center;color:#999">Chargement...</p>';
+
+      const { data: images, error } = await db
+        .from('project_images')
+        .select('*')
+        .eq('project_id', projectId)
+        .order('position');
+
+      if (error || !images || images.length === 0) {
+        gallery.innerHTML = `<img src="${project.image_url}" alt="Visuels IA ${project.category} pour ${project.title} — studio IA e-commerce Elips Studio">`;
+      } else {
+        gallery.innerHTML = images.map((img, i) =>
+          `<img src="${img.image_url}" alt="${project.title} — visuel IA ${project.category} ${project.tag} n°${i + 1} par Elips Studio">`
+        ).join('');
+      }
+
+      // Lien vers la page dédiée
+      const slug = project.title.trim().toLowerCase().replace(/\s+/g, '-');
+      const ctaLink = document.getElementById('modal-cta');
+      ctaLink.href = `projet-${slug}.html`;
+
+      // Ouvrir la modale
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  </script>
+
+</body>
+</html>
