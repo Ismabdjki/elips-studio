@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Visuels IA & E-commerce | Elips Studio</title>
+  <meta name="description" content="Conseils, tendances et études de cas sur les visuels IA, la vidéo publicitaire et le e-commerce. Par Elips Studio.">
+  <meta name="keywords" content="blog visuels IA, e-commerce, vidéo ads, montage vidéo, intelligence artificielle, Elips Studio">
+
+  <meta property="og:title" content="Blog — Elips Studio">
+  <meta property="og:description" content="Conseils et tendances sur les visuels IA et le e-commerce.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/jpeg" href="portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav nav--dark">
+    <div class="nav__bar">
+      <a href="index.html" class="nav__logo"><em>elips</em></a>
+      <ul class="nav__links">
+        <li><a href="index.html#avantages" class="nav__link">Avantages</a></li>
+        <li><a href="index.html#projets" class="nav__link">Projets</a></li>
+        <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+        <li><a href="index.html#tarifs" class="nav__link">Tarifs</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+      </ul>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__cta">Je suis intéressé</a>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html#avantages">Avantages</a>
+    <a href="index.html#projets">Projets</a>
+    <a href="index.html#apropos">À propos</a>
+    <a href="index.html#tarifs">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+  </div>
+
+  <!-- HERO BLOG -->
+  <header class="blog-hero">
+    <div class="blog-hero__inner">
+      <span class="blog-hero__label glow-orange">Blog</span>
+      <h1 class="blog-hero__title">Visuels IA, e-commerce<br>& <em>stratégie digitale</em></h1>
+      <p class="blog-hero__subtitle">Conseils, tendances et retours d'expérience pour les marques qui veulent se démarquer avec l'IA.</p>
+    </div>
+  </header>
+
+  <!-- FILTRES -->
+  <section class="blog-filters">
+    <div class="blog-filters__inner">
+      <button class="blog-filter is-active" data-filter="all">Tous</button>
+      <button class="blog-filter" data-filter="Visuels IA">Visuels IA</button>
+      <button class="blog-filter" data-filter="Vidéo Ads">Vidéo Ads</button>
+      <button class="blog-filter" data-filter="E-commerce">E-commerce</button>
+      <button class="blog-filter" data-filter="Montage Vidéo">Montage Vidéo</button>
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <section class="blog-grid-section">
+    <div class="blog-grid" id="blog-grid">
+      <!-- Chargé dynamiquement depuis Supabase -->
+    </div>
+    <div class="blog-empty" id="blog-empty" style="display:none;">
+      <p>Aucun article pour le moment. Revenez bientôt !</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="blog-cta">
+    <div class="blog-cta__inner">
+      <h2>Vous voulez des visuels IA<br>pour votre <em>marque</em> ?</h2>
+      <p>Réservez un appel découverte gratuit de 30 minutes.</p>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="btn">Prendre rendez-vous →</a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP STICKY -->
+  <a href="https://wa.me/message/OOO75YFUQXAUP1" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <div class="footer__status">
+          <span class="footer__status-dot"></span>
+          Disponible pour travailler
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/in/ismael-boudjakdji-6644411b3/" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#projets">Projets</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Études de cas</h4>
+          <a href="projet-elmut.html">Elmut</a>
+          <a href="projet-mvst-select.html">Mvst Select</a>
+          <a href="projet-kosbiotic.html">Kosbiotic</a>
+          <a href="projet-monateo.html">Monateo</a>
+          <a href="projet-création-de-contenu.html">Création de contenu</a>
+          <a href="projet-ads.html">Ads</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Légal</h4>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elips Studio. Tous droits réservés.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = 'https://nxdsnklqnahmifyptgmm.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im54ZHNua2xxbmFobWlmeXB0Z21tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUwNDk4MjUsImV4cCI6MjA5MDYyNTgyNX0.kJJcouEPDujWHKKNlG-aJDt_8M1zCKZMAMuatbi3OXA';
+    const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let allPosts = [];
+    let currentFilter = 'all';
+
+    async function loadPosts() {
+      const { data: posts, error } = await db
+        .from('blog_posts')
+        .select('*')
+        .order('published_at', { ascending: false });
+
+      if (error || !posts || posts.length === 0) {
+        document.getElementById('blog-empty').style.display = 'block';
+        return;
+      }
+
+      allPosts = posts;
+      renderPosts(posts);
+    }
+
+    function renderPosts(posts) {
+      const grid = document.getElementById('blog-grid');
+      const empty = document.getElementById('blog-empty');
+
+      if (posts.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+
+      empty.style.display = 'none';
+      grid.innerHTML = posts.map(post => {
+        const date = new Date(post.published_at).toLocaleDateString('fr-FR', {
+          day: 'numeric', month: 'long', year: 'numeric'
+        });
+        const excerpt = post.meta_description || post.content.replace(/<[^>]*>/g, '').substring(0, 150) + '...';
+        return `
+          <a href="article.html?slug=${post.slug}" class="blog-card">
+            ${post.image_url ? `<div class="blog-card__img"><img src="${post.image_url}" alt="${post.title}" loading="lazy"></div>` : ''}
+            <div class="blog-card__content">
+              <div class="blog-card__meta">
+                <span class="blog-card__cat">${post.category || 'Visuels IA'}</span>
+                <span class="blog-card__date">${date}</span>
+              </div>
+              <h2 class="blog-card__title">${post.title}</h2>
+              <p class="blog-card__excerpt">${excerpt}</p>
+              <span class="blog-card__link">Lire l'article →</span>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+
+    // Filtres
+    document.querySelectorAll('.blog-filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.blog-filter.is-active').classList.remove('is-active');
+        btn.classList.add('is-active');
+        currentFilter = btn.dataset.filter;
+
+        if (currentFilter === 'all') {
+          renderPosts(allPosts);
+        } else {
+          renderPosts(allPosts.filter(p => p.category === currentFilter));
+        }
+      });
+    });
+
+    loadPosts();
+
+    // Mobile menu
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
