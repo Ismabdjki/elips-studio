@@ -185,6 +185,28 @@
   border-bottom-color: var(--color-accent);
 }
 
+/* Stats images inline */
+.projet-article__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.projet-article__stats img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .projet-article__stats {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+}
+
 /* CTA */
 .projet-article__cta {
   margin-top: var(--space-xl);
