@@ -236,6 +236,12 @@
   font-weight: var(--weight-medium);
 }
 
+.projet-article__inner img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  margin: var(--space-md) 0;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .blog-grid {

@@ -165,13 +165,7 @@
       const contentEl = document.getElementById('article-content');
       contentEl.innerHTML = post.content;
 
-      // Ajouter le CTA Calendly en fin d'article
-      contentEl.innerHTML += `
-        <div class="projet-article__cta">
-          <p>Vous voulez des visuels IA pour votre marque e-commerce ?</p>
-          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="btn">Réserver un appel gratuit →</a>
-        </div>
-      `;
+      // Le CTA noir est déjà dans le HTML (section blog-cta)
     }
 
     loadArticle();
