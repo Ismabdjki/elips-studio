@@ -436,7 +436,7 @@
       heroEl.style.setProperty('--parallax-y', scrollY * 0.4 + 'px');
 
       // Images parallax
-      document.querySelectorAll('.bento__card--img img, .projects__featured-img img, .about__image img').forEach(img => {
+      document.querySelectorAll('.bento__card--img img, .projects__card-img img, .about__image img').forEach(img => {
         const rect = img.getBoundingClientRect();
         const center = rect.top + rect.height / 2;
         const offset = (center - window.innerHeight / 2) * 0.05;
@@ -489,7 +489,7 @@
     // === REVEAL ON SCROLL ===
     const reveals = document.querySelectorAll(
       '.bento__header, .bento__left, .bento__right-top, .bento__right-bottom, .bento__card--wide,' +
-      '.projects__header, .projects__featured, .projects__card,' +
+      '.projects__header, .projects__card,' +
       '.about__image, .about__content,' +
       '.pricing__header, .pricing__card,' +
       '.faq__header, .faq__item,' +
@@ -547,58 +547,31 @@
       }
 
       const grid = document.getElementById('projects-grid');
-      // Si pas de colonne featured, prend le premier projet comme featured
-      const featured = projects.find(p => p.featured === true) || projects[0];
-      const others = projects.filter(p => p.id !== featured.id);
-
       let html = '';
 
-      // Projet mis en avant (featured)
-      if (featured) {
+      projects.forEach(project => {
         html += `
-          <article class="projects__featured" data-project-id="${featured.id}">
-            <div class="projects__featured-img">
-              <img src="${featured.image_url}" alt="Visuels IA ${featured.category} pour ${featured.title} — ${featured.tag} par Elips Studio">
-              <span class="projects__tag">${featured.tag}</span>
+          <article class="projects__card" data-project-id="${project.id}">
+            <div class="projects__card-img">
+              <img src="${project.image_url}" alt="${project.category} pour ${project.title} — ${project.tag} par Elips Studio">
+              <span class="projects__card-cat">${project.category}</span>
             </div>
-            <div class="projects__featured-content">
-              <span class="projects__cat">${featured.category}</span>
-              <h3 class="projects__featured-title">${featured.title}</h3>
-              <p class="projects__featured-text">${featured.description || ''}</p>
-              <div class="projects__featured-footer">
-                <span class="projects__author">by Elips Studio</span>
-                <span class="projects__view-btn">Voir le projet →</span>
+            <div class="projects__card-content">
+              <h4 class="projects__card-title">${project.title}</h4>
+              <p class="projects__card-text">${project.description || ''}</p>
+              <div class="projects__card-footer">
+                <span class="projects__card-author">by Elips Studio</span>
+                <span class="projects__view-btn projects__view-btn--sm">Voir le projet →</span>
               </div>
             </div>
           </article>
         `;
-      }
-
-      // Autres projets (petites cartes)
-      if (others.length > 0) {
-        html += '<div class="projects__small-grid">';
-        others.forEach(project => {
-          html += `
-            <article class="projects__card" data-project-id="${project.id}">
-              <div class="projects__card-img">
-                <img src="${project.image_url}" alt="Visuels IA ${project.category} pour ${project.title} — ${project.tag} par Elips Studio">
-                <span class="projects__card-cat">${project.category}</span>
-              </div>
-              <div class="projects__card-content">
-                <h4 class="projects__card-title">${project.title}</h4>
-                <p class="projects__card-text">${project.description || ''}</p>
-                <span class="projects__view-btn projects__view-btn--sm">Voir le projet →</span>
-              </div>
-            </article>
-          `;
-        });
-        html += '</div>';
-      }
+      });
 
       grid.innerHTML = html;
 
       // Réappliquer les animations reveal sur les nouveaux éléments
-      grid.querySelectorAll('.projects__featured, .projects__card').forEach(el => {
+      grid.querySelectorAll('.projects__card').forEach(el => {
         el.classList.add('reveal-on-scroll');
         revealObserver.observe(el);
       });
