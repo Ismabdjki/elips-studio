@@ -513,6 +513,18 @@
       revealObserver.observe(el);
     });
 
+    // === HELPERS ===
+    function isYouTubeUrl(url) {
+      return url && url.includes('youtube.com/embed');
+    }
+
+    function renderMedia(url, alt, i) {
+      if (isYouTubeUrl(url)) {
+        return `<div class="modal__video-wrap"><iframe src="${url}" title="${alt}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+      }
+      return `<img src="${url}" alt="${alt}">`;
+    }
+
     // === LOAD PROJECTS FROM SUPABASE ===
     async function loadProjects() {
       console.log('Chargement des projets...');
@@ -630,6 +642,15 @@
       const articleEl = document.getElementById('modal-article');
       if (project.article) {
         const paragraphs = project.article.split('\n\n');
+        // Liens Instagram des clients mentionnés dans les articles
+        const brandLinks = {
+          'Rapcity': 'https://www.instagram.com/rapcity/',
+          'LaGenerationF': 'https://www.instagram.com/lagenerationf/',
+          'Elmut': 'https://www.instagram.com/myelmut/',
+          'MVST Select': 'https://www.instagram.com/mvstselect/',
+          'Kosbiotic': 'https://www.instagram.com/kosbiotic/',
+          'Monateo': 'https://www.instagram.com/monateo.paris/'
+        };
         let articleHtml = paragraphs.map(p => {
           // Remplacer le nom de la marque par un lien Instagram
           if (project.instagram) {
@@ -637,6 +658,13 @@
             const regex = new RegExp(name, 'g');
             p = p.replace(regex, `<a href="${project.instagram}" target="_blank" rel="noopener" class="modal__brand-link">${name}</a>`);
           }
+          // Remplacer les noms de clients connus par des liens
+          Object.entries(brandLinks).forEach(([brand, url]) => {
+            const re = new RegExp(brand, 'g');
+            if (p.includes(brand)) {
+              p = p.replace(re, `<a href="${url}" target="_blank" rel="noopener" class="modal__brand-link">${brand}</a>`);
+            }
+          });
           return `<p>${p}</p>`;
         }).join('');
         articleEl.innerHTML = articleHtml;
@@ -655,10 +683,13 @@
         .order('position');
 
       if (error || !images || images.length === 0) {
-        gallery.innerHTML = `<img src="${project.image_url}" alt="Visuels IA ${project.category} pour ${project.title} — studio IA e-commerce Elips Studio">`;
+        gallery.innerHTML = renderMedia(project.image_url, `${project.category} pour ${project.title} par Elips Studio`, 0);
       } else {
+        const hasVideos = images.some(img => isYouTubeUrl(img.image_url));
+        if (hasVideos) gallery.classList.add('modal__gallery--videos');
+        else gallery.classList.remove('modal__gallery--videos');
         gallery.innerHTML = images.map((img, i) =>
-          `<img src="${img.image_url}" alt="${project.title} — visuel IA ${project.category} ${project.tag} n°${i + 1} par Elips Studio">`
+          renderMedia(img.image_url, `${project.title} — ${project.category} ${project.tag} n°${i + 1} par Elips Studio`, i)
         ).join('');
       }
 
