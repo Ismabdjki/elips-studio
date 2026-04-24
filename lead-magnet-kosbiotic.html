@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Breakdown Kosbiotic — Comment j'ai recréé un shooting produit en IA | Elips Studio</title>
+  <meta name="description" content="Le process complet pour transformer des photos existantes en shooting produit IA pour Kosbiotic : méthode, prompts et outils utilisés.">
+
+  <link rel="icon" type="image/jpeg" href="portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projet.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <style>
+    /* ============================================
+       LEAD MAGNET — SCOPED STYLES
+       ============================================ */
+    .lead-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+      background: var(--color-bg);
+    }
+    .lead-intro__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .lead-intro__lead {
+      font-size: var(--text-md);
+      line-height: 1.7;
+      color: var(--color-gray-800);
+      margin-bottom: var(--space-lg);
+    }
+
+    .lead-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .lead-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+      padding: var(--space-md);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+    }
+    .lead-step:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .lead-step__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--color-accent);
+    }
+    .lead-step__body h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+    .lead-step__body p {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-gray-600);
+      margin: 0;
+    }
+    .lead-step__body a {
+      color: var(--color-accent);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color var(--duration) ease;
+      font-weight: var(--weight-medium);
+    }
+    .lead-step__body a:hover {
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* Divider */
+    .lead-divider {
+      max-width: 800px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 32px;
+    }
+    .lead-divider__line {
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    /* Visuels section */
+    .lead-visuals {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+    .lead-visuals__header {
+      max-width: 800px;
+      margin: 0 auto var(--space-lg);
+      padding: 0 32px;
+      text-align: center;
+    }
+    .lead-visuals__header h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: var(--space-xs);
+    }
+    .lead-visuals__header p {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+    }
+
+    .lead-visual {
+      max-width: 900px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 32px;
+    }
+    .lead-visual__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    .lead-visual__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--text-md);
+      color: var(--color-accent);
+    }
+    .lead-visual__title {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin: 0;
+    }
+    .lead-visual__img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      display: block;
+      box-shadow: var(--shadow-md);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Prompt box */
+    .lead-prompt {
+      background: var(--color-black);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lead-prompt__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    .lead-prompt__head::-webkit-details-marker { display: none; }
+    .lead-prompt__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lead-prompt__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lead-prompt__copy {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background var(--duration) ease;
+    }
+    .lead-prompt__copy:hover { background: rgba(255,255,255,0.2); }
+    .lead-prompt__copy.is-copied {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+    .lead-prompt__chevron {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-xs);
+      transition: transform var(--duration) ease;
+    }
+    details[open] .lead-prompt__chevron { transform: rotate(180deg); }
+
+    .lead-prompt__body {
+      padding: 20px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .lead-prompt__body pre {
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+
+    /* Resources block */
+    .lead-resources {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+    .lead-resources__inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .lead-resources__label {
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-sm);
+      text-align: center;
+    }
+    .lead-resources__title {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      line-height: 1.3;
+      margin-bottom: var(--space-lg);
+      text-align: center;
+    }
+    .lead-resources__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+    .lead-resource-card {
+      padding: var(--space-lg);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      text-align: center;
+      transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+    }
+    .lead-resource-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .lead-resource-card__name {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: var(--space-xs);
+    }
+    .lead-resource-card__desc {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+    }
+
+    /* Final CTA */
+    .lead-cta {
+      padding: 0 0 var(--space-2xl);
+      background: var(--color-bg);
+    }
+    .lead-cta__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--color-black);
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+    .lead-cta__inner h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: var(--space-sm);
+    }
+    .lead-cta__inner p {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--space-md);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .lead-intro__inner,
+      .lead-visuals__header,
+      .lead-visual,
+      .lead-resources__inner { padding-left: 20px; padding-right: 20px; }
+
+      .lead-step {
+        grid-template-columns: 60px 1fr;
+        padding: var(--space-sm);
+      }
+      .lead-step__num { font-size: 2.5rem; }
+      .lead-cta__inner {
+        margin: 0 20px;
+        padding: var(--space-lg) var(--space-md);
+      }
+      .lead-prompt__head {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .lead-prompt__body { padding: 16px; }
+      .lead-resources__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav nav--dark">
+    <div class="nav__bar">
+      <a href="index.html" class="nav__logo"><em>elips</em></a>
+      <ul class="nav__links">
+        <li><a href="index.html#avantages" class="nav__link">Avantages</a></li>
+        <li><a href="index.html#projets" class="nav__link">Projets</a></li>
+        <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+        <li><a href="index.html#tarifs" class="nav__link">Tarifs</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+      </ul>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__cta">Je suis intéressé</a>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html#avantages">Avantages</a>
+    <a href="index.html#projets">Projets</a>
+    <a href="index.html#apropos">À propos</a>
+    <a href="index.html#tarifs">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="projet-hero">
+    <div class="projet-hero__inner">
+      <a href="index.html" class="projet-hero__back">← Retour à l'accueil</a>
+      <div class="projet-hero__meta">
+        <span class="projet-hero__tag">Breakdown</span>
+        <span class="projet-hero__cat">Shooting IA</span>
+      </div>
+      <h1 class="projet-hero__title">Comment j'ai recréé un shooting produit pour <em>Kosbiotic</em></h1>
+      <p class="projet-hero__subtitle">Sans studio, sans modèle, sans produit physique. Uniquement à partir de photos existantes + IA. Voici la méthode exacte et les 4 prompts utilisés.</p>
+    </div>
+  </header>
+
+  <!-- INTRO + METHODOLOGIE -->
+  <section class="lead-intro">
+    <div class="lead-intro__inner">
+      <p class="lead-intro__lead">
+        La technique ici est différente d'un visuel pub généré from scratch. On part d'une <strong>photo de shooting existante</strong> (trouvée sur Pinterest ou dans une banque d'images) et on demande à l'IA de <strong>remplacer le produit</strong> par celui de la marque — en respectant la lumière, les ombres, les reflets, l'échelle. C'est du "photo swap" photoréaliste.
+      </p>
+
+      <div class="lead-steps">
+
+        <div class="lead-step">
+          <div class="lead-step__num">01</div>
+          <div class="lead-step__body">
+            <h3>Moodboard Pinterest</h3>
+            <p>Je crée un <strong>moodboard Pinterest</strong> de photos de shooting qui matchent l'esthétique de la marque : lumière, ambiance, compositions, type de modèles. Pour Kosbiotic, le moodboard exact est ici → <a href="https://pin.it/5A1IOcv95" target="_blank" rel="noopener">Voir le moodboard</a>.</p>
+          </div>
+        </div>
+
+        <div class="lead-step">
+          <div class="lead-step__num">02</div>
+          <div class="lead-step__body">
+            <h3>Sélection de la photo de référence</h3>
+            <p>Dans le moodboard, je choisis la photo qui correspond le mieux au visuel cible : la <strong>photo de référence</strong> deviendra la base. Plus la lumière et la composition sont cohérentes avec ce que je veux obtenir, plus l'IA aura peu de travail à faire.</p>
+          </div>
+        </div>
+
+        <div class="lead-step">
+          <div class="lead-step__num">03</div>
+          <div class="lead-step__body">
+            <h3>Identifier les éléments à swap</h3>
+            <p>Je liste précisément <strong>ce qui doit changer</strong> : produit à remplacer, détails à retirer (tatouages, logos, textes), couleurs à ajuster, éléments à ajouter. Tout ce qui n'est pas listé ne doit pas bouger.</p>
+          </div>
+        </div>
+
+        <div class="lead-step">
+          <div class="lead-step__num">04</div>
+          <div class="lead-step__body">
+            <h3>Rédaction du prompt "swap"</h3>
+            <p>Je rédige le prompt avec ChatGPT. La clé sur ce type de visuel, c'est les <strong>contraintes physiques</strong> : direction de la lumière, ombres de contact, reflets, échelle du produit par rapport aux mains/corps. Si tu sautes ces détails, l'intégration fait "collage" et tu perds tout le réalisme.</p>
+          </div>
+        </div>
+
+        <div class="lead-step">
+          <div class="lead-step__num">05</div>
+          <div class="lead-step__body">
+            <h3>Génération sur Weavy</h3>
+            <p>Dans <strong>Weavy</strong>, j'upload l'image de référence + le prompt. Le résultat : un visuel qui ressemble à une vraie photo de shooting, sans avoir loué de studio ni payé de photographe.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="lead-divider"><div class="lead-divider__line"></div></div>
+
+  <!-- LES 4 VISUELS -->
+  <section class="lead-visuals">
+    <div class="lead-visuals__header">
+      <h2>Les 4 visuels & leurs <em>prompts</em></h2>
+      <p>Clique sur « voir le prompt » pour déplier et copier celui que tu veux tester.</p>
+    </div>
+
+    <!-- VISUEL 01 -->
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">01</span>
+        <h3 class="lead-visual__title">Setup wellness — yoga mat & clémentines</h3>
+      </div>
+      <img src="kosbiotic-01.jpeg" alt="Visuel Kosbiotic — boîte orange sur tapis de yoga avec clémentines, ambiance wellness minimaliste" class="lead-visual__img" loading="lazy">
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 1)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-1">Replace the two supplement bottles with two Kosbiotic boxes:
+one upright orange Kosbiotic box near the top left,
+one second Kosbiotic box laying flat near the bottom left,
+realistic scale and natural placement.
+
+Change the yoga mat color to Kosbiotic orange, same texture and lighting.
+
+Replace the soap and stone inside the wooden dish with two fresh clementines,
+natural citrus texture, soft shadows.
+
+Match original lighting:
+strong sunlight from top right,
+hard shadows on the floor,
+realistic contact shadows for boxes and fruits.
+
+Keep composition minimal and photorealistic.</pre>
+        </div>
+      </details>
+    </div>
+
+    <!-- VISUEL 02 -->
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">02</span>
+        <h3 class="lead-visual__title">Mains trio — orange, jaune, violet</h3>
+      </div>
+      <img src="kosbiotic-02.jpeg" alt="Visuel Kosbiotic — trois mains tenant chacune une boîte Kosbiotic de couleur différente" class="lead-visual__img" loading="lazy">
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 2)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-2">Replace the three products with Kosbiotic boxes:
+one orange, one pale yellow, one violet.
+Each hand holding one box, realistic grip, correct scale.
+
+Remove the tattoo on the left wrist.
+Clean skin, natural hand.
+
+Match lighting perfectly:
+same sunlight direction, realistic shadows,
+soft contact shadows on hands,
+natural color grading and reflections,
+photorealistic integration.
+
+Keep same composition, same pose, same background.
+Only hands and Kosbiotic boxes.</pre>
+        </div>
+      </details>
+    </div>
+
+    <!-- VISUEL 03 -->
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">03</span>
+        <h3 class="lead-visual__title">Shooting miroir d'eau</h3>
+      </div>
+      <img src="kosbiotic-03.jpeg" alt="Visuel Kosbiotic — femme assise dans l'eau avec boîte Kosbiotic orange en reflet, lumière dorée" class="lead-visual__img" loading="lazy">
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 3)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-3">Editorial wellness photograph, woman sitting in shallow reflective water, pale yellow bikini, beige textured wall background, warm late afternoon sunlight coming from right side, soft golden tones, calm minimal composition, centered framing, natural body pose, realistic studio environment
+
+Kosbiotic orange box placed in shallow water in foreground,
+smaller realistic product scale relative to model,
+box not dominating frame,
+physically grounded in water surface,
+slightly submerged base,
+realistic thin water contact line,
+correct perspective and distance from camera,
+
+Reflection:
+only the Kosbiotic box reflected in water,
+no reflection of the woman,
+no torso reflection,
+no head reflection,
+subtle box-only reflection,
+reflection slightly blurred and darker,
+gentle ripple distortion,
+reflection aligned perfectly under box only,
+
+Lighting:
+box lit by same directional sunlight from right,
+warm highlight on right edge,
+soft shadow cast to left matching model shadow direction,
+realistic ambient bounce light from water onto box,
+consistent exposure and color temperature,
+
+Model shadow:
+single directional sunlight from right,
+soft realistic shadow projected on wall,
+accurate arm silhouette,
+natural perspective,
+soft edge falloff,
+no duplicated shadows,
+consistent with body distance from wall
+
+Water realism:
+soft mirror reflection only under product,
+slight ripple distortion,
+darker reflection values,
+gentle surface gloss,
+shallow water depth,
+no full mirror effect,
+no reflection of background subject
+
+clean studio background, minimal aesthetic, photorealistic compositing, seamless integration, physically accurate lighting</pre>
+        </div>
+      </details>
+    </div>
+
+    <!-- VISUEL 04 -->
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">04</span>
+        <h3 class="lead-visual__title">Beauty close-up — capsules</h3>
+      </div>
+      <img src="kosbiotic-04.jpeg" alt="Visuel Kosbiotic — close-up beauté d'une femme tenant deux capsules Kosbiotic devant l'œil" class="lead-visual__img" loading="lazy">
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 4)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-4">Close-up beauty editorial photo of a European blonde woman with light skin and subtle natural freckles.
+
+Woman:
+European blonde,
+light brown / hazel eyes,
+soft natural freckles across nose and cheeks,
+natural lips,
+minimal makeup,
+clean skincare editorial look,
+dewy skin texture,
+realistic pores.
+
+Pose:
+woman holding two capsules between fingers in front of one eye,
+same macro beauty framing,
+one eye closed, one eye looking at camera,
+natural hand position.
+
+Capsules:
+two transparent Kosbiotic capsules,
+beige powder inside with natural granules,
+"kosbiotic" text horizontal along capsule length,
+text embedded inside capsule, slightly diffused,
+one capsule slightly higher than the other,
+slight natural rotation difference,
+realistic scale relative to fingers.
+
+Lighting:
+warm beauty sunlight from front-left,
+soft skin highlights,
+natural finger shadows on face,
+light passing through capsules,
+realistic contact shadow on skin.
+
+Style:
+macro beauty photography,
+editorial skincare campaign,
+photorealistic,
+no duplication, no floating effect,
+perfect integration.</pre>
+        </div>
+      </details>
+    </div>
+
+  </section>
+
+  <!-- RESSOURCES (Weavy + Pinterest) -->
+  <section class="lead-resources">
+    <div class="lead-resources__inner">
+      <div class="lead-resources__label">Bonus</div>
+      <h2 class="lead-resources__title">Les ressources exactes utilisées sur ce projet</h2>
+
+      <div class="lead-resources__grid">
+
+        <div class="lead-resource-card">
+          <h3 class="lead-resource-card__name">Board <em>Weavy</em></h3>
+          <p class="lead-resource-card__desc">Tous les prompts, les variations et les images de référence du projet Kosbiotic.</p>
+          <a href="https://app.weavy.ai/flow/lmWRw1hGYQbkYveSCxbf2c" target="_blank" rel="noopener" class="btn">Ouvrir Weavy →</a>
+        </div>
+
+        <div class="lead-resource-card">
+          <h3 class="lead-resource-card__name">Moodboard <em>Pinterest</em></h3>
+          <p class="lead-resource-card__desc">Les photos de référence qui ont servi de base à chaque visuel.</p>
+          <a href="https://pin.it/5A1IOcv95" target="_blank" rel="noopener" class="btn btn--ghost">Voir le moodboard →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA NOIR -->
+  <section class="lead-cta">
+    <div class="lead-cta__inner">
+      <h2>Envie du même traitement<br>pour <em>votre marque</em> ?</h2>
+      <p>Je recrée des shootings produits entiers avec l'IA pour les marques e-commerce : plus rapide, moins cher, même qualité. Réservez un appel découverte gratuit de 30 minutes.</p>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="btn">Prendre rendez-vous →</a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP STICKY -->
+  <a href="https://wa.me/message/OOO75YFUQXAUP1" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <div class="footer__status">
+          <span class="footer__status-dot"></span>
+          Disponible pour travailler
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/in/ismael-boudjakdji-6644411b3/" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#projets">Projets</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Études de cas</h4>
+          <a href="projet-elmut.html">Elmut</a>
+          <a href="projet-mvst-select.html">Mvst Select</a>
+          <a href="projet-kosbiotic.html">Kosbiotic</a>
+          <a href="projet-monateo.html">Monateo</a>
+          <a href="projet-création-de-contenu.html">Création de contenu</a>
+          <a href="projet-ads.html">Ads</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Légal</h4>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elips Studio. Tous droits réservés.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Copier prompt
+    function copyPrompt(event, id) {
+      event.preventDefault();
+      event.stopPropagation();
+      const pre = document.getElementById('prompt-' + id);
+      const btn = event.currentTarget;
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copié ✓';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 1800);
+      }).catch(() => {
+        btn.textContent = 'Erreur';
+        setTimeout(() => { btn.textContent = 'Copier'; }, 1800);
+      });
+    }
+
+    // Mobile menu
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
