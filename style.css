@@ -1416,7 +1416,17 @@ img { display: block; max-width: 100%; }
 .bento__left {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--space-md);
+}
+
+.bento__left-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--color-black);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
 .bento__card--main {
@@ -1541,6 +1551,283 @@ img { display: block; max-width: 100%; }
   .bento__right-bottom {
     grid-template-columns: 1fr;
   }
+}
+
+/* ============================================
+   BENTO — VISUAL ASSETS (UI mockups)
+   ============================================ */
+.bento-asset {
+  position: relative;
+  margin-bottom: var(--space-sm);
+  padding: 14px;
+  background: linear-gradient(135deg, #1A1A1F 0%, #0F0F12 100%);
+  border: 1px solid rgba(255, 155, 84, 0.12);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: var(--font-sans);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bento-asset::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 155, 84, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bento-asset > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bento-asset__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.bento-asset__label {
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bento-asset__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.04em;
+}
+
+.bento-asset__pill--accent {
+  background: rgba(255, 155, 84, 0.15);
+  border-color: rgba(255, 155, 84, 0.3);
+  color: var(--color-accent);
+}
+
+.bento-asset__pill--success {
+  background: rgba(52, 199, 89, 0.15);
+  border-color: rgba(52, 199, 89, 0.3);
+  color: #4ED464;
+}
+
+/* Timeline / bars (Card 1 — Livraison express) */
+.bento-asset__row {
+  margin-bottom: 8px;
+}
+
+.bento-asset__row:last-child {
+  margin-bottom: 0;
+}
+
+.bento-asset__row-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.bento-asset__row-name {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bento-asset__row-value {
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+}
+
+.bento-asset__row-value--muted {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: line-through;
+}
+
+.bento-asset__row-value--accent {
+  color: var(--color-accent);
+}
+
+.bento-asset__bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bento-asset__bar-fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255, 155, 84, 0.5);
+}
+
+.bento-asset__bar-fill--muted {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+/* Client testimonial chat (Card 2 — Qualité shooting pro) */
+.bento-asset__chat-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.bento-asset__chat-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9B54 0%, #e88a45 100%);
+  color: var(--color-white);
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento-asset__chat-name {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: var(--weight-medium);
+}
+
+.bento-asset__chat-bubble {
+  position: relative;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px 12px 12px 4px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 6px;
+}
+
+.bento-asset__chat-time {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+}
+
+/* Brand block (Card 3 — Votre DA respectée) */
+.bento-asset__brand-block {
+  margin-bottom: 8px;
+}
+
+.bento-asset__brand-block:last-child {
+  margin-bottom: 0;
+}
+
+.bento-asset__brand-label {
+  display: block;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.bento-asset__swatches {
+  display: flex;
+  gap: 4px;
+}
+
+.bento-asset__swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bento-asset__typo {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.bento-asset__typo-sans {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: var(--weight-medium);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.bento-asset__typo-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.bento-asset__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.bento-asset__tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: var(--weight-medium);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 155, 84, 0.1);
+  border: 1px solid rgba(255, 155, 84, 0.2);
+  color: rgba(255, 200, 150, 0.95);
+  letter-spacing: 0.02em;
+}
+
+/* Cost comparison (Card 4 — Fraction du coût) */
+.bento-asset__quote {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 6px;
+}
+
+.bento-asset__quote:last-child {
+  margin-bottom: 0;
+}
+
+.bento-asset__quote--highlight {
+  background: rgba(255, 155, 84, 0.1);
+  border-color: rgba(255, 155, 84, 0.25);
+}
+
+.bento-asset__quote-name {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.bento-asset__quote-price {
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+}
+
+.bento-asset__quote-price--muted {
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: line-through;
+  font-weight: var(--weight-regular);
 }
 
 /* ============================================
