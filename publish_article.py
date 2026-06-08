@@ -122,7 +122,7 @@ def main():
             f"📝 {title}\n"
             f"📂 {category}\n"
             f"🔑 Mot-cle : {keyword}\n\n"
-            f"🔗 https://elips-studio.vercel.app/article.html?slug={slug}"
+            f"🔗 https://www.ismael-boudjakdji.com/article.html?slug={slug}"
         )
         send_telegram(msg)
     else:
