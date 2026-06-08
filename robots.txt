@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Pages d'acquisition payante (non destinées au référencement naturel)
+Disallow: /lead-magnet-kosbiotic.html
+Disallow: /lead-magnet-mj.html
+Disallow: /lead-magnet-noobiotik.html
+
+Sitemap: https://www.ismael-boudjakdji.com/sitemap.xml

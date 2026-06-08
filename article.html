@@ -162,6 +162,56 @@
         document.getElementById('page-description').content = post.meta_description;
       }
 
+      // SEO dynamique : canonical, Open Graph, Twitter, données structurées
+      const pageUrl = 'https://www.ismael-boudjakdji.com/article.html?slug=' + slug;
+      const desc = post.meta_description || (post.content ? post.content.replace(/<[^>]+>/g, '').slice(0, 155) : '');
+      const img = post.image_url || 'https://www.ismael-boudjakdji.com/og-image.jpg';
+
+      const setMeta = (attr, key, value) => {
+        if (!value) return;
+        let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+        if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); }
+        el.setAttribute('content', value);
+      };
+
+      let canonical = document.head.querySelector('link[rel="canonical"]');
+      if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+      canonical.href = pageUrl;
+
+      setMeta('property', 'og:type', 'article');
+      setMeta('property', 'og:locale', 'fr_FR');
+      setMeta('property', 'og:site_name', 'Elips Studio');
+      setMeta('property', 'og:url', pageUrl);
+      setMeta('property', 'og:title', post.title);
+      setMeta('property', 'og:description', desc);
+      setMeta('property', 'og:image', img);
+      setMeta('name', 'twitter:card', 'summary_large_image');
+      setMeta('name', 'twitter:title', post.title);
+      setMeta('name', 'twitter:description', desc);
+      setMeta('name', 'twitter:image', img);
+
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": desc,
+        "image": img,
+        "datePublished": post.published_at,
+        "dateModified": post.published_at,
+        "url": pageUrl,
+        "mainEntityOfPage": pageUrl,
+        "author": { "@type": "Person", "name": "Ismaël Boudjakdji" },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Elips Studio",
+          "logo": { "@type": "ImageObject", "url": "https://www.ismael-boudjakdji.com/og-image.jpg" }
+        }
+      };
+      const ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      ldScript.textContent = JSON.stringify(ld);
+      document.head.appendChild(ldScript);
+
       // Hero
       document.getElementById('article-category').textContent = post.category || 'Visuels IA';
       document.getElementById('article-date').textContent = new Date(post.published_at).toLocaleDateString('fr-FR', {
