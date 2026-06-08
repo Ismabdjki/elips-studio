@@ -29,14 +29,20 @@
       <a href="#" class="nav__logo"><em>elips</em></a>
 
       <ul class="nav__links">
-        <li><a href="#avantages" class="nav__link">Avantages</a></li>
-        <li><a href="#projets" class="nav__link">Projets</a></li>
-        <li><a href="#apropos" class="nav__link">À propos</a></li>
-        <li><a href="#faq" class="nav__link">FAQ</a></li>
-        <li><a href="blog.html" class="nav__link">Blog</a></li>
+        <li><a href="#avantages" class="nav__link" data-i18n="nav.avantages">Avantages</a></li>
+        <li><a href="#projets" class="nav__link" data-i18n="nav.projets">Projets</a></li>
+        <li><a href="#apropos" class="nav__link" data-i18n="nav.apropos">À propos</a></li>
+        <li><a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="blog.html" class="nav__link" data-i18n="nav.blog">Blog</a></li>
       </ul>
 
-      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__cta">Je suis intéressé</a>
+      <div class="nav__lang" role="group" aria-label="Language">
+        <button type="button" class="nav__lang-btn" data-lang-switch="fr">FR</button>
+        <span class="nav__lang-sep">·</span>
+        <button type="button" class="nav__lang-btn" data-lang-switch="en">EN</button>
+      </div>
+
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__cta" data-i18n="nav.cta">Je suis intéressé</a>
 
       <button class="nav__burger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -46,12 +52,17 @@
 
   <!-- MOBILE MENU -->
   <div class="nav__mobile" id="nav-mobile">
-    <a href="#avantages" class="nav__mobile-link">Avantages</a>
-    <a href="#projets" class="nav__mobile-link">Projets</a>
-    <a href="#apropos" class="nav__mobile-link">À propos</a>
-    <a href="#faq" class="nav__mobile-link">FAQ</a>
-    <a href="blog.html" class="nav__mobile-link">Blog</a>
-    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+    <a href="#avantages" class="nav__mobile-link" data-i18n="nav.avantages">Avantages</a>
+    <a href="#projets" class="nav__mobile-link" data-i18n="nav.projets">Projets</a>
+    <a href="#apropos" class="nav__mobile-link" data-i18n="nav.apropos">À propos</a>
+    <a href="#faq" class="nav__mobile-link" data-i18n="nav.faq">FAQ</a>
+    <a href="blog.html" class="nav__mobile-link" data-i18n="nav.blog">Blog</a>
+    <div class="nav__mobile-lang" role="group" aria-label="Language">
+      <button type="button" class="nav__lang-btn" data-lang-switch="fr">FR</button>
+      <span class="nav__lang-sep">·</span>
+      <button type="button" class="nav__lang-btn" data-lang-switch="en">EN</button>
+    </div>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta" data-i18n="nav.cta">Je suis intéressé</a>
   </div>
 
   <!-- ========== HERO ========== -->
@@ -59,12 +70,12 @@
     <div class="hero__content">
       <span class="hero__status glow-green">
         <span class="hero__status-dot"></span>
-        Disponible pour travailler
+        <span data-i18n="hero.status">Disponible pour travailler</span>
       </span>
-      <h1 class="hero__title">
+      <h1 class="hero__title" data-i18n-html="hero.title.html">
         Des shootings produits <em>premium.</em><br>Sans studio. Livrés en 7 jours.
       </h1>
-      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="hero__btn">Je suis intéressé</a>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="hero__btn" data-i18n="hero.btn">Je suis intéressé</a>
     </div>
   </section>
 
@@ -72,9 +83,9 @@
   <section class="bento" id="avantages">
     <div class="bento__inner">
       <div class="bento__header">
-        <span class="bento__label glow-orange">Pourquoi l'IA</span>
-        <h2 class="bento__title">L'<em class="accent">alternative</em> au shooting traditionnel</h2>
-        <p class="bento__subtitle">Tout ce qu'un shooting studio vous apporte.<br>Sans les contraintes qui vont avec.</p>
+        <span class="bento__label glow-orange" data-i18n="bento.label">Pourquoi l'IA</span>
+        <h2 class="bento__title" data-i18n-html="bento.title.html">L'<em class="accent">alternative</em> au shooting traditionnel</h2>
+        <p class="bento__subtitle" data-i18n-html="bento.subtitle.html">Tout ce qu'un shooting studio vous apporte.<br>Sans les contraintes qui vont avec.</p>
       </div>
 
       <div class="bento__grid">
@@ -83,9 +94,9 @@
           <div class="bento__card bento__card--img bento__card--main">
             <img src="portfolio_IA.avif" alt="Shooting produit IA pour marque e-commerce par Elips Studio">
           </div>
-          <h3 class="bento__left-title">Un brief. Sept jours. <em>Visuels livrés.</em></h3>
-          <p class="bento__left-text">Vous arrivez avec un brief, vous repartez avec 30 visuels prêts à publier — et autant d'itérations que vous voulez ensuite. Sans studio à louer, sans logistique à coordonner, sans pression du jour J.</p>
-          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="bento__card-btn">Démarrer un projet →</a>
+          <h3 class="bento__left-title" data-i18n-html="bento.left.title.html">Un brief. Sept jours. <em>Visuels livrés.</em></h3>
+          <p class="bento__left-text" data-i18n="bento.left.text">Vous arrivez avec un brief, vous repartez avec 30 visuels prêts à publier — et autant d'itérations que vous voulez ensuite. Sans studio à louer, sans logistique à coordonner, sans pression du jour J.</p>
+          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="bento__card-btn" data-i18n="bento.main.btn">Démarrer un projet →</a>
         </div>
 
         <!-- Right column: 2 small top + 1 wide bottom -->
@@ -94,55 +105,55 @@
             <div class="bento__card bento__card--text bento__card--sm">
               <div class="bento-asset bento-asset--timeline">
                 <div class="bento-asset__head">
-                  <span class="bento-asset__label">DÉLAIS</span>
-                  <span class="bento-asset__pill bento-asset__pill--accent">−75%</span>
+                  <span class="bento-asset__label" data-i18n="bento.card1.label">DÉLAIS</span>
+                  <span class="bento-asset__pill bento-asset__pill--accent" data-i18n="bento.card1.pill">−75%</span>
                 </div>
                 <div class="bento-asset__row">
                   <div class="bento-asset__row-meta">
-                    <span class="bento-asset__row-name">Shooting trad.</span>
-                    <span class="bento-asset__row-value bento-asset__row-value--muted">28 j</span>
+                    <span class="bento-asset__row-name" data-i18n="bento.card1.row1.name">Shooting trad.</span>
+                    <span class="bento-asset__row-value bento-asset__row-value--muted" data-i18n="bento.card1.row1.value">28 j</span>
                   </div>
                   <div class="bento-asset__bar"><div class="bento-asset__bar-fill bento-asset__bar-fill--muted" style="width:100%"></div></div>
                 </div>
                 <div class="bento-asset__row">
                   <div class="bento-asset__row-meta">
-                    <span class="bento-asset__row-name">Avec moi</span>
-                    <span class="bento-asset__row-value bento-asset__row-value--accent">7 j</span>
+                    <span class="bento-asset__row-name" data-i18n="bento.card1.row2.name">Avec moi</span>
+                    <span class="bento-asset__row-value bento-asset__row-value--accent" data-i18n="bento.card1.row2.value">7 j</span>
                   </div>
                   <div class="bento-asset__bar"><div class="bento-asset__bar-fill" style="width:25%"></div></div>
                 </div>
               </div>
-              <h3 class="bento__card-title">Livraison express</h3>
-              <p class="bento__card-desc">7 jours du brief à la livraison finale. Là où un shooting traditionnel prend 3 à 4 semaines.</p>
+              <h3 class="bento__card-title" data-i18n="bento.card1.title">Livraison express</h3>
+              <p class="bento__card-desc" data-i18n="bento.card1.desc">7 jours du brief à la livraison finale. Là où un shooting traditionnel prend 3 à 4 semaines.</p>
             </div>
             <div class="bento__card bento__card--text bento__card--sm">
               <div class="bento-asset bento-asset--testimonial">
                 <div class="bento-asset__head">
-                  <span class="bento-asset__label">MESSAGE CLIENT</span>
-                  <span class="bento-asset__pill bento-asset__pill--success">✓ Reçu</span>
+                  <span class="bento-asset__label" data-i18n="bento.card2.label">MESSAGE CLIENT</span>
+                  <span class="bento-asset__pill bento-asset__pill--success" data-i18n="bento.card2.pill">✓ Reçu</span>
                 </div>
                 <div class="bento-asset__chat-meta">
                   <div class="bento-asset__chat-avatar">L</div>
-                  <div class="bento-asset__chat-name">Léa · Wellness brand</div>
+                  <div class="bento-asset__chat-name" data-i18n="bento.card2.chat.name">Léa · Wellness brand</div>
                 </div>
-                <div class="bento-asset__chat-bubble">
+                <div class="bento-asset__chat-bubble" data-i18n-html="bento.card2.chat.bubble.html">
                   Sérieusement c'est dingue le rendu,<br>on fonce sur la suite !
                 </div>
-                <div class="bento-asset__chat-time">09:42 · Vu</div>
+                <div class="bento-asset__chat-time" data-i18n="bento.card2.chat.time">09:42 · Vu</div>
               </div>
-              <h3 class="bento__card-title">Qualité shooting pro</h3>
-              <p class="bento__card-desc">Des visuels photoréalistes indiscernables d'un shoot studio. Aucun compromis sur le rendu.</p>
+              <h3 class="bento__card-title" data-i18n="bento.card2.title">Qualité shooting pro</h3>
+              <p class="bento__card-desc" data-i18n="bento.card2.desc">Des visuels photoréalistes indiscernables d'un shoot studio. Aucun compromis sur le rendu.</p>
             </div>
           </div>
           <div class="bento__right-bottom">
             <div class="bento__card bento__card--text bento__card--half">
               <div class="bento-asset bento-asset--brand">
                 <div class="bento-asset__head">
-                  <span class="bento-asset__label">DIRECTION ARTISTIQUE</span>
-                  <span class="bento-asset__pill bento-asset__pill--success">✓ Sync</span>
+                  <span class="bento-asset__label" data-i18n="bento.card3.label">DIRECTION ARTISTIQUE</span>
+                  <span class="bento-asset__pill bento-asset__pill--success" data-i18n="bento.card3.pill">✓ Sync</span>
                 </div>
                 <div class="bento-asset__brand-block">
-                  <span class="bento-asset__brand-label">Couleurs</span>
+                  <span class="bento-asset__brand-label" data-i18n="bento.card3.brand.colors">Couleurs</span>
                   <div class="bento-asset__swatches">
                     <span class="bento-asset__swatch" style="background:#1A1A1A"></span>
                     <span class="bento-asset__swatch" style="background:#FF9B54"></span>
@@ -151,41 +162,41 @@
                   </div>
                 </div>
                 <div class="bento-asset__brand-block">
-                  <span class="bento-asset__brand-label">Ambiance</span>
+                  <span class="bento-asset__brand-label" data-i18n="bento.card3.brand.mood">Ambiance</span>
                   <div class="bento-asset__tags">
-                    <span class="bento-asset__tag">éditorial</span>
-                    <span class="bento-asset__tag">luxe</span>
-                    <span class="bento-asset__tag">intime</span>
+                    <span class="bento-asset__tag" data-i18n="bento.card3.tag.editorial">éditorial</span>
+                    <span class="bento-asset__tag" data-i18n="bento.card3.tag.luxe">luxe</span>
+                    <span class="bento-asset__tag" data-i18n="bento.card3.tag.intime">intime</span>
                   </div>
                 </div>
                 <div class="bento-asset__brand-block">
-                  <span class="bento-asset__brand-label">Lumière</span>
+                  <span class="bento-asset__brand-label" data-i18n="bento.card3.brand.light">Lumière</span>
                   <div class="bento-asset__tags">
-                    <span class="bento-asset__tag">doré</span>
-                    <span class="bento-asset__tag">soft</span>
+                    <span class="bento-asset__tag" data-i18n="bento.card3.tag.dore">doré</span>
+                    <span class="bento-asset__tag" data-i18n="bento.card3.tag.soft">soft</span>
                   </div>
                 </div>
               </div>
-              <h3 class="bento__card-title">Votre DA respectée</h3>
-              <p class="bento__card-desc">Je travaille à partir de votre charte, vos codes visuels, vos inspirations. L'IA s'adapte à votre marque, pas l'inverse.</p>
+              <h3 class="bento__card-title" data-i18n="bento.card3.title">Votre DA respectée</h3>
+              <p class="bento__card-desc" data-i18n="bento.card3.desc">Je travaille à partir de votre charte, vos codes visuels, vos inspirations. L'IA s'adapte à votre marque, pas l'inverse.</p>
             </div>
             <div class="bento__card bento__card--text bento__card--half">
               <div class="bento-asset bento-asset--cost">
                 <div class="bento-asset__head">
-                  <span class="bento-asset__label">DEVIS COMPARATIF</span>
-                  <span class="bento-asset__pill bento-asset__pill--accent">−85%</span>
+                  <span class="bento-asset__label" data-i18n="bento.card4.label">DEVIS COMPARATIF</span>
+                  <span class="bento-asset__pill bento-asset__pill--accent" data-i18n="bento.card4.pill">−85%</span>
                 </div>
                 <div class="bento-asset__quote">
-                  <span class="bento-asset__quote-name">Shooting traditionnel</span>
-                  <span class="bento-asset__quote-price bento-asset__quote-price--muted">12 000 €</span>
+                  <span class="bento-asset__quote-name" data-i18n="bento.card4.quote1.name">Shooting traditionnel</span>
+                  <span class="bento-asset__quote-price bento-asset__quote-price--muted" data-i18n="bento.card4.quote1.price">12 000 €</span>
                 </div>
                 <div class="bento-asset__quote bento-asset__quote--highlight">
-                  <span class="bento-asset__quote-name">Elips Studio</span>
-                  <span class="bento-asset__quote-price">1 800 €</span>
+                  <span class="bento-asset__quote-name" data-i18n="bento.card4.quote2.name">Elips Studio</span>
+                  <span class="bento-asset__quote-price" data-i18n="bento.card4.quote2.price">1 800 €</span>
                 </div>
               </div>
-              <h3 class="bento__card-title">Fraction du coût</h3>
-              <p class="bento__card-desc">Plus de studio à 2 000€ la journée, de photographe à briefer, de modèle à caster. Le budget va où ça compte vraiment.</p>
+              <h3 class="bento__card-title" data-i18n="bento.card4.title">Fraction du coût</h3>
+              <p class="bento__card-desc" data-i18n="bento.card4.desc">Plus de studio à 2 000€ la journée, de photographe à briefer, de modèle à caster. Le budget va où ça compte vraiment.</p>
             </div>
           </div>
         </div>
@@ -197,8 +208,8 @@
   <section class="projects" id="projets">
     <div class="projects__inner">
       <div class="projects__header">
-        <span class="projects__label glow-orange">Projets</span>
-        <h2 class="projects__title">Mes dernières<br><em>créations.</em></h2>
+        <span class="projects__label glow-orange" data-i18n="projects.label">Projets</span>
+        <h2 class="projects__title" data-i18n-html="projects.title.html">Mes dernières<br><em>créations.</em></h2>
       </div>
 
       <div class="projects__grid" id="projects-grid">
@@ -210,37 +221,37 @@
   <!-- ========== MARQUEE ========== -->
   <div class="marquee marquee--dark">
     <div class="marquee__track">
-      <span class="marquee__item">Shootings IA</span>
+      <span class="marquee__item" data-i18n="marquee.shootings_ia">Shootings IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__item" data-i18n="marquee.videos_ia">Vidéos IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__item" data-i18n="marquee.ecommerce">E-commerce</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__item" data-i18n="marquee.visuels_ia">Visuels IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__item" data-i18n="marquee.da">Direction Artistique</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Shootings IA</span>
+      <span class="marquee__item" data-i18n="marquee.shootings_ia">Shootings IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__item" data-i18n="marquee.videos_ia">Vidéos IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__item" data-i18n="marquee.ecommerce">E-commerce</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__item" data-i18n="marquee.visuels_ia">Visuels IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__item" data-i18n="marquee.da">Direction Artistique</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Shootings IA</span>
+      <span class="marquee__item" data-i18n="marquee.shootings_ia">Shootings IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Vidéos IA</span>
+      <span class="marquee__item" data-i18n="marquee.videos_ia">Vidéos IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">E-commerce</span>
+      <span class="marquee__item" data-i18n="marquee.ecommerce">E-commerce</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Visuels IA</span>
+      <span class="marquee__item" data-i18n="marquee.visuels_ia">Visuels IA</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Direction Artistique</span>
+      <span class="marquee__item" data-i18n="marquee.da">Direction Artistique</span>
       <span class="marquee__dot">●</span>
-      <span class="marquee__item">Shootings IA</span>
+      <span class="marquee__item" data-i18n="marquee.shootings_ia">Shootings IA</span>
       <span class="marquee__dot">●</span>
     </div>
   </div>
@@ -256,12 +267,12 @@
       </div>
 
       <div class="about__content">
-        <span class="about__label glow-orange">À propos</span>
-        <h2 class="about__title">Ismaël, fondateur<br>d'<em>Elips Studio</em></h2>
-        <p class="about__text-lead">
+        <span class="about__label glow-orange" data-i18n="about.label">À propos</span>
+        <h2 class="about__title" data-i18n-html="about.title.html">Ismaël, fondateur<br>d'<em>Elips Studio</em></h2>
+        <p class="about__text-lead" data-i18n="about.lead">
           Je suis directeur artistique pour les marques e-commerce. L'IA est mon outil pour produire plus vite, sans jamais compromettre la qualité d'un shooting pro.
         </p>
-        <p class="about__text">
+        <p class="about__text" data-i18n="about.text">
           À partir de votre identité de marque, de votre moodboard et de vos produits, je dirige la production visuelle de A à Z : composition, lumière, ambiance, cohérence. Ce qui prenait 3 semaines en studio se livre désormais en 7 jours — sans sacrifier l'exigence éditoriale.
         </p>
         <div class="about__stats">
@@ -269,25 +280,25 @@
             <div class="about__stat-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            <span class="about__stat-title">50+ Projets</span>
-            <span class="about__stat-label">Visuels et vidéos livrés clé en main</span>
+            <span class="about__stat-title" data-i18n="about.stat1.title">50+ Projets</span>
+            <span class="about__stat-label" data-i18n="about.stat1.label">Visuels et vidéos livrés clé en main</span>
           </div>
           <div class="about__stat">
             <div class="about__stat-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <span class="about__stat-title">20+ Clients</span>
-            <span class="about__stat-label">Marques e-commerce accompagnées</span>
+            <span class="about__stat-title" data-i18n="about.stat2.title">20+ Clients</span>
+            <span class="about__stat-label" data-i18n="about.stat2.label">Marques e-commerce accompagnées</span>
           </div>
           <div class="about__stat">
             <div class="about__stat-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
-            <span class="about__stat-title">100% Satisfaits</span>
-            <span class="about__stat-label">Clients qui recommandent nos services</span>
+            <span class="about__stat-title" data-i18n="about.stat3.title">100% Satisfaits</span>
+            <span class="about__stat-label" data-i18n="about.stat3.label">Clients qui recommandent nos services</span>
           </div>
         </div>
-        <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="about__btn">Me contacter →</a>
+        <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="about__btn" data-i18n="about.btn">Me contacter →</a>
       </div>
     </div>
   </section>
@@ -353,56 +364,56 @@
   <section class="faq" id="faq">
     <div class="faq__inner">
       <div class="faq__header">
-        <span class="faq__label">FAQ</span>
-        <h2 class="faq__title">Frequently Asked<br><em>Questions</em></h2>
+        <span class="faq__label" data-i18n="faq.label">FAQ</span>
+        <h2 class="faq__title" data-i18n-html="faq.title.html">Questions<br><em>fréquentes</em></h2>
       </div>
 
       <div class="faq__grid">
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Comment l'IA génère mes visuels ?</span>
+            <span data-i18n="faq.q1">Comment l'IA génère mes visuels ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">Je travaille à partir de votre identité de marque et de votre moodboard. Je rédige les prompts, pilote chaque génération, retravaille les images une par une. L'IA est mon outil — votre direction artistique est mon cahier des charges.</p>
+          <p class="faq__answer" data-i18n="faq.a1">Je travaille à partir de votre identité de marque et de votre moodboard. Je rédige les prompts, pilote chaque génération, retravaille les images une par une. L'IA est mon outil — votre direction artistique est mon cahier des charges.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Les visuels sont-ils réalistes ?</span>
+            <span data-i18n="faq.q2">Les visuels sont-ils réalistes ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">Oui, les technologies actuelles permettent de produire des visuels photoréalistes. Nous affinons chaque rendu manuellement pour garantir un résultat professionnel indiscernable d'une photo traditionnelle.</p>
+          <p class="faq__answer" data-i18n="faq.a2">Oui, les technologies actuelles permettent de produire des visuels photoréalistes. Nous affinons chaque rendu manuellement pour garantir un résultat professionnel indiscernable d'une photo traditionnelle.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Quels sont les délais de livraison ?</span>
+            <span data-i18n="faq.q3">Quels sont les délais de livraison ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">En moyenne, un projet de visuels IA est livré en 7 jours ouvrés. Les vidéos IA peuvent prendre jusqu'à 14 jours selon la complexité. Nous proposons aussi des options express.</p>
+          <p class="faq__answer" data-i18n="faq.a3">En moyenne, un projet de visuels IA est livré en 7 jours ouvrés. Les vidéos IA peuvent prendre jusqu'à 14 jours selon la complexité. Nous proposons aussi des options express.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Dois-je fournir des photos ?</span>
+            <span data-i18n="faq.q4">Dois-je fournir des photos ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">Idéalement oui, quelques photos de référence suffisent. Mais nous pouvons aussi travailler à partir de moodboards, de descriptions ou même de croquis pour générer vos visuels.</p>
+          <p class="faq__answer" data-i18n="faq.a4">Idéalement oui, quelques photos de référence suffisent. Mais nous pouvons aussi travailler à partir de moodboards, de descriptions ou même de croquis pour générer vos visuels.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Les visuels sont-ils libres de droits ?</span>
+            <span data-i18n="faq.q5">Les visuels sont-ils libres de droits ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">Absolument. Tous les visuels que nous créons vous appartiennent entièrement. Vous pouvez les utiliser sur vos réseaux, votre site, vos publicités et vos supports print sans restriction.</p>
+          <p class="faq__answer" data-i18n="faq.a5">Absolument. Tous les visuels que nous créons vous appartiennent entièrement. Vous pouvez les utiliser sur vos réseaux, votre site, vos publicités et vos supports print sans restriction.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">
-            <span>Quelle différence avec un shooting ?</span>
+            <span data-i18n="faq.q6">Quelle différence avec un shooting ?</span>
             <span class="faq__icon"></span>
           </summary>
-          <p class="faq__answer">Pas de studio à louer, pas de modèle à caster, pas de logistique produit. Vous obtenez des visuels de même qualité qu'un shooting studio, livrés en 7 jours, pour une fraction du coût. Et surtout : avec votre direction artistique respectée à la lettre.</p>
+          <p class="faq__answer" data-i18n="faq.a6">Pas de studio à louer, pas de modèle à caster, pas de logistique produit. Vous obtenez des visuels de même qualité qu'un shooting studio, livrés en 7 jours, pour une fraction du coût. Et surtout : avec votre direction artistique respectée à la lettre.</p>
         </details>
       </div>
 
-      <p class="faq__contact">Contactez-nous : <a href="mailto:ismaelboudjakdji@gmail.com">ismaelboudjakdji@gmail.com</a></p>
+      <p class="faq__contact"><span data-i18n="faq.contact">Contactez-nous :</span> <a href="mailto:ismaelboudjakdji@gmail.com">ismaelboudjakdji@gmail.com</a></p>
     </div>
   </section>
 
@@ -435,10 +446,10 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__left">
-        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <p class="footer__address" data-i18n-html="footer.address">Elips Studio<br>Paris, France</p>
         <div class="footer__status">
           <span class="footer__status-dot"></span>
-          Disponible pour travailler
+          <span data-i18n="footer.status">Disponible pour travailler</span>
         </div>
         <div class="footer__socials">
           <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">IG</a>
@@ -448,14 +459,14 @@
 
       <div class="footer__columns">
         <div class="footer__col">
-          <h4 class="footer__col-title">Navigation</h4>
-          <a href="#">Accueil</a>
-          <a href="#projets">Projets</a>
-          <a href="#apropos">À propos</a>
-          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener">Contact</a>
+          <h4 class="footer__col-title" data-i18n="footer.col1.title">Navigation</h4>
+          <a href="#" data-i18n="footer.col1.accueil">Accueil</a>
+          <a href="#projets" data-i18n="footer.col1.projets">Projets</a>
+          <a href="#apropos" data-i18n="footer.col1.apropos">À propos</a>
+          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" data-i18n="footer.col1.contact">Contact</a>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title">Études de cas</h4>
+          <h4 class="footer__col-title" data-i18n="footer.col2.title">Études de cas</h4>
           <a href="projet-elmut.html">Elmut</a>
           <a href="projet-mvst-select.html">Mvst Select</a>
           <a href="projet-kosbiotic.html">Kosbiotic</a>
@@ -464,18 +475,21 @@
           <a href="projet-ads.html">Ads</a>
         </div>
         <div class="footer__col">
-          <h4 class="footer__col-title">Légal</h4>
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="politique-confidentialite.html">Politique de confidentialité</a>
-          <a href="cgv.html">CGV</a>
+          <h4 class="footer__col-title" data-i18n="footer.col3.title">Légal</h4>
+          <a href="mentions-legales.html" data-i18n="footer.col3.mentions">Mentions légales</a>
+          <a href="politique-confidentialite.html" data-i18n="footer.col3.politique">Politique de confidentialité</a>
+          <a href="cgv.html" data-i18n="footer.col3.cgv">CGV</a>
         </div>
       </div>
     </div>
 
     <div class="footer__bottom">
-      <span>© 2025 Elips Studio. Tous droits réservés.</span>
+      <span data-i18n="footer.copyright">© 2026 Elips Studio. Tous droits réservés.</span>
     </div>
   </footer>
+
+  <!-- i18n FR/EN -->
+  <script src="i18n.js"></script>
 
   <!-- Supabase SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -649,8 +663,8 @@
               <h4 class="projects__card-title">${project.title}</h4>
               <p class="projects__card-text">${project.description || ''}</p>
               <div class="projects__card-footer">
-                <span class="projects__card-author">by Elips Studio</span>
-                <span class="projects__view-btn projects__view-btn--sm">Voir le projet →</span>
+                <span class="projects__card-author" data-i18n="projects.author">by Elips Studio</span>
+                <span class="projects__view-btn projects__view-btn--sm" data-i18n="projects.view">Voir le projet →</span>
               </div>
             </div>
           </article>
@@ -658,6 +672,9 @@
       });
 
       grid.innerHTML = html;
+
+      // Re-appliquer les traductions sur le contenu fraîchement injecté
+      if (window.Elipsi18n) window.Elipsi18n.refresh();
 
       // Réappliquer les animations reveal sur les nouveaux éléments
       grid.querySelectorAll('.projects__card').forEach(el => {
