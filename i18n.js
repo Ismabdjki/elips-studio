@@ -5,7 +5,7 @@
 
 const TRANSLATIONS = {
   fr: {
-    'meta.title': 'Elips Studio — Shootings produits IA pour marques e-commerce',
+    'meta.title': 'Elips Studio — Visuels & vidéos IA pour marques e-commerce',
 
     /* Navbar */
     'nav.avantages': 'Avantages',
@@ -17,17 +17,17 @@ const TRANSLATIONS = {
 
     /* Hero */
     'hero.status': 'Disponible pour travailler',
-    'hero.title.html': 'Des shootings produits <em>premium.</em><br>Sans studio. Livrés en 7 jours.',
+    'hero.title.html': 'Des visuels & vidéos IA <em>premium.</em><br>Sans studio. Livrés en 7 jours.',
     'hero.btn': 'Je suis intéressé',
 
     /* Bento */
     'bento.label': 'Pourquoi l’IA',
-    'bento.title.html': 'L’<em class="accent">alternative</em> au shooting traditionnel',
-    'bento.subtitle.html': 'Tout ce qu’un shooting studio vous apporte.<br>Sans les contraintes qui vont avec.',
-    'bento.main.text': 'Vos visuels méritent mieux qu’un studio loué à la journée. Je les produis à partir de votre direction artistique, en 7 jours.',
+    'bento.title.html': 'L’<em class="accent">alternative</em> aux productions traditionnelles',
+    'bento.subtitle.html': 'Tout ce qu’une production studio vous apporte.<br>Sans les contraintes qui vont avec.',
+    'bento.main.text': 'Vos visuels et vidéos méritent mieux qu’un studio loué à la journée. Je les produis à partir de votre direction artistique, en 7 jours.',
     'bento.main.btn': 'Démarrer un projet →',
-    'bento.left.title.html': 'Un brief. Sept jours. <em>Visuels livrés.</em>',
-    'bento.left.text': 'Vous arrivez avec un brief, vous repartez avec 30 visuels prêts à publier — et autant d’itérations que vous voulez ensuite. Sans studio à louer, sans logistique à coordonner, sans pression du jour J.',
+    'bento.left.title.html': 'Un brief. Sept jours. <em>Visuels & vidéos livrés.</em>',
+    'bento.left.text': 'Vous arrivez avec un brief, vous repartez avec 30 visuels et vidéos prêts à publier — et autant d’itérations que vous voulez ensuite. Sans studio à louer, sans logistique à coordonner, sans pression du jour J.',
 
     /* Bento cards (labels + texts of the 4 mockup cards) */
     'bento.card1.label': 'DÉLAIS',
@@ -37,15 +37,15 @@ const TRANSLATIONS = {
     'bento.card1.row2.name': 'Avec moi',
     'bento.card1.row2.value': '7 j',
     'bento.card1.title': 'Livraison express',
-    'bento.card1.desc': '7 jours du brief à la livraison finale. Là où un shooting traditionnel prend 3 à 4 semaines.',
+    'bento.card1.desc': '7 jours du brief à la livraison finale. Là où un shooting ou un tournage traditionnel prend 3 à 4 semaines.',
 
     'bento.card2.label': 'MESSAGE CLIENT',
     'bento.card2.pill': '✓ Reçu',
     'bento.card2.chat.name': 'Léa · Wellness brand',
     'bento.card2.chat.bubble.html': 'Sérieusement c’est dingue le rendu,<br>on fonce sur la suite !',
     'bento.card2.chat.time': '09:42 · Vu',
-    'bento.card2.title': 'Qualité shooting pro',
-    'bento.card2.desc': 'Des visuels photoréalistes indiscernables d’un shoot studio. Aucun compromis sur le rendu.',
+    'bento.card2.title': 'Qualité studio pro',
+    'bento.card2.desc': 'Des visuels et vidéos photoréalistes indiscernables d’une production studio. Aucun compromis sur le rendu.',
 
     'bento.card3.label': 'DIRECTION ARTISTIQUE',
     'bento.card3.pill': '✓ Sync',
@@ -67,7 +67,7 @@ const TRANSLATIONS = {
     'bento.card4.quote2.name': 'Elips Studio',
     'bento.card4.quote2.price': '1 800 €',
     'bento.card4.title': 'Fraction du coût',
-    'bento.card4.desc': 'Plus de studio à 2 000€ la journée, de photographe à briefer, de modèle à caster. Le budget va où ça compte vraiment.',
+    'bento.card4.desc': 'Plus de studio à 2 000€ la journée, de photographe ou vidéaste à briefer, de modèle à caster. Le budget va où ça compte vraiment.',
 
     /* Projects */
     'projects.label': 'Projets',
@@ -85,8 +85,8 @@ const TRANSLATIONS = {
     /* About */
     'about.label': 'À propos',
     'about.title.html': 'Ismaël, fondateur<br>d’<em>Elips Studio</em>',
-    'about.lead': 'Je suis directeur artistique pour les marques e-commerce. L’IA est mon outil pour produire plus vite, sans jamais compromettre la qualité d’un shooting pro.',
-    'about.text': 'À partir de votre identité de marque, de votre moodboard et de vos produits, je dirige la production visuelle de A à Z : composition, lumière, ambiance, cohérence. Ce qui prenait 3 semaines en studio se livre désormais en 7 jours — sans sacrifier l’exigence éditoriale.',
+    'about.lead': 'Je suis directeur artistique pour les marques e-commerce. L’IA est mon outil pour produire plus vite, sans jamais compromettre la qualité d’un shooting ou d’un tournage pro.',
+    'about.text': 'À partir de votre identité de marque, de votre moodboard et de vos produits, je dirige la production de A à Z — visuels comme vidéos. Composition, lumière, ambiance, cohérence : ce qui prenait 3 semaines en studio se livre désormais en 7 jours, sans sacrifier l’exigence éditoriale.',
     'about.stat1.title': '50+ Projets',
     'about.stat1.label': 'Visuels et vidéos livrés clé en main',
     'about.stat2.title': '20+ Clients',
@@ -98,18 +98,18 @@ const TRANSLATIONS = {
     /* FAQ */
     'faq.label': 'FAQ',
     'faq.title.html': 'Questions<br><em>fréquentes</em>',
-    'faq.q1': 'Comment l’IA génère mes visuels ?',
-    'faq.a1': 'Je travaille à partir de votre identité de marque et de votre moodboard. Je rédige les prompts, pilote chaque génération, retravaille les images une par une. L’IA est mon outil — votre direction artistique est mon cahier des charges.',
-    'faq.q2': 'Les visuels sont-ils réalistes ?',
-    'faq.a2': 'Oui, les technologies actuelles permettent de produire des visuels photoréalistes. Nous affinons chaque rendu manuellement pour garantir un résultat professionnel indiscernable d’une photo traditionnelle.',
+    'faq.q1': 'Comment l’IA génère mes visuels et vidéos ?',
+    'faq.a1': 'Je travaille à partir de votre identité de marque et de votre moodboard. Je rédige les prompts, pilote chaque génération, retravaille visuels et vidéos un par un. L’IA est mon outil — votre direction artistique est mon cahier des charges.',
+    'faq.q2': 'Les visuels et vidéos sont-ils réalistes ?',
+    'faq.a2': 'Oui, les technologies actuelles permettent de produire des visuels et des vidéos photoréalistes. Nous affinons chaque rendu manuellement pour garantir un résultat professionnel indiscernable d’une production traditionnelle.',
     'faq.q3': 'Quels sont les délais de livraison ?',
     'faq.a3': 'En moyenne, un projet de visuels IA est livré en 7 jours ouvrés. Les vidéos IA peuvent prendre jusqu’à 14 jours selon la complexité. Nous proposons aussi des options express.',
     'faq.q4': 'Dois-je fournir des photos ?',
     'faq.a4': 'Idéalement oui, quelques photos de référence suffisent. Mais nous pouvons aussi travailler à partir de moodboards, de descriptions ou même de croquis pour générer vos visuels.',
-    'faq.q5': 'Les visuels sont-ils libres de droits ?',
-    'faq.a5': 'Absolument. Tous les visuels que nous créons vous appartiennent entièrement. Vous pouvez les utiliser sur vos réseaux, votre site, vos publicités et vos supports print sans restriction.',
-    'faq.q6': 'Quelle différence avec un shooting ?',
-    'faq.a6': 'Pas de studio à louer, pas de modèle à caster, pas de logistique produit. Vous obtenez des visuels de même qualité qu’un shooting studio, livrés en 7 jours, pour une fraction du coût. Et surtout : avec votre direction artistique respectée à la lettre.',
+    'faq.q5': 'Les visuels et vidéos sont-ils libres de droits ?',
+    'faq.a5': 'Absolument. Tous les visuels et vidéos que nous créons vous appartiennent entièrement. Vous pouvez les utiliser sur vos réseaux, votre site, vos publicités et vos supports print sans restriction.',
+    'faq.q6': 'Quelle différence avec un shooting ou un tournage ?',
+    'faq.a6': 'Pas de studio à louer, pas de modèle à caster, pas de logistique produit. Vous obtenez des visuels et des vidéos de même qualité qu’une production studio, livrés en 7 jours, pour une fraction du coût. Et surtout : avec votre direction artistique respectée à la lettre.',
     'faq.contact': 'Contactez-nous :',
 
     /* Footer */
@@ -129,7 +129,7 @@ const TRANSLATIONS = {
   },
 
   en: {
-    'meta.title': 'Elips Studio — AI product shoots for e-commerce brands',
+    'meta.title': 'Elips Studio — AI visuals & videos for e-commerce brands',
 
     /* Navbar */
     'nav.avantages': 'Benefits',
@@ -141,17 +141,17 @@ const TRANSLATIONS = {
 
     /* Hero */
     'hero.status': 'Available for work',
-    'hero.title.html': '<em>Premium</em> AI product shoots.<br>No studio. Delivered in 7 days.',
+    'hero.title.html': '<em>Premium</em> AI visuals & videos.<br>No studio. Delivered in 7 days.',
     'hero.btn': 'Get in touch',
 
     /* Bento */
     'bento.label': 'Why AI',
-    'bento.title.html': 'The <em class="accent">alternative</em> to traditional shoots',
-    'bento.subtitle.html': 'Everything a studio shoot delivers.<br>Without the constraints that come with it.',
-    'bento.main.text': 'Your visuals deserve more than a studio rented by the day. I produce them based on your art direction, in 7 days.',
+    'bento.title.html': 'The <em class="accent">alternative</em> to traditional productions',
+    'bento.subtitle.html': 'Everything a studio production delivers.<br>Without the constraints that come with it.',
+    'bento.main.text': 'Your visuals and videos deserve more than a studio rented by the day. I produce them based on your art direction, in 7 days.',
     'bento.main.btn': 'Start a project →',
-    'bento.left.title.html': 'One brief. Seven days. <em>Visuals delivered.</em>',
-    'bento.left.text': 'You come in with a brief, you walk out with 30 visuals ready to publish — and as many iterations as you want after. No studio to book, no logistics to coordinate, no D-day pressure.',
+    'bento.left.title.html': 'One brief. Seven days. <em>Visuals & videos delivered.</em>',
+    'bento.left.text': 'You come in with a brief, you walk out with 30 visuals and videos ready to publish — and as many iterations as you want after. No studio to book, no logistics to coordinate, no D-day pressure.',
 
     /* Bento cards */
     'bento.card1.label': 'TIMELINE',
@@ -161,7 +161,7 @@ const TRANSLATIONS = {
     'bento.card1.row2.name': 'With me',
     'bento.card1.row2.value': '7 d',
     'bento.card1.title': 'Express delivery',
-    'bento.card1.desc': '7 days from brief to final delivery. Where a traditional shoot takes 3 to 4 weeks.',
+    'bento.card1.desc': '7 days from brief to final delivery. Where a traditional shoot or video production takes 3 to 4 weeks.',
 
     'bento.card2.label': 'CLIENT MESSAGE',
     'bento.card2.pill': '✓ Received',
@@ -169,7 +169,7 @@ const TRANSLATIONS = {
     'bento.card2.chat.bubble.html': 'Honestly the render is insane,<br>can’t wait for the rest!',
     'bento.card2.chat.time': '09:42 · Read',
     'bento.card2.title': 'Studio-grade quality',
-    'bento.card2.desc': 'Photorealistic visuals indistinguishable from a studio shoot. No compromise on the render.',
+    'bento.card2.desc': 'Photorealistic visuals and videos indistinguishable from a studio production. No compromise on the render.',
 
     'bento.card3.label': 'ART DIRECTION',
     'bento.card3.pill': '✓ Sync',
@@ -191,7 +191,7 @@ const TRANSLATIONS = {
     'bento.card4.quote2.name': 'Elips Studio',
     'bento.card4.quote2.price': '€1,800',
     'bento.card4.title': 'Fraction of the cost',
-    'bento.card4.desc': 'No more €2,000/day studios, photographers to brief, models to cast. Budget goes where it really counts.',
+    'bento.card4.desc': 'No more €2,000/day studios, photographers or videographers to brief, models to cast. Budget goes where it really counts.',
 
     /* Projects */
     'projects.label': 'Projects',
@@ -209,8 +209,8 @@ const TRANSLATIONS = {
     /* About */
     'about.label': 'About',
     'about.title.html': 'Ismaël, founder<br>of <em>Elips Studio</em>',
-    'about.lead': 'I’m an art director for e-commerce brands. AI is my tool to produce faster, without ever compromising on the quality of a pro shoot.',
-    'about.text': 'Starting from your brand identity, your moodboard and your products, I direct the visual production end to end: composition, lighting, mood, consistency. What used to take 3 weeks in studio is now delivered in 7 days — without sacrificing editorial standards.',
+    'about.lead': 'I’m an art director for e-commerce brands. AI is my tool to produce faster, without ever compromising on the quality of a pro shoot or video production.',
+    'about.text': 'Starting from your brand identity, your moodboard and your products, I direct production end to end — both visuals and videos. Composition, lighting, mood, consistency: what used to take 3 weeks in studio is now delivered in 7 days, without sacrificing editorial standards.',
     'about.stat1.title': '50+ Projects',
     'about.stat1.label': 'Visuals and videos delivered turnkey',
     'about.stat2.title': '20+ Clients',
@@ -222,18 +222,18 @@ const TRANSLATIONS = {
     /* FAQ */
     'faq.label': 'FAQ',
     'faq.title.html': 'Frequently<br><em>asked</em>',
-    'faq.q1': 'How does AI generate my visuals?',
-    'faq.a1': 'I work from your brand identity and your moodboard. I write the prompts, pilot each generation, rework images one by one. AI is my tool — your art direction is my brief.',
-    'faq.q2': 'Are the visuals realistic?',
-    'faq.a2': 'Yes, current technologies produce photorealistic visuals. We refine each render manually to deliver a professional result indistinguishable from a traditional photo.',
+    'faq.q1': 'How does AI generate my visuals and videos?',
+    'faq.a1': 'I work from your brand identity and your moodboard. I write the prompts, pilot each generation, rework visuals and videos one by one. AI is my tool — your art direction is my brief.',
+    'faq.q2': 'Are the visuals and videos realistic?',
+    'faq.a2': 'Yes, current technologies produce photorealistic visuals and videos. We refine each render manually to deliver a professional result indistinguishable from a traditional production.',
     'faq.q3': 'What are the delivery times?',
     'faq.a3': 'On average, an AI visual project is delivered in 7 working days. AI videos can take up to 14 days depending on complexity. Express options available.',
     'faq.q4': 'Do I have to provide photos?',
     'faq.a4': 'Ideally yes, a few reference photos are enough. But we can also work from moodboards, descriptions, or even sketches.',
-    'faq.q5': 'Are the visuals royalty-free?',
-    'faq.a5': 'Absolutely. All visuals we create belong entirely to you. You can use them on socials, your website, ads and print without restriction.',
-    'faq.q6': 'What’s the difference with a shoot?',
-    'faq.a6': 'No studio to rent, no model to cast, no product logistics. You get visuals of the same quality as a studio shoot, delivered in 7 days, for a fraction of the cost. And above all: with your art direction respected to the letter.',
+    'faq.q5': 'Are the visuals and videos royalty-free?',
+    'faq.a5': 'Absolutely. All visuals and videos we create belong entirely to you. You can use them on socials, your website, ads and print without restriction.',
+    'faq.q6': 'What’s the difference with a shoot or video production?',
+    'faq.a6': 'No studio to rent, no model to cast, no product logistics. You get visuals and videos of the same quality as a studio production, delivered in 7 days, for a fraction of the cost. And above all: with your art direction respected to the letter.',
     'faq.contact': 'Contact us:',
 
     /* Footer */
