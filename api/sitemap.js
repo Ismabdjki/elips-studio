@@ -9,6 +9,7 @@ const BASE = 'https://www.ismael-boudjakdji.com';
 // Pages statiques (hors articles de blog)
 const STATIC_PAGES = [
   { path: '/', changefreq: 'weekly', priority: '1.0' },
+  { path: '/shooting-produit-ia', changefreq: 'weekly', priority: '0.9' },
   { path: '/blog.html', changefreq: 'daily', priority: '0.9' },
   { path: '/projet-kosbiotic.html', changefreq: 'monthly', priority: '0.7' },
   { path: '/projet-elmut.html', changefreq: 'monthly', priority: '0.7' },
