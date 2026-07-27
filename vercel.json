@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/shooting-produit-ia", "destination": "/shooting-produit-ia.html" }
+    { "source": "/shooting-produit-ia", "destination": "/shooting-produit-ia.html" },
+    { "source": "/navito", "destination": "/navito.html" }
   ]
 }

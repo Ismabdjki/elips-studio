@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKHGKEMQJ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BKHGKEMQJ5');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm the editor you need, Navito — Ismaël</title>
+  <meta name="description" content="Hey Navito — I'm Ismaël, a video editor who lives and breathes travel & food content. Here's why I'm the editor you need for your shorts.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://www.ismael-boudjakdji.com/navito">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Elips Studio">
+  <meta property="og:url" content="https://www.ismael-boudjakdji.com/navito">
+  <meta property="og:title" content="I'm the editor you need, Navito">
+  <meta property="og:description" content="A video editor who lives and breathes travel & food content. Here's why I'm the editor you need.">
+  <meta property="og:image" content="https://www.ismael-boudjakdji.com/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/jpeg" href="portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ===== APPLICATION PAGE — Navito ===== */
+    .lp { background: var(--color-bg); }
+    .lp-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+    .lp-section { padding: var(--space-2xl) 0; }
+    .lp-section--tight { padding: var(--space-xl) 0; }
+    .lp-eyebrow { display:inline-block; font-size: var(--text-xs); font-weight:600; letter-spacing:.1em; text-transform:uppercase; color: var(--color-accent); margin-bottom: var(--space-sm); }
+    .lp-h2 { font-size: clamp(var(--text-xl), 3.5vw, var(--text-2xl)); font-weight:500; letter-spacing:-.03em; line-height:1.15; color: var(--color-black); }
+    .lp-h2--center { margin: 0 auto var(--space-sm); text-align:center; max-width: 22ch; }
+    .lp-lead { font-size: var(--text-md); color: var(--color-gray-800); line-height:1.7; }
+    .lp-lead--center { max-width: 60ch; margin: 0 auto; text-align:center; }
+
+    /* HERO */
+    .lp-hero { padding: calc(var(--nav-height) + var(--space-2xl)) 0 var(--space-xl); background: radial-gradient(120% 90% at 80% 0%, #fff 0%, var(--color-bg) 60%); text-align:center; }
+    .lp-badge { display:inline-flex; align-items:center; gap:8px; font-size: var(--text-xs); font-weight:600; letter-spacing:.04em; text-transform:uppercase; color: var(--color-gray-800); background: var(--color-white); border:1px solid var(--color-gray-200); padding:8px 16px; border-radius: var(--radius-full); margin-bottom: var(--space-md); }
+    .lp-badge__dot { width:7px; height:7px; border-radius:50%; background: var(--color-accent); }
+    .lp-hero h1 { max-width: 16ch; margin: 0 auto var(--space-md); }
+    .lp-hero__sub { font-size: var(--text-md); color: var(--color-gray-800); line-height:1.7; max-width: 54ch; margin: 0 auto var(--space-lg); }
+    .lp-hero__cta { display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap; }
+
+    /* ABOUT */
+    .lp-about__grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: var(--space-xl); align-items:center; }
+    .lp-about__photo { position:relative; }
+    .lp-about__photo img { width:100%; height:auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display:block; }
+    .lp-about__photo-tag { position:absolute; bottom:16px; left:16px; font-size: var(--text-xs); font-weight:600; color: var(--color-white); background: rgba(17,17,17,.72); backdrop-filter: blur(8px); padding:8px 14px; border-radius: var(--radius-full); }
+    .lp-about__body p { margin-bottom: var(--space-md); }
+    .lp-about__body p:last-child { margin-bottom:0; }
+    .lp-about__body strong { color: var(--color-black); font-weight:600; }
+
+    /* WORK / VIDEOS */
+    .lp-videos { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+    .lp-video { display:flex; flex-direction:column; }
+    .lp-video__frame { position:relative; width:100%; aspect-ratio: 9 / 16; border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-lg); background: var(--color-black); }
+    .lp-video__frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+    .lp-video__label { margin-top: var(--space-sm); }
+    .lp-video__label h3 { font-size: var(--text-md); margin-bottom:4px; }
+    .lp-video__label p { font-size: var(--text-sm); color: var(--color-gray-600); line-height:1.5; }
+    .lp-video__tag { display:inline-block; font-size: var(--text-xs); font-weight:600; letter-spacing:.04em; text-transform:uppercase; color: var(--color-accent); background: rgba(255,155,84,.1); border:1px solid rgba(255,155,84,.2); padding:4px 12px; border-radius: var(--radius-full); margin-bottom: var(--space-xs); align-self:flex-start; }
+
+    /* CTA */
+    .lp-cta { text-align:center; background: var(--color-black); border-radius: var(--radius-xl); padding: var(--space-2xl) var(--space-lg); color: var(--color-white); }
+    .lp-cta h2 { color: var(--color-white); font-size: clamp(var(--text-xl), 3.5vw, var(--text-2xl)); font-weight:500; letter-spacing:-.03em; max-width: 20ch; margin:0 auto var(--space-md); }
+    .lp-cta p { color: rgba(255,255,255,.7); max-width: 48ch; margin: 0 auto var(--space-lg); }
+    .lp-cta__btns { display:flex; gap: var(--space-sm); justify-content:center; flex-wrap:wrap; }
+
+    @media (max-width: 860px) {
+      .lp-about__grid { grid-template-columns: 1fr; gap: var(--space-lg); }
+      .lp-about__photo { max-width: 380px; margin: 0 auto; }
+      .lp-videos { grid-template-columns: 1fr; max-width: 380px; margin-left:auto; margin-right:auto; }
+    }
+  </style>
+</head>
+<body class="lp">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav">
+    <div class="nav__bar">
+      <a href="index.html" class="nav__logo"><em>elips</em></a>
+
+      <ul class="nav__links">
+        <li><a href="#about" class="nav__link">About me</a></li>
+        <li><a href="#work" class="nav__link">My work</a></li>
+        <li><a href="index.html" class="nav__link">Studio</a></li>
+      </ul>
+
+      <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="nav__cta">Let's talk</a>
+
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="#about" class="nav__mobile-link">About me</a>
+    <a href="#work" class="nav__mobile-link">My work</a>
+    <a href="index.html" class="nav__mobile-link">Studio</a>
+    <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="nav__mobile-cta">Let's talk</a>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <header class="lp-hero">
+    <div class="lp-wrap">
+      <span class="lp-badge"><span class="lp-badge__dot"></span> Video editor · Travel &amp; Food</span>
+      <h1>I'm the editor you need, <em>Navito</em></h1>
+      <p class="lp-hero__sub">Travel, food, Japan — this is exactly the world I love editing in. Give me your raw footage and I'll turn it into shorts that hook, breathe and make people want to book the flight.</p>
+      <div class="lp-hero__cta">
+        <a href="#work" class="btn">See my work →</a>
+        <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="btn btn--ghost">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="lp-section" id="about">
+    <div class="lp-wrap">
+      <div class="lp-about__grid">
+        <div class="lp-about__photo">
+          <img src="portrait.jpg" alt="Ismaël, video editor" loading="eager" width="800" height="1000">
+          <span class="lp-about__photo-tag">Ismaël — Editor at Elips Studio</span>
+        </div>
+        <div class="lp-about__body">
+          <span class="lp-eyebrow">A quick hello</span>
+          <h2 class="lp-h2">Nice to meet you — I'm Ismaël</h2>
+          <p>I'm a video editor and the founder of Elips Studio. Day to day, I craft short-form content that's built to stop the scroll: sharp pacing, clean sound design, and cuts that actually respect the story.</p>
+          <p><strong>Here's the honest reason I'm reaching out:</strong> my wife is a huge fan of your content — and she's obsessed with Japan. So I've been living inside your videos and inside that Japanese food-and-travel world for a while now. I know your rhythm, your vibe, and what makes your shorts feel like <em>you</em>.</p>
+          <p>That means you wouldn't be hiring an editor who needs the culture explained. You'd be working with someone who already gets it — and just wants to help you post more, faster, without losing an ounce of quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WORK ========== -->
+  <section class="lp-section lp-section--tight" id="work">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow" style="display:block;text-align:center;">My work</span>
+      <h2 class="lp-h2 lp-h2--center">A few edits that speak your language</h2>
+      <p class="lp-lead lp-lead--center">Three shorts I edited. Watch them with sound on — the pacing and the audio are half the job.</p>
+
+      <div class="lp-videos">
+        <!-- Video 1 — Travel vlog -->
+        <article class="lp-video">
+          <div class="lp-video__frame">
+            <iframe src="https://www.youtube.com/embed/-GB92szbn-Q" title="Travel vlog edit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="lp-video__label">
+            <span class="lp-video__tag">Travel</span>
+            <h3>Travel vlog</h3>
+            <p>Exactly your lane — a travel vlog cut for momentum, atmosphere and that "take me there" feeling.</p>
+          </div>
+        </article>
+
+        <!-- Video 2 — English edit -->
+        <article class="lp-video">
+          <div class="lp-video__frame">
+            <iframe src="https://www.youtube.com/embed/OZn6q8v5eyk" title="English-language edit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="lp-video__label">
+            <span class="lp-video__tag">English</span>
+            <h3>Editing in English</h3>
+            <p>Different topic, on purpose: proof I can edit in English — captions, timing and hooks that land for an English-speaking audience.</p>
+          </div>
+        </article>
+
+        <!-- Video 3 -->
+        <article class="lp-video">
+          <div class="lp-video__frame">
+            <iframe src="https://www.youtube.com/embed/AuVDPYpMeNQ" title="Short-form edit" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="lp-video__label">
+            <span class="lp-video__tag">Short-form</span>
+            <h3>Another edit</h3>
+            <p>One more short to show range — same obsession with clean rhythm, sound and a strong opening second.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="lp-section">
+    <div class="lp-wrap">
+      <div class="lp-cta">
+        <h2>Let's make your next shorts together</h2>
+        <p>Send me a raw clip and I'll edit a test short for free — no strings attached. If you like it, we keep going.</p>
+        <div class="lp-cta__btns">
+          <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="btn">Message me on Instagram →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <div class="footer__status">
+          <span class="footer__status-dot"></span>
+          <span>Available to work</span>
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/in/ismael-boudjakdji-6644411b3/" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">This page</h4>
+          <a href="#about">About me</a>
+          <a href="#work">My work</a>
+          <a href="index.html">Elips Studio</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Elips Studio. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+    // Dark nav on scroll
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) nav.classList.add('nav--dark');
+      else nav.classList.remove('nav--dark');
+    });
+    // Smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const top = target.getBoundingClientRect().top + window.scrollY - 90;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
