@@ -72,6 +72,16 @@
     .lp-video__label p { font-size: var(--text-sm); color: var(--color-gray-600); line-height:1.5; }
     .lp-video__tag { display:inline-block; font-size: var(--text-xs); font-weight:600; letter-spacing:.04em; text-transform:uppercase; color: var(--color-accent); background: rgba(255,155,84,.1); border:1px solid rgba(255,155,84,.2); padding:4px 12px; border-radius: var(--radius-full); margin-bottom: var(--space-xs); align-self:flex-start; }
 
+    /* PRICING */
+    .lp-price { display:flex; justify-content:center; margin-top: var(--space-xl); }
+    .lp-price__card { background: var(--color-white); border:1px solid var(--color-gray-200); border-radius: var(--radius-xl); padding: var(--space-xl) var(--space-lg); max-width: 420px; width:100%; text-align:center; box-shadow: var(--shadow-md); }
+    .lp-price__range { display:block; font-size: clamp(var(--text-2xl), 6vw, var(--text-3xl)); font-weight:600; letter-spacing:-.03em; color: var(--color-black); line-height:1; }
+    .lp-price__unit { display:block; font-size: var(--text-sm); color: var(--color-gray-400); margin-top: var(--space-xs); text-transform:uppercase; letter-spacing:.08em; font-weight:600; }
+    .lp-price__list { list-style:none; padding:0; margin: var(--space-lg) 0 0; text-align:left; }
+    .lp-price__list li { position:relative; padding-left: 28px; margin-bottom: 12px; font-size: var(--text-base); color: var(--color-gray-800); line-height:1.5; }
+    .lp-price__list li::before { content:"✓"; position:absolute; left:0; top:0; color: var(--color-accent); font-weight:700; }
+    .lp-price__note { margin-top: var(--space-lg); padding-top: var(--space-md); border-top:1px solid var(--color-gray-100); font-size: var(--text-sm); color: var(--color-gray-600); }
+
     /* CTA */
     .lp-cta { text-align:center; background: var(--color-black); border-radius: var(--radius-xl); padding: var(--space-2xl) var(--space-lg); color: var(--color-white); }
     .lp-cta h2 { color: var(--color-white); font-size: clamp(var(--text-xl), 3.5vw, var(--text-2xl)); font-weight:500; letter-spacing:-.03em; max-width: 20ch; margin:0 auto var(--space-md); }
@@ -95,6 +105,7 @@
       <ul class="nav__links">
         <li><a href="#about" class="nav__link">About me</a></li>
         <li><a href="#work" class="nav__link">My work</a></li>
+        <li><a href="#pricing" class="nav__link">Rates</a></li>
         <li><a href="index.html" class="nav__link">Studio</a></li>
       </ul>
 
@@ -110,6 +121,7 @@
   <div class="nav__mobile" id="nav-mobile">
     <a href="#about" class="nav__mobile-link">About me</a>
     <a href="#work" class="nav__mobile-link">My work</a>
+    <a href="#pricing" class="nav__mobile-link">Rates</a>
     <a href="index.html" class="nav__mobile-link">Studio</a>
     <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="nav__mobile-cta">Let's talk</a>
   </div>
@@ -189,6 +201,30 @@
             <p>One more short to show range — same obsession with clean rhythm, sound and a strong opening second.</p>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="lp-section lp-section--tight" id="pricing">
+    <div class="lp-wrap">
+      <span class="lp-eyebrow" style="display:block;text-align:center;">Rates</span>
+      <h2 class="lp-h2 lp-h2--center">Simple, per-video pricing</h2>
+      <p class="lp-lead lp-lead--center">One fair rate per edited short — depending on length, complexity and how fast you need it.</p>
+
+      <div class="lp-price">
+        <div class="lp-price__card">
+          <span class="lp-price__range">$90 – $130</span>
+          <span class="lp-price__unit">per video</span>
+          <ul class="lp-price__list">
+            <li>Full edit: cuts, pacing &amp; rhythm</li>
+            <li>Sound design &amp; music sync</li>
+            <li>Captions (English)</li>
+            <li>Color &amp; clean-up pass</li>
+            <li>Revisions until you're happy</li>
+          </ul>
+          <p class="lp-price__note">Long-form or high volume? We'll agree on a package that works for both of us.</p>
+        </div>
       </div>
     </div>
   </section>
