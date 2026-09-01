@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire — Comprendre votre marché | Elips Studio</title>
+  <meta name="description" content="Quelques questions pour cerner votre produit et votre client idéal, et créer des contenus qui vendent vraiment.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/jpeg" href="portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+
+  <style>
+    body { background: var(--color-bg); }
+    .q-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+    /* HERO */
+    .q-hero { padding: clamp(56px, 9vh, 96px) 0 clamp(28px, 4vh, 44px); text-align: center; }
+    .q-eyebrow { display:inline-block; font-size: var(--text-xs); font-weight:600; letter-spacing:.12em; text-transform:uppercase; color: var(--color-accent); margin-bottom: var(--space-sm); }
+    .q-hero h1 { font-size: clamp(var(--text-xl), 4.5vw, var(--text-3xl)); margin-bottom: var(--space-md); }
+    .q-hero h1 em { color: var(--color-accent); }
+    .q-hero p { font-size: var(--text-md); color: var(--color-gray-600); max-width: 52ch; margin: 0 auto; }
+    .q-meta { margin-top: var(--space-md); font-size: var(--text-xs); color: var(--color-gray-400); }
+
+    /* FORM */
+    .q-form { padding-bottom: clamp(60px, 10vh, 110px); }
+    .q-section { margin-top: var(--space-xl); }
+    .q-section__head { display:flex; align-items:center; gap:12px; margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-gray-200); }
+    .q-section__num { flex-shrink:0; width:30px; height:30px; border-radius:50%; background: var(--color-black); color:#fff; font-size: var(--text-sm); font-weight:600; display:flex; align-items:center; justify-content:center; }
+    .q-section__title { font-size: var(--text-lg); font-weight:600; color: var(--color-black); }
+
+    .q-field { margin-bottom: var(--space-lg); }
+    .q-field label { display:block; font-size: var(--text-base); font-weight:500; color: var(--color-black); margin-bottom: 8px; line-height:1.5; }
+    .q-field .q-hint { font-weight:400; color: var(--color-gray-400); font-size: var(--text-sm); }
+    .q-field .req { color: var(--color-accent); }
+    .q-field input, .q-field textarea {
+      width:100%; font-family: var(--font-sans); font-size: var(--text-base); color: var(--color-black);
+      background: var(--color-white); border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-md);
+      padding: 13px 15px; transition: border-color .2s ease, box-shadow .2s ease; resize: vertical;
+    }
+    .q-field textarea { min-height: 92px; line-height:1.6; }
+    .q-field input:focus, .q-field textarea:focus { outline:none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(255,155,84,.15); }
+    .q-field input::placeholder, .q-field textarea::placeholder { color: var(--color-gray-400); }
+
+    .q-grid { display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    @media (max-width: 560px) { .q-grid { grid-template-columns: 1fr; } }
+
+    .q-submit { margin-top: var(--space-xl); text-align:center; }
+    .q-submit .btn { font-size: var(--text-base); padding: 16px 44px; }
+    .q-submit .btn:disabled { opacity:.6; cursor: wait; }
+    .q-error { color: #c0392b; font-size: var(--text-sm); margin-top: var(--space-sm); min-height: 1em; }
+
+    /* THANK YOU */
+    .q-thanks { display:none; text-align:center; padding: clamp(70px, 14vh, 140px) 0; }
+    .q-thanks.show { display:block; }
+    .q-thanks__icon { width:64px; height:64px; margin:0 auto var(--space-md); border-radius:50%; background: rgba(255,155,84,.12); color: var(--color-accent); display:flex; align-items:center; justify-content:center; }
+    .q-thanks h2 { font-size: var(--text-2xl); margin-bottom: var(--space-sm); }
+    .q-thanks p { font-size: var(--text-md); color: var(--color-gray-600); max-width: 42ch; margin: 0 auto; }
+
+    .q-foot { text-align:center; padding: 0 0 40px; font-size: var(--text-xs); color: var(--color-gray-400); }
+    .q-foot em { font-family: var(--font-serif); font-style: italic; color: var(--color-gray-600); }
+  </style>
+</head>
+<body>
+
+  <div class="q-wrap">
+
+    <!-- HERO -->
+    <header class="q-hero" id="top">
+      <span class="q-eyebrow">Elips Studio × Vous</span>
+      <h1>Aidez-moi à <em>vendre votre produit</em> comme vous le feriez</h1>
+      <p>Quelques questions pour cerner votre SaaS et votre client idéal en profondeur. Plus vos réponses sont précises, plus les contenus qu'on créera taperont juste. Comptez <strong>8 à 12 minutes</strong>.</p>
+      <p class="q-meta">Vos réponses me sont envoyées directement — elles restent confidentielles.</p>
+    </header>
+
+    <!-- FORM -->
+    <form class="q-form" id="qform">
+
+      <!-- Bloc 1 -->
+      <section class="q-section">
+        <div class="q-section__head"><span class="q-section__num">1</span><h2 class="q-section__title">Votre produit</h2></div>
+
+        <div class="q-field">
+          <label>En une phrase, que fait votre SaaS d'attribution ? <span class="req">*</span></label>
+          <textarea name="1. Pitch en une phrase" required placeholder="Ex : On relie chaque euro dépensé en pub au chiffre d'affaires réel, sans cookies."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Quel problème concret résout-il ? <span class="q-hint">— la galère du client <em>avant</em> vous</span> <span class="req">*</span></label>
+          <textarea name="2. Probleme resolu (avant)" required placeholder="Ex : Les marketeurs ne savent pas quelle campagne rapporte vraiment, ils pilotent à l'aveugle."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Votre <em>unfair advantage</em> <span class="q-hint">— ce que vos concurrents ne peuvent pas copier facilement (techno, data, intégrations…)</span> <span class="req">*</span></label>
+          <textarea name="3. Unfair advantage" required placeholder="Ex : Notre modèle d'attribution propriétaire + des intégrations natives que personne d'autre n'a."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Vos 2-3 concurrents principaux — et pourquoi on vous choisit <em>vous</em> ?</label>
+          <textarea name="4. Concurrents et differenciation" placeholder="Ex : Triple Whale, Northbeam… Nous, on est plus précis sur le offline / plus simple à installer."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Votre objectif / vision produit sur les 12 prochains mois ?</label>
+          <textarea name="5. Objectif / vision 12 mois" placeholder="Ex : Devenir la référence attribution pour les e-commerces 1-10M€."></textarea>
+        </div>
+      </section>
+
+      <!-- Bloc 2 -->
+      <section class="q-section">
+        <div class="q-section__head"><span class="q-section__num">2</span><h2 class="q-section__title">Votre client idéal</h2></div>
+
+        <div class="q-field">
+          <label>Décrivez votre client idéal <span class="q-hint">— poste, type & taille d'entreprise, secteur</span> <span class="req">*</span></label>
+          <textarea name="6. Persona (poste, entreprise, secteur)" required placeholder="Ex : Head of Growth dans un e-commerce DTC de 20-50 personnes, 2 à 15M€ de CA."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Son objectif n°1 au travail <span class="q-hint">— ce sur quoi il est jugé</span> <span class="req">*</span></label>
+          <textarea name="7. Objectif n1 du persona" required placeholder="Ex : Faire baisser le CAC tout en scalant le budget pub."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Ses plus grosses frustrations avec l'attribution pub aujourd'hui ? <span class="req">*</span></label>
+          <textarea name="8. Frustrations / douleurs" required placeholder="Ex : Les chiffres de Meta et de Shopify ne matchent jamais, il perd des heures en reporting."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Ses <em>peurs</em> <span class="q-hint">— ce qu'il redoute s'il ne règle pas ce problème</span> <span class="req">*</span></label>
+          <textarea name="9. Peurs / risques" required placeholder="Ex : Cramer le budget sur les mauvaises campagnes, se faire remonter les bretelles par le CEO."></textarea>
+        </div>
+        <div class="q-field">
+          <label>Ses objections / hésitations avant d'acheter ce type d'outil ?</label>
+          <textarea name="10. Objections avant achat" placeholder="Ex : « Encore un outil de plus », peur que l'install soit longue, doute sur la fiabilité de la data."></textarea>
+        </div>
+      </section>
+
+      <!-- Bloc 3 -->
+      <section class="q-section">
+        <div class="q-section__head"><span class="q-section__num">3</span><h2 class="q-section__title">Déclencheur & transformation</h2></div>
+
+        <div class="q-field">
+          <label>Le déclencheur : qu'est-ce qui le pousse à chercher une solution <em>maintenant</em> ?</label>
+          <textarea name="11. Declencheur (pourquoi maintenant)" placeholder="Ex : iOS a cassé son tracking, ou il vient de lever des fonds et doit prouver son ROAS."></textarea>
+        </div>
+        <div class="q-field">
+          <label>La transformation rêvée <span class="q-hint">— sa vie/son taf une fois votre SaaS en place (l'<em>après</em>)</span> <span class="req">*</span></label>
+          <textarea name="12. Transformation revee (apres)" required placeholder="Ex : Il ouvre un seul dashboard le matin, sait exactement où mettre 1€ de plus, dort tranquille."></textarea>
+        </div>
+      </section>
+
+      <!-- Bloc 4 -->
+      <section class="q-section">
+        <div class="q-section__head"><span class="q-section__num">4</span><h2 class="q-section__title">Sa voix & vos preuves</h2></div>
+
+        <div class="q-field">
+          <label>Une phrase typique qu'il dirait, avec <em>ses mots à lui</em> pour décrire son problème ?</label>
+          <textarea name="13. Verbatim client (ses mots)" placeholder="Ex : « J'ai aucune idée de quelle pub me rapporte vraiment de l'argent. »"></textarea>
+        </div>
+        <div class="q-field">
+          <label>Vos meilleures preuves <span class="q-hint">— résultats chiffrés, cas clients, témoignages</span></label>
+          <textarea name="14. Preuves (chiffres, cas clients)" placeholder="Ex : « Client X : +32% de ROAS en 2 mois », témoignages, logos notables…"></textarea>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="q-section">
+        <div class="q-section__head"><span class="q-section__num">5</span><h2 class="q-section__title">Pour vous recontacter</h2></div>
+        <div class="q-grid">
+          <div class="q-field">
+            <label>Votre nom <span class="req">*</span></label>
+            <input type="text" name="Nom" required placeholder="Prénom Nom">
+          </div>
+          <div class="q-field">
+            <label>Entreprise <span class="req">*</span></label>
+            <input type="text" name="Entreprise" required placeholder="Nom du SaaS">
+          </div>
+        </div>
+        <div class="q-field">
+          <label>Email <span class="req">*</span></label>
+          <input type="email" name="Email" required placeholder="vous@entreprise.com">
+        </div>
+      </section>
+
+      <!-- Champs cachés -->
+      <input type="hidden" name="_subject" value="Nouvelle réponse — Questionnaire persona">
+      <input type="text" name="_gotcha" style="display:none">
+      <input type="hidden" name="Repondu le" id="submittedAt">
+
+      <div class="q-submit">
+        <button type="submit" class="btn" id="submitBtn">Envoyer mes réponses →</button>
+        <div class="q-error" id="formError"></div>
+      </div>
+    </form>
+
+    <!-- MERCI -->
+    <div class="q-thanks" id="thanks">
+      <div class="q-thanks__icon">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2>Merci beaucoup !</h2>
+      <p>Vos réponses m'ont bien été envoyées. Je reviens vers vous très vite avec la suite.</p>
+    </div>
+
+    <div class="q-foot"><em>Elips Studio</em> — visuels & vidéos qui vendent.</div>
+
+  </div>
+
+  <script>
+    // ⚠️ À REMPLACER par ton endpoint Formspree (https://formspree.io/f/xxxxxxx)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/REMPLACER_PAR_TON_LIEN";
+
+    const form = document.getElementById('qform');
+    const btn = document.getElementById('submitBtn');
+    const errBox = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errBox.textContent = '';
+      document.getElementById('submittedAt').value = new Date().toLocaleString('fr-FR');
+
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('top').style.display = 'none';
+          document.getElementById('thanks').classList.add('show');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const data = await res.json().catch(() => ({}));
+          errBox.textContent = (data.errors && data.errors[0] && data.errors[0].message)
+            ? data.errors[0].message
+            : "Une erreur est survenue. Vérifiez votre connexion et réessayez.";
+          btn.disabled = false;
+          btn.textContent = 'Envoyer mes réponses →';
+        }
+      } catch (err) {
+        errBox.textContent = "Impossible d'envoyer pour le moment. Réessayez dans un instant.";
+        btn.disabled = false;
+        btn.textContent = 'Envoyer mes réponses →';
+      }
+    });
+  </script>
+</body>
+</html>
