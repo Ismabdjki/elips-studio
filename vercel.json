@@ -23,6 +23,10 @@
     {
       "source": "/derush",
       "destination": "/guide-derush.html"
+    },
+    {
+      "source": "/vap",
+      "destination": "/candidature-vap.html"
     }
   ]
 }

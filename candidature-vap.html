@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Candidature monteur vidéo — Ismaël × vap</title>
+  <meta name="description" content="Candidature d'Ismaël (Elips Studio) au poste de monteur vidéo chez vap.">
+
+  <link rel="icon" type="image/jpeg" href="portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projet.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <style>
+    /* ============================================
+       LEAD MAGNET — SCOPED STYLES
+       ============================================ */
+    .lead-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+      background: var(--color-bg);
+    }
+    .lead-intro__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .lead-intro__lead {
+      font-size: var(--text-md);
+      line-height: 1.7;
+      color: var(--color-gray-800);
+      margin-bottom: var(--space-lg);
+    }
+
+    .lead-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .lead-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+      padding: var(--space-md);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+    }
+    .lead-step:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .lead-step__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--color-accent);
+    }
+    .lead-step__body h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+    .lead-step__body p {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-gray-600);
+      margin: 0;
+    }
+
+    /* Divider */
+    .lead-divider {
+      max-width: 800px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 32px;
+    }
+    .lead-divider__line {
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    /* Visuels section */
+    .lead-visuals {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+    .lead-visuals__header {
+      max-width: 800px;
+      margin: 0 auto var(--space-lg);
+      padding: 0 32px;
+      text-align: center;
+    }
+    .lead-visuals__header h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: var(--space-xs);
+    }
+    .lead-visuals__header p {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+    }
+
+    .lead-visual {
+      max-width: 900px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 32px;
+    }
+    .lead-visual__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    .lead-visual__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--text-md);
+      color: var(--color-accent);
+    }
+    .lead-visual__title {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin: 0;
+    }
+    .lead-visual__img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      display: block;
+      box-shadow: var(--shadow-md);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Prompt box */
+    .lead-prompt {
+      background: var(--color-black);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lead-prompt__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    .lead-prompt__head::-webkit-details-marker { display: none; }
+    .lead-prompt__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lead-prompt__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lead-prompt__copy {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background var(--duration) ease;
+    }
+    .lead-prompt__copy:hover { background: rgba(255,255,255,0.2); }
+    .lead-prompt__copy.is-copied {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+    .lead-prompt__chevron {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-xs);
+      transition: transform var(--duration) ease;
+    }
+    details[open] .lead-prompt__chevron { transform: rotate(180deg); }
+
+    .lead-prompt__body {
+      padding: 20px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .lead-prompt__body pre {
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+
+    /* Final CTA */
+    .lead-cta {
+      padding: 0 0 var(--space-2xl);
+      background: var(--color-bg);
+    }
+    .lead-cta__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--color-black);
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+    .lead-cta__inner h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: var(--space-sm);
+    }
+    .lead-cta__inner p {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--space-md);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .lead-intro__inner,
+      .lead-visuals__header,
+      .lead-visual { padding-left: 20px; padding-right: 20px; }
+
+      .lead-step {
+        grid-template-columns: 60px 1fr;
+        padding: var(--space-sm);
+      }
+      .lead-step__num { font-size: 2.5rem; }
+      .lead-cta__inner {
+        margin: 0 20px;
+        padding: var(--space-lg) var(--space-md);
+      }
+      .lead-prompt__head {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .lead-prompt__body { padding: 16px; }
+    }
+  </style>
+
+  <style>
+    .vap-sec{background:var(--color-bg);padding:40px 24px 80px}
+    .vap-wrap{max-width:1040px;margin:0 auto}
+    .vap-h2{font-family:var(--font-main,Inter),sans-serif;font-weight:700;font-size:clamp(30px,4vw,44px);letter-spacing:-0.03em;margin:0 0 10px;color:var(--color-black)}
+    .vap-h2 em{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;color:var(--color-accent)}
+    .vap-p{color:var(--color-gray-600);font-size:17px;line-height:1.6;margin:0 0 32px;max-width:640px}
+    .vap-film{position:relative;width:100%;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 30px 70px rgba(0,0,0,.12)}
+    .vap-film iframe,.vap-v iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .vap-cap{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:15px;color:var(--color-gray-600)}
+    .vap-cap b{color:var(--color-black);font-weight:600}
+    .vap-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .vap-v{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+    .vap-vt{margin-top:12px;font-size:15px;font-weight:600;color:var(--color-black)}
+    .vap-vs{font-size:13px;color:var(--color-gray-600);margin-top:2px}
+    .vap-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+    .vap-stat{background:#fff;border:1px solid var(--color-gray-200);border-radius:20px;padding:26px 24px}
+    .vap-stat b{display:block;font-size:40px;font-weight:700;letter-spacing:-0.03em;color:var(--color-black)}
+    .vap-stat span{font-size:14px;color:var(--color-gray-600)}
+    .vap-q{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-gray-400);font-weight:600;margin-bottom:8px}
+    @media (max-width:820px){.vap-grid{grid-template-columns:repeat(2,1fr)}.vap-stats{grid-template-columns:1fr}.vap-cap{flex-direction:column;gap:2px}}
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="nav nav--dark">
+    <div class="nav__bar">
+      <a href="index.html" class="nav__logo"><em>elips</em></a>
+      <ul class="nav__links">
+        <li><a href="index.html#avantages" class="nav__link">Avantages</a></li>
+        <li><a href="index.html#projets" class="nav__link">Projets</a></li>
+        <li><a href="index.html#apropos" class="nav__link">À propos</a></li>
+        <li><a href="index.html#tarifs" class="nav__link">Tarifs</a></li>
+        <li><a href="blog.html" class="nav__link">Blog</a></li>
+      </ul>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__cta">Je suis intéressé</a>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav__mobile" id="nav-mobile">
+    <a href="index.html#avantages">Avantages</a>
+    <a href="index.html#projets">Projets</a>
+    <a href="index.html#apropos">À propos</a>
+    <a href="index.html#tarifs">Tarifs</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="nav__mobile-cta">Je suis intéressé</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="projet-hero">
+    <div class="projet-hero__inner">
+      <a href="index.html" class="projet-hero__back">← Retour à l'accueil</a>
+      <div class="projet-hero__meta">
+        <span class="projet-hero__tag">Candidature</span>
+        <span class="projet-hero__cat">Monteur vidéo · vap</span>
+      </div>
+      <h1 class="projet-hero__title">Du rush au crush, <em>je connais le chemin.</em></h1>
+      <p class="projet-hero__subtitle">Ismaël, monteur vidéo et directeur artistique chez Elips Studio, à Paris. Voici mon terrain de jeu en quelques minutes : qui je suis, ce que je monte, et pourquoi j'ai envie de jouer avec vous.</p>
+    </div>
+  </header>
+
+  <!-- PRESENTATION -->
+  <section class="lead-intro">
+    <div class="lead-intro__inner">
+      <div class="vap-q">En deux mots</div>
+      <p class="lead-intro__lead">
+        Je suis Ismaël, fondateur d'<strong>Elips Studio</strong>. Je monte des vidéos pour des marques et des créateurs : <strong>reels, films, contenus réseaux</strong>, avec une vraie obsession du rythme, du son et de l'image. Des vidéos « lues et relues », c'est exactement comme ça que je travaille, et c'est pour ça que vap me parle.
+      </p>
+      <div class="vap-stats">
+        <div class="vap-stat"><b>50+</b><span>projets livrés clé en main</span></div>
+        <div class="vap-stat"><b>20+</b><span>marques et créateurs accompagnés</span></div>
+        <div class="vap-stat"><b>16:9 · 9:16</b><span>du film long aux formats verticaux</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILM -->
+  <section class="vap-sec">
+    <div class="vap-wrap">
+      <h2 class="vap-h2">Le film, <em>en grand</em></h2>
+      <p class="vap-p">Un film de mariage : narration, rythme sur la musique, étalonnage et son. Le genre de projet où chaque coupe compte.</p>
+      <div class="vap-film"><iframe src="https://www.youtube-nocookie.com/embed/0Vvg6IdGyWY?rel=0&modestbranding=1" title="Film de mariage" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+      <div class="vap-cap"><b>Film de mariage</b><span>Montage · étalonnage · sound design</span></div>
+    </div>
+  </section>
+
+  <!-- VERTICAL -->
+  <section class="vap-sec" style="padding-top:20px">
+    <div class="vap-wrap">
+      <h2 class="vap-h2">Les formats <em>verticaux</em></h2>
+      <p class="vap-p">Des reels pour des créateurs et des médias : hook dès la première seconde, sous-titres, rythme pensé pour la rétention.</p>
+      <div class="vap-grid">
+        <div>
+          <div class="vap-v"><iframe src="https://www.youtube-nocookie.com/embed/PzmfVix5q_Y?rel=0&modestbranding=1" title="Analyse de stats" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+          <div class="vap-vt">Analyse de stats</div><div class="vap-vs">La Génération F</div>
+        </div>
+        <div>
+          <div class="vap-v"><iframe src="https://www.youtube-nocookie.com/embed/f_eUPM3IQpw?rel=0&modestbranding=1" title="Coach de coach sportif" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+          <div class="vap-vt">Coach de coach sportif</div><div class="vap-vs">Réel créateur</div>
+        </div>
+        <div>
+          <div class="vap-v"><iframe src="https://www.youtube-nocookie.com/embed/AuVDPYpMeNQ?rel=0&modestbranding=1" title="Rahma Zamdane" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+          <div class="vap-vt">Rahma Zamdane</div><div class="vap-vs">Rapcity</div>
+        </div>
+        <div>
+          <div class="vap-v"><iframe src="https://www.youtube-nocookie.com/embed/QHr6No1K-Rc?rel=0&modestbranding=1" title="Mike Tyson × musique" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+          <div class="vap-vt">Mike Tyson × musique</div><div class="vap-vs">Rapcity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lead-divider"><div class="lead-divider__line"></div></div>
+
+  <!-- CRITERES -->
+  <section class="lead-intro">
+    <div class="lead-intro__inner">
+      <h2 class="vap-h2" style="margin-bottom:28px">Ce que vous cherchez, <em>très concrètement</em></h2>
+      <div class="lead-steps">
+        <div class="lead-step"><div class="lead-step__num">01</div><div class="lead-step__body">
+          <h3>Sérieux, créatif et réactif</h3>
+          <p>Je tiens les délais sans sacrifier la finition : dérush propre, coupes invisibles, sound design et étalonnage soignés. Les retours sont intégrés vite et bien.</p></div></div>
+        <div class="lead-step"><div class="lead-step__num">02</div><div class="lead-step__body">
+          <h3>Les codes et les modes des réseaux</h3>
+          <p>Hooks, sous-titres animés, punch-ins, formats verticaux : je monte pour qu'on regarde <strong>jusqu'au bout</strong>, pas seulement pour que ce soit joli.</p></div></div>
+        <div class="lead-step"><div class="lead-step__num">03</div><div class="lead-step__body">
+          <h3>Bosser en équipe, à distance, de façon carrée</h3>
+          <p>Brief, allers-retours, versions numérotées, fichiers rangés et nommés proprement. Je suis habitué à travailler avec des clients et des équipes à distance.</p></div></div>
+        <div class="lead-step"><div class="lead-step__num">04</div><div class="lead-step__body">
+          <h3>Kiffer la vidéo sous toutes ses formes</h3>
+          <p>Film, reel, pub, motion design, contenus IA : je passe d'un format à l'autre, et c'est justement ce qui me plaît dans un studio comme vap.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA NOIR -->
+  <section class="lead-cta">
+    <div class="lead-cta__inner">
+      <h2>À vous <em>de jouer.</em></h2>
+      <p>Partant pour un test, un premier projet ou un appel pour faire connaissance.</p>
+      <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener" class="btn">Réserver un appel →</a>
+      <a href="mailto:ismaelboudjakdji@gmail.com" class="btn" style="margin-left:10px;background:transparent;border:1px solid rgba(255,255,255,.35)">M'écrire</a>
+    </div>
+  </section>
+
+  <!-- WHATSAPP STICKY -->
+  <a href="https://wa.me/message/OOO75YFUQXAUP1" target="_blank" rel="noopener" class="whatsapp" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__left">
+        <p class="footer__address">Elips Studio<br>Paris, France</p>
+        <div class="footer__status">
+          <span class="footer__status-dot"></span>
+          Disponible pour travailler
+        </div>
+        <div class="footer__socials">
+          <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">IG</a>
+          <a href="https://www.linkedin.com/in/ismael-boudjakdji-6644411b3/" target="_blank" rel="noopener" class="footer__social" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#projets">Projets</a>
+          <a href="blog.html">Blog</a>
+          <a href="https://calendly.com/ismaelbdjki/30min" target="_blank" rel="noopener">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Études de cas</h4>
+          <a href="projet-elmut.html">Elmut</a>
+          <a href="projet-mvst-select.html">Mvst Select</a>
+          <a href="projet-kosbiotic.html">Kosbiotic</a>
+          <a href="projet-tasty-crousty.html">Tasty Crousty</a>
+          <a href="projet-création-de-contenu.html">Création de contenu</a>
+          <a href="projet-ads.html">Ads</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Légal</h4>
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="politique-confidentialite.html">Politique de confidentialité</a>
+          <a href="cgv.html">CGV</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2025 Elips Studio. Tous droits réservés.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Copier prompt
+    function copyPrompt(event, id) {
+      event.preventDefault();
+      event.stopPropagation();
+      const pre = document.getElementById('prompt-' + id);
+      const btn = event.currentTarget;
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copié ✓';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 1800);
+      }).catch(() => {
+        btn.textContent = 'Erreur';
+        setTimeout(() => { btn.textContent = 'Copier'; }, 1800);
+      });
+    }
+
+    // Mobile menu
+    const burger = document.querySelector('.nav__burger');
+    const mobileMenu = document.getElementById('nav-mobile');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-active');
+      mobileMenu.classList.toggle('is-open');
+      document.body.style.overflow = mobileMenu.classList.contains('is-open') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        mobileMenu.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
