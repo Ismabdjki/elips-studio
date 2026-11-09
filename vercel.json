@@ -1,8 +1,28 @@
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
-    { "source": "/shooting-produit-ia", "destination": "/shooting-produit-ia.html" },
-    { "source": "/navito", "destination": "/navito.html" },
-    { "source": "/questionnaire", "destination": "/questionnaire.html" }
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
+    },
+    {
+      "source": "/shooting-produit-ia",
+      "destination": "/shooting-produit-ia.html"
+    },
+    {
+      "source": "/navito",
+      "destination": "/navito.html"
+    },
+    {
+      "source": "/questionnaire",
+      "destination": "/questionnaire.html"
+    },
+    {
+      "source": "/guide-derush",
+      "destination": "/guide-derush.html"
+    },
+    {
+      "source": "/derush",
+      "destination": "/guide-derush.html"
+    }
   ]
 }
