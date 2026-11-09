@@ -355,7 +355,7 @@
   <section class="lead-visuals">
     <div class="lead-visuals__header">
       <h2>Le prompt <em>prêt à copier</em></h2>
-      <p>Envoie ta vidéo (et ton son micro si tu en as un) à Claude, puis colle ce prompt. Remplace juste ce qui est entre crochets.</p>
+      <p>Envoie ta vidéo (et ton son micro si tu en as un) à Claude, puis colle ce prompt. Remplace juste ce qui est entre crochets. Et si une coupe ne te plaît pas, le deuxième prompt la fait corriger sans toucher au reste.</p>
     </div>
 
     <div class="lead-visual">
@@ -398,6 +398,31 @@ LIVRAISON
 - La liste des coupes (horaire et raison).
 - Ce que tu n'as pas pu vérifier toi-même, s'il y a quelque chose.
 </pre>
+        </div>
+      </details>
+    </div>
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">02</span>
+        <h3 class="lead-visual__title">Si une coupe n'est pas bonne : le prompt de correction</h3>
+      </div>
+      <details class="lead-prompt" open>
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 2)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-2">Le résultat de la coupe de [NOM DU FICHIER VIDEO] n'est pas bon. Voici ce qui ne va pas :
+
+Le problème : [CHOISIS UNE LIGNE ET SUPPRIME LES AUTRES]
+ a. Un blanc est trop court à [HEURE, PAR EXEMPLE 0:42]. La phrase suivante arrive trop vite, remets environ [PAR EXEMPLE 0,3] seconde de blanc.
+ b. Un mot est coupé à [HEURE]. Le mot est [LE MOT]. Recule la coupe pour garder le mot en entier, avec un petit blanc après.
+ c. Tu as gardé une mauvaise prise à [HEURE]. Je veux garder la dernière prise, celle qui commence par [LES PREMIERS MOTS DE LA BONNE PRISE].
+
+Refais UNIQUEMENT ce morceau. Ne touche pas aux autres. Pose la nouvelle coupe dans un blanc mesuré sur la forme d'onde, relance les 3 vérifications sur ce morceau et sur ses voisins, puis montre-moi le tableau mis à jour avant d'exporter. Garde mon fichier original intact, avec le son parfaitement calé.</pre>
         </div>
       </details>
     </div>
