@@ -260,6 +260,39 @@
       .lead-prompt__body { padding: 16px; }
     }
   </style>
+
+  <style>
+    /* ===== DA ISMA ELIPSE (rouge #D92825 / bleu #142C82 / noir #0F0B0C) ===== */
+    :root{--color-accent:#D92825;--color-accent-hover:#B81F1C;--color-bg:#0F0B0C;--el-blue:#142C82;--el-blue-l:#5B7FFF;--el-card:#18121A;--el-line:rgba(255,255,255,.08)}
+    body{background:#0F0B0C;color:#F5F5F7}
+    .projet-hero{background:radial-gradient(120% 90% at 85% 0%,rgba(20,44,130,.55) 0%,rgba(15,11,12,0) 60%),radial-gradient(90% 70% at 0% 100%,rgba(217,40,37,.28) 0%,rgba(15,11,12,0) 60%),#0F0B0C}
+    .projet-hero__title em,.lead-visuals__header h2 em,.lead-cta h2 em{color:#D92825}
+    .projet-hero__tag{background:rgba(255,255,255,.06);border-color:var(--el-line);color:#F5F5F7}
+    .projet-hero__cat{background:rgba(217,40,37,.12);border-color:rgba(217,40,37,.45);color:#FF6B66}
+    .lead-intro,.lead-visuals,.lead-divider{background:#0F0B0C}
+    .lead-intro__lead,.lead-intro__lead strong{color:#E9E9EE}
+    .lead-intro__lead strong{color:#fff}
+    .lead-step{background:var(--el-card);border:1px solid var(--el-line);box-shadow:none}
+    .lead-step:nth-child(odd) .lead-step__num{color:#D92825}
+    .lead-step:nth-child(even) .lead-step__num{color:var(--el-blue-l)}
+    .lead-step__body h3{color:#fff}
+    .lead-step__body p{color:#A9A9B3}
+    .lead-step__body p strong{color:#fff}
+    .lead-divider__line{background:var(--el-line)}
+    .lead-visuals__header h2,.lead-visual__title{color:#fff}
+    .lead-visuals__header p{color:#A9A9B3}
+    .lead-visual__num{color:#D92825}
+    .lead-prompt{background:#08060A;border:1px solid rgba(91,127,255,.25);box-shadow:0 30px 80px rgba(20,44,130,.25)}
+    .lead-prompt__head{background:linear-gradient(90deg,rgba(20,44,130,.45),rgba(20,44,130,.1));border-bottom:1px solid var(--el-line)}
+    .lead-prompt__copy{background:#D92825;color:#fff}
+    .lead-prompt__copy:hover{background:#B81F1C}
+    .lead-prompt pre{color:#E6E8F2}
+    .lead-cta{background:#0F0B0C}
+    .lead-cta__inner{background:linear-gradient(140deg,#142C82 0%,#0F0B0C 70%);border:1px solid var(--el-line)}
+    .lead-cta .btn,.btn{background:#D92825;color:#fff}
+    .lead-cta .btn:hover,.btn:hover{background:#B81F1C}
+    .nav__cta,.nav__mobile-cta{background:#D92825!important;color:#fff!important}
+  </style>
 </head>
 <body>
 
@@ -355,13 +388,13 @@
   <section class="lead-visuals">
     <div class="lead-visuals__header">
       <h2>Le prompt <em>prêt à copier</em></h2>
-      <p>Envoie ta vidéo (et ton son micro si tu en as un) à Claude, puis colle ce prompt. Remplace juste ce qui est entre crochets. Et si une coupe ne te plaît pas, le deuxième prompt la fait corriger sans toucher au reste.</p>
+      <p>Copie-le, colle-le dans Claude et remplace juste ce qui est entre crochets.</p>
     </div>
 
     <div class="lead-visual">
       <div class="lead-visual__meta">
         <span class="lead-visual__num">01</span>
-        <h3 class="lead-visual__title">Prompt de dérush complet</h3>
+        <h3 class="lead-visual__title">Le prompt dérush</h3>
       </div>
       <details class="lead-prompt" open>
         <summary class="lead-prompt__head">
@@ -372,50 +405,7 @@
           </div>
         </summary>
         <div class="lead-prompt__body">
-<pre id="prompt-1">Tu es un monteur vidéo expert. Je t'envoie [ma vidéo face caméra] + [le son de mon micro, si j'en ai un]. Je veux que tu fasses le dérush complet et que tu me rendes la vidéo montée.
-
-ÉTAPE 0 — LE SON
-Si je t'ai donné un son micro séparé : synchronise-le sur la vidéo en comparant les deux sons (corrélation), vérifie qu'il ne se décale pas sur la durée, et monte avec le son du micro.
-
-ÉTAPE 1 — TOUT TRANSCRIRE, MÊME LES RATÉS
-Transcris la vidéo mot à mot, avec l'horaire de début et de fin de CHAQUE mot.
-Ne nettoie rien : garde les répétitions, les bégaiements, les phrases recommencées, les « euh », les « je recommence ».
-Si besoin, découpe le son en morceaux pour que la transcription ne saute aucun passage.
-
-ÉTAPE 2 — ANALYSER LE TEXTE ET LA VOIX SÉPARÉMENT
-- Le texte : repère chaque phrase et toutes ses prises. Pour chaque phrase dite plusieurs fois, garde la meilleure prise (en général la dernière, complète et fluide). Supprime les ratés, les bégaiements et les hors-sujets.
-- La voix : analyse la forme d'onde du son (volume toutes les 10 ms) pour trouver les vrais silences.
-Coupe uniquement dans les silences, jamais au milieu d'un mot. Laisse environ 0,08 s avant chaque phrase et 0,15 à 0,2 s après, pour que la fin des mots ne soit pas mangée.
-Rythme dynamique : quasiment aucun blanc entre les phrases, mais garde les respirations naturelles.
-
-ÉTAPE 3 — TROIS PASSES DE VÉRIFICATION
-Passe 1 (coupes) : liste chaque coupe avec son horaire et la raison.
-Passe 2 (raccords) : réécoute chaque coupe. Aucun mot coupé, aucun souffle ni clic, aucune phrase qui commence trop tôt. Corrige si besoin.
-Passe 3 (contrôle final) : retranscris la vidéo montée et compare-la à [mon script / au texte que je voulais dire]. Aucune phrase oubliée, aucune phrase en double, tout doit avoir du sens.
-
-LIVRAISON
-- La vidéo dérushée en MP4, même qualité que l'original (aucune perte).
-- La liste des coupes (horaire et raison).
-- Ce que tu n'as pas pu vérifier toi-même, s'il y a quelque chose.
-</pre>
-        </div>
-      </details>
-    </div>
-    <div class="lead-visual">
-      <div class="lead-visual__meta">
-        <span class="lead-visual__num">02</span>
-        <h3 class="lead-visual__title">Si une coupe n'est pas bonne : le prompt de correction</h3>
-      </div>
-      <details class="lead-prompt" open>
-        <summary class="lead-prompt__head">
-          <span class="lead-prompt__label">Le prompt</span>
-          <div class="lead-prompt__actions">
-            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 2)">Copier</button>
-            <span class="lead-prompt__chevron">▾</span>
-          </div>
-        </summary>
-        <div class="lead-prompt__body">
-<pre id="prompt-2">Le résultat de la coupe de [NOM DU FICHIER VIDEO] n'est pas bon. Voici ce qui ne va pas :
+<pre id="prompt-1">Le résultat de la coupe de [NOM DU FICHIER VIDEO] n'est pas bon. Voici ce qui ne va pas :
 
 Le problème : [CHOISIS UNE LIGNE ET SUPPRIME LES AUTRES]
  a. Un blanc est trop court à [HEURE, PAR EXEMPLE 0:42]. La phrase suivante arrive trop vite, remets environ [PAR EXEMPLE 0,3] seconde de blanc.
