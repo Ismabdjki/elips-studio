@@ -27,6 +27,25 @@
     {
       "source": "/vap",
       "destination": "/candidature-vap.html"
+    },
+    {
+      "source": "/mariage",
+      "destination": "/mariage/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/mariage/p/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }
