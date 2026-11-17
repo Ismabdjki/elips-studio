@@ -29,6 +29,22 @@
       "destination": "/candidature-vap.html"
     },
     {
+      "source": "/sharingan",
+      "destination": "/guide-sharingan.html"
+    },
+    {
+      "source": "/guide-sharingan",
+      "destination": "/guide-sharingan.html"
+    },
+    {
+      "source": "/da",
+      "destination": "/guide-da.html"
+    },
+    {
+      "source": "/guide-da",
+      "destination": "/guide-da.html"
+    },
+    {
       "source": "/mariage",
       "destination": "/mariage/index.html"
     }
