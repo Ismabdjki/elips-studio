@@ -106,3 +106,11 @@ section.lead-cta .btn { border-radius: 14px !important; background: var(--ie-pap
 .ie-foot__links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
 .ie-foot a { color: var(--ie-paper); text-decoration: none; }
 @media (hover: hover) { .ie-foot__links a:hover { color: var(--ie-red); } }
+
+/* Numéros des étapes : Hanson, plus d'italique serif */
+.lead-step__num, .lead-visual__num {
+  font-family: var(--ie-display) !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+.lead-step h3, .lead-visual__title { font-weight: 650 !important; }

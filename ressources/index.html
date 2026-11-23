@@ -252,6 +252,39 @@
     .reveal.is-visible { opacity: 1; transform: none; }
     .no-js .reveal { opacity: 1; transform: none; }
 
+
+    /* ── Ordinateur ───────────────────────────────────────── */
+    @media (min-width: 960px) {
+      .wrap { max-width: 1120px; padding: 0 48px; }
+      .hero { padding: 72px 0 80px; }
+      .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, 1fr); grid-template-rows: auto auto; column-gap: 72px; align-items: end; }
+      .hero__top { grid-column: 1 / -1; }
+      .hero__name { grid-column: 1; font-size: clamp(110px, 11vw, 150px); margin-top: 40px; }
+      .hero__side { grid-column: 2; padding-bottom: 14px; }
+      .hero__line { margin-top: 0; font-size: 32px; }
+      .hero__story { font-size: 16.5px; }
+
+      .res-section { padding: 88px 0 80px; }
+      .section-title { font-size: 48px; }
+      .section-sub { font-size: 16px; }
+      .res-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; margin-top: 40px; }
+      .res-list > li { border-bottom: 1px solid var(--line-dark); }
+      .res-list > li:nth-child(-n+2) { border-top: 1px solid var(--line-dark); }
+      .res-list > li:nth-child(n+3) { border-top: 0; }
+      .res { padding: 34px 0 38px; height: 100%; display: flex; flex-direction: column; }
+      .res__key { font-size: 52px; }
+      .res__title { font-size: 21px; }
+      .res__text { font-size: 16px; max-width: 42ch; flex: 1; }
+      .res__cta, .res__soon { align-self: flex-start; }
+
+      .school { padding: 96px 0 100px; }
+      .school__grid { display: grid; grid-template-columns: 1.1fr 1fr; column-gap: 80px; align-items: center; }
+      .school__title { font-size: 76px; }
+      .school__text { font-size: 17px; }
+      .form, .done { margin-top: 0; }
+      .done { border-top: 0; padding-top: 0; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; transition: none !important; }
       .reveal { opacity: 1; transform: none; }
@@ -285,6 +318,7 @@
 
       <h1 class="hero__name in in-2">Isma<span>.</span></h1>
 
+      <div class="hero__side">
       <p class="hero__line in in-3">Claude fait la technique, toi tu gardes <em>la vision.</em></p>
       <p class="hero__story in in-4">Je suis monteur et je n'ai jamais appris After Effects. Aujourd'hui, je fais le motion design que je veux avec Claude. L'IA ne te remplace pas&nbsp;: elle t'aide à passer un cap.</p>
 
@@ -299,6 +333,7 @@
         </a>
         <a class="social" href="#ecole" data-social="ecole">La Salle du Temps →</a>
       </nav>
+      </div>
     </div>
   </header>
 
@@ -318,10 +353,13 @@
     </section>
 
     <section class="school" id="ecole" aria-labelledby="school-title">
-      <div class="wrap">
+      <div class="wrap school__grid">
+        <div class="school__intro">
         <div class="school__label reveal"><span class="dot" style="background:#fff"></span>Liste d'attente</div>
         <h2 class="school__title reveal" id="school-title"><span class="nw">La Salle</span> <span class="nw">du Temps</span></h2>
         <p class="school__text reveal">L'endroit où les monteurs passent un cap grâce à l'IA. Ouverture dans quelques mois&nbsp;: les inscrits sont prévenus en premier.</p>
+        </div>
+        <div class="school__action">
 
         <form class="form reveal" id="waitlist" novalidate>
           <div class="field">
@@ -342,6 +380,7 @@
           <div class="done__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
           <p class="done__title" id="done-title">C'est noté.</p>
           <p class="done__text">Tu fais partie de la liste d'attente. Je te préviens par e-mail dès que la Salle du Temps ouvre.</p>
+        </div>
         </div>
       </div>
     </section>
