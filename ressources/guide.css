@@ -1,0 +1,108 @@
+/* ─────────────────────────────────────────────────────────────
+   Habillage DA Isma Elipse des guides gratuits (/derush, /sharingan, /da…)
+   Chargé après les styles de l'ancien site : il les remplace.
+   ───────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Hanson";
+  src: url("/ressources/hanson-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --ie-red: #D92825;
+  --ie-blue: #142C82;
+  --ie-ink: #0F0B0C;
+  --ie-paper: #F2EFE8;
+  --ie-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ie-display: "Hanson", "Arial Black", Impact, sans-serif;
+  --color-accent: #D92825;
+  --color-accent-hover: #B81F1C;
+  --color-black: #0F0B0C;
+  --font-sans: var(--ie-sans);
+  --nav-height: 60px;
+}
+
+body { font-family: var(--ie-sans); overflow-x: hidden; }
+
+/* Titres en Hanson, mot-clé en rouge (pas d'italique) */
+.projet-hero__title,
+.lead-visuals__header h2,
+.lead-cta h2 {
+  font-family: var(--ie-display) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: -.015em;
+  line-height: 1.02 !important;
+}
+.projet-hero__title { font-size: clamp(30px, 8.4vw, 54px) !important; }
+.lead-visuals__header h2, .lead-cta h2 { font-size: clamp(26px, 7.2vw, 40px) !important; }
+.projet-hero__title em,
+.lead-visuals__header h2 em,
+.lead-cta h2 em {
+  font-family: inherit !important;
+  font-style: normal !important;
+  color: var(--ie-red) !important;
+}
+.lead-step h3, .lead-visual__title { font-family: var(--ie-sans) !important; letter-spacing: -.02em; }
+
+/* ── Barre du haut ─────────────────────────────────────────── */
+.ie-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(242, 239, 232, .86);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid rgba(15, 11, 12, .08);
+}
+.ie-nav__bar {
+  max-width: 800px; margin: 0 auto;
+  height: var(--nav-height);
+  padding: 0 clamp(20px, 5vw, 32px);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.ie-nav__logo {
+  font-family: var(--ie-display); font-weight: 700;
+  font-size: 22px; letter-spacing: -.01em; line-height: 1;
+  color: var(--ie-ink); text-decoration: none; text-transform: uppercase;
+}
+.ie-nav__logo span { color: var(--ie-red); }
+.ie-nav__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 38px; padding: 0 16px; border-radius: 999px;
+  background: var(--ie-ink); color: var(--ie-paper);
+  font: 600 14px/1 var(--ie-sans); letter-spacing: -.01em; text-decoration: none;
+  white-space: nowrap;
+  transition: transform .2s ease, background .25s ease;
+}
+.ie-nav__link:active { transform: scale(.96); }
+@media (hover: hover) { .ie-nav__link:hover { background: var(--ie-red); } }
+
+/* Le hero ne doit plus compter la hauteur de l'ancienne barre fixe */
+.projet-hero { padding-top: 40px !important; }
+
+/* ── Bloc final : La Salle du Temps ───────────────────────── */
+section.lead-cta { background: var(--ie-blue) !important; padding: 56px 0 60px !important; margin-top: 56px; }
+section.lead-cta .lead-cta__inner {
+  background: transparent !important; border: 0 !important; box-shadow: none !important;
+  border-radius: 0 !important; text-align: left; padding: 0 clamp(20px, 5vw, 32px) !important;
+}
+section.lead-cta h2 { color: var(--ie-paper) !important; }
+section.lead-cta p { color: rgba(242, 239, 232, .8) !important; }
+section.lead-cta .btn { border-radius: 14px !important; background: var(--ie-paper) !important; color: var(--ie-ink) !important; }
+@media (hover: hover) { section.lead-cta .btn:hover { background: #fff !important; } }
+
+/* ── Pied de page ─────────────────────────────────────────── */
+.ie-foot {
+  background: var(--ie-ink); color: rgba(242, 239, 232, .6);
+  padding: 34px 0 calc(34px + env(safe-area-inset-bottom));
+  font: 400 14px/1.5 var(--ie-sans);
+}
+.ie-foot__inner {
+  max-width: 800px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 32px);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 20px;
+}
+.ie-foot__logo { font-family: var(--ie-display); font-size: 20px; color: var(--ie-paper); text-transform: uppercase; text-decoration: none; }
+.ie-foot__logo span { color: var(--ie-red); }
+.ie-foot__links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.ie-foot a { color: var(--ie-paper); text-decoration: none; }
+@media (hover: hover) { .ie-foot__links a:hover { color: var(--ie-red); } }
