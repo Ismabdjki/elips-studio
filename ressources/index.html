@@ -190,9 +190,10 @@
     }
     .school__title {
       font-family: var(--display); font-weight: 700;
-      font-size: clamp(40px, 13vw, 64px); line-height: .9; letter-spacing: -.015em;
+      font-size: clamp(32px, 11.6vw, 60px); line-height: .92; letter-spacing: -.015em;
       text-transform: uppercase; margin: 16px 0 0;
     }
+    .school__title .nw { display: block; white-space: nowrap; }
     .school__text { font-size: 16px; line-height: 1.5; color: rgba(242, 239, 232, .8); margin: 16px 0 0; max-width: 36ch; }
 
     .form { margin-top: 26px; display: grid; gap: 10px; }
@@ -319,7 +320,7 @@
     <section class="school" id="ecole" aria-labelledby="school-title">
       <div class="wrap">
         <div class="school__label reveal"><span class="dot" style="background:#fff"></span>Liste d'attente</div>
-        <h2 class="school__title reveal" id="school-title">La Salle du Temps</h2>
+        <h2 class="school__title reveal" id="school-title"><span class="nw">La Salle</span> <span class="nw">du Temps</span></h2>
         <p class="school__text reveal">L'endroit où les monteurs passent un cap grâce à l'IA. Ouverture dans quelques mois&nbsp;: les inscrits sont prévenus en premier.</p>
 
         <form class="form reveal" id="waitlist" novalidate>
