@@ -47,6 +47,14 @@
     {
       "source": "/mariage",
       "destination": "/mariage/index.html"
+    },
+    {
+      "source": "/ressources",
+      "destination": "/ressources/index.html"
+    },
+    {
+      "source": "/liens",
+      "destination": "/ressources/index.html"
     }
   ],
   "headers": [

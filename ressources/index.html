@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Isma — Ressources IA gratuites pour monteurs</title>
+  <meta name="description" content="Toutes les ressources gratuites d'Isma pour les monteurs : guides et prompts pour monter avec Claude. Claude fait la technique, toi tu gardes la vision.">
+  <link rel="canonical" href="https://www.ismael-boudjakdji.com/ressources">
+  <meta name="theme-color" content="#F2EFE8">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://www.ismael-boudjakdji.com/ressources">
+  <meta property="og:title" content="Isma — Ressources IA gratuites pour monteurs">
+  <meta property="og:description" content="Claude fait la technique, toi tu gardes la vision. Guides, prompts et outils gratuits pour les monteurs.">
+  <meta property="og:image" content="https://www.ismael-boudjakdji.com/ressources/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/jpeg" href="/ressources/isma.jpg">
+  <link rel="preload" href="/ressources/hanson-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/ressources/isma.webp" as="image">
+
+  <style>
+    @font-face {
+      font-family: "Hanson";
+      src: url("/ressources/hanson-bold.woff2") format("woff2");
+      font-weight: 700;
+      font-display: swap;
+    }
+
+    :root {
+      --red: #D92825;
+      --blue: #142C82;
+      --ink: #0F0B0C;
+      --paper: #F2EFE8;
+      --paper-2: #E7E2D7;
+      --muted-dark: rgba(242, 239, 232, .58);
+      --line-dark: rgba(242, 239, 232, .12);
+      --muted-light: rgba(15, 11, 12, .56);
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --display: "Hanson", "Arial Black", Impact, sans-serif;
+      --ease: cubic-bezier(.22, .8, .24, 1);
+      --pad: clamp(22px, 6vw, 32px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      min-width: 0;
+      background: var(--ink);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; -webkit-tap-highlight-color: transparent; }
+    .wrap { width: 100%; max-width: 560px; margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ── Haut de page (fond papier) ───────────────────────── */
+    .hero { background: var(--paper); padding: calc(44px + env(safe-area-inset-top)) 0 44px; }
+    .hero__top { display: flex; align-items: center; gap: 14px; }
+    .avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      object-fit: cover; flex: none;
+      box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--red);
+      background: var(--paper-2);
+    }
+    .hero__handle { font-size: 14px; font-weight: 600; letter-spacing: -.01em; }
+    .hero__role { font-size: 13px; color: var(--muted-light); }
+
+    .hero__name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(64px, 24vw, 112px);
+      line-height: .86;
+      letter-spacing: -.02em;
+      margin: 30px 0 0;
+      text-transform: uppercase;
+    }
+    .hero__name span { color: var(--red); }
+
+    .hero__line {
+      font-size: clamp(22px, 6.2vw, 28px);
+      line-height: 1.18;
+      font-weight: 650;
+      letter-spacing: -.025em;
+      margin: 22px 0 0;
+      max-width: 22ch;
+    }
+    .hero__line em { font-style: normal; color: var(--red); }
+    .hero__story {
+      font-size: 15.5px;
+      color: var(--muted-light);
+      margin: 14px 0 0;
+      max-width: 38ch;
+    }
+
+    .socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    .social {
+      display: inline-flex; align-items: center; gap: 7px;
+      height: 40px; padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 11, 12, .16);
+      font-size: 14px; font-weight: 600;
+      transition: background .25s var(--ease), color .25s var(--ease), transform .2s var(--ease);
+    }
+    .social svg { width: 16px; height: 16px; flex: none; }
+    .social:active { transform: scale(.96); }
+    @media (hover: hover) { .social:hover { background: var(--ink); color: var(--paper); } }
+
+    /* ── Ressources (fond noir) ───────────────────────────── */
+    .res-section { background: var(--ink); color: var(--paper); padding: 46px 0 22px; }
+    .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; }
+    .section-title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(24px, 7.2vw, 34px); line-height: 1; letter-spacing: -.01em;
+      margin: 0; text-transform: uppercase;
+    }
+    .section-count { font-size: 13px; color: var(--muted-dark); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .section-sub { font-size: 15px; color: var(--muted-dark); margin: 10px 0 0; }
+
+    .res-list { margin: 26px 0 0; padding: 0; list-style: none; }
+    .res-list > li { border-top: 1px solid var(--line-dark); }
+    .res-list > li:last-child { border-bottom: 1px solid var(--line-dark); }
+
+    .res { display: block; padding: 26px 0 28px; position: relative; }
+    .res__meta {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--muted-dark);
+    }
+    .res__num { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+    .res__bar { width: 18px; height: 1px; background: var(--line-dark); }
+    .res__key {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(30px, 10.5vw, 44px); line-height: .95;
+      letter-spacing: -.01em; color: var(--red);
+      margin: 12px 0 0;
+      overflow-wrap: anywhere;
+    }
+    .res__title { font-size: 19px; line-height: 1.25; font-weight: 650; letter-spacing: -.02em; margin: 14px 0 0; }
+    .res__text { font-size: 15px; line-height: 1.5; color: var(--muted-dark); margin: 6px 0 0; }
+
+    .res__cta {
+      display: inline-flex; align-items: center; gap: 12px;
+      margin-top: 18px; height: 46px; padding: 0 8px 0 20px;
+      background: var(--red); color: #fff; border-radius: 999px;
+      font-size: 15px; font-weight: 650; letter-spacing: -.01em;
+      transition: transform .2s var(--ease), background .25s var(--ease);
+    }
+    .res__arrow {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255, 255, 255, .18);
+      display: grid; place-items: center;
+      transition: transform .35s var(--ease);
+    }
+    .res__arrow svg { width: 14px; height: 14px; }
+    a.res:active .res__cta { transform: scale(.97); }
+    @media (hover: hover) {
+      a.res:hover .res__arrow { transform: translateX(3px); }
+      a.res:hover .res__cta { background: #c4211e; }
+    }
+
+    .res--soon .res__key { color: rgba(242, 239, 232, .28); }
+    .res__soon {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 18px; height: 46px; padding: 0 18px;
+      border-radius: 999px; border: 1px solid var(--line-dark);
+      font-size: 14px; font-weight: 600; color: var(--muted-dark);
+    }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red); position: relative; flex: none; }
+    .dot::after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%;
+      background: var(--red); animation: ping 1.8s var(--ease) infinite;
+    }
+    @keyframes ping { 0% { transform: scale(1); opacity: .7; } 80%, 100% { transform: scale(3); opacity: 0; } }
+
+    .res-empty { color: var(--muted-dark); padding: 24px 0; }
+
+    /* ── Liste d'attente (fond bleu) ──────────────────────── */
+    .school { background: var(--blue); color: var(--paper); padding: 52px 0 56px; position: relative; overflow: hidden; }
+    .school__label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(242, 239, 232, .72);
+    }
+    .school__title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(40px, 13vw, 64px); line-height: .9; letter-spacing: -.015em;
+      text-transform: uppercase; margin: 16px 0 0;
+    }
+    .school__text { font-size: 16px; line-height: 1.5; color: rgba(242, 239, 232, .8); margin: 16px 0 0; max-width: 36ch; }
+
+    .form { margin-top: 26px; display: grid; gap: 10px; }
+    .field { position: relative; }
+    .field label {
+      position: absolute; left: 1px; top: 1px; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);
+    }
+    .input {
+      width: 100%; height: 54px; padding: 0 18px;
+      border-radius: 14px; border: 1px solid rgba(242, 239, 232, .24);
+      background: rgba(242, 239, 232, .08);
+      color: var(--paper); font-family: var(--sans); font-size: 16px;
+      outline: none; -webkit-appearance: none; appearance: none;
+      transition: border-color .2s var(--ease), background .2s var(--ease);
+    }
+    .input::placeholder { color: rgba(242, 239, 232, .55); }
+    .input:focus { border-color: var(--paper); background: rgba(242, 239, 232, .13); }
+    .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; }
+    .submit {
+      height: 54px; border: 0; border-radius: 14px; cursor: pointer;
+      background: var(--paper); color: var(--ink);
+      font-size: 16px; font-weight: 700; letter-spacing: -.01em;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      transition: transform .2s var(--ease), opacity .2s var(--ease);
+    }
+    .submit:active { transform: scale(.98); }
+    .submit[disabled] { opacity: .6; cursor: default; }
+    .form__note { font-size: 12.5px; line-height: 1.45; color: rgba(242, 239, 232, .6); margin: 4px 0 0; }
+    .form__note a { text-decoration: underline; text-underline-offset: 2px; }
+    .form__error { font-size: 14px; color: #fff; background: rgba(217, 40, 37, .9); border-radius: 10px; padding: 10px 14px; display: none; }
+    .form__error.is-on { display: block; }
+
+    .done { display: none; margin-top: 26px; padding: 22px 0 0; border-top: 1px solid rgba(242, 239, 232, .22); }
+    .done.is-on { display: block; animation: rise .6s var(--ease) both; }
+    .done__check {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--paper); color: var(--blue);
+      display: grid; place-items: center;
+    }
+    .done__check svg { width: 20px; height: 20px; }
+    .done__check path { stroke-dasharray: 30; stroke-dashoffset: 30; animation: draw .5s .25s var(--ease) forwards; }
+    .done__title { font-size: 22px; font-weight: 700; letter-spacing: -.02em; margin: 16px 0 0; }
+    .done__text { font-size: 15.5px; color: rgba(242, 239, 232, .8); margin: 6px 0 0; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* ── Pied de page (fond papier) ───────────────────────── */
+    .foot { background: var(--paper); color: var(--muted-light); padding: 28px 0 calc(28px + env(safe-area-inset-bottom)); font-size: 13px; }
+    .foot__row { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
+    .foot a { color: var(--ink); }
+
+    /* ── Animations ───────────────────────────────────────── */
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .in { animation: rise .8s var(--ease) both; }
+    .in-1 { animation-delay: .05s; } .in-2 { animation-delay: .12s; } .in-3 { animation-delay: .2s; }
+    .in-4 { animation-delay: .28s; } .in-5 { animation-delay: .36s; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .no-js .reveal { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .done__check path { stroke-dashoffset: 0; }
+    }
+  </style>
+
+  <!-- Google Analytics (même propriété que le reste du site) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKHGKEMQJ5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BKHGKEMQJ5');
+  </script>
+</head>
+<body class="no-js">
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero__top in in-1">
+        <picture>
+          <source srcset="/ressources/isma.webp" type="image/webp">
+          <img class="avatar" src="/ressources/isma.jpg" alt="Isma" width="64" height="64">
+        </picture>
+        <div>
+          <div class="hero__handle">@isma_elips3</div>
+          <div class="hero__role">Monteur · motion design avec Claude</div>
+        </div>
+      </div>
+
+      <h1 class="hero__name in in-2">Isma<span>.</span></h1>
+
+      <p class="hero__line in in-3">Claude fait la technique, toi tu gardes <em>la vision.</em></p>
+      <p class="hero__story in in-4">Je suis monteur et je n'ai jamais appris After Effects. Aujourd'hui, je fais le motion design que je veux avec Claude. L'IA ne te remplace pas&nbsp;: elle t'aide à passer un cap.</p>
+
+      <nav class="socials in in-5" aria-label="Réseaux">
+        <a class="social" href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener" data-social="instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a class="social" href="https://www.linkedin.com/in/ismael-boudjakdji-6644411b3/" target="_blank" rel="noopener" data-social="linkedin">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.64-1.61-2.64-1.61 0-1.86 1.26-1.86 2.56v4.92h-4v-11Z"/></svg>
+          LinkedIn
+        </a>
+        <a class="social" href="#ecole" data-social="ecole">L'école →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="res-section" aria-labelledby="res-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 class="section-title" id="res-title">Ressources</h2>
+          <span class="section-count" id="res-count"></span>
+        </div>
+        <p class="section-sub reveal">Gratuites. Le mot-clé, c'est celui que tu as commenté sous le reel.</p>
+
+        <ul class="res-list" id="res-list">
+          <li class="res-empty">Chargement…</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="school" id="ecole" aria-labelledby="school-title">
+      <div class="wrap">
+        <div class="school__label reveal"><span class="dot" style="background:#fff"></span>Liste d'attente</div>
+        <h2 class="school__title reveal" id="school-title">L'école</h2>
+        <p class="school__text reveal">Une formation par abonnement pour les monteurs qui veulent faire du motion design avec l'IA. Elle ouvre dans quelques mois&nbsp;: les inscrits sont prévenus en premier.</p>
+
+        <form class="form reveal" id="waitlist" novalidate>
+          <div class="field">
+            <label for="f-prenom">Prénom</label>
+            <input class="input" id="f-prenom" name="prenom" type="text" placeholder="Ton prénom" autocomplete="given-name" required maxlength="60">
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input class="input" id="f-email" name="email" type="email" placeholder="Ton e-mail" autocomplete="email" inputmode="email" required maxlength="120">
+          </div>
+          <input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form__error" id="form-error" role="alert"></div>
+          <button class="submit" type="submit" id="submit">Rejoindre la liste d'attente</button>
+          <p class="form__note">Ton e-mail sert uniquement à te prévenir de l'ouverture de l'école. Tu peux demander ta désinscription à tout moment. <a href="/politique-confidentialite.html">Confidentialité</a></p>
+        </form>
+
+        <div class="done" id="done" aria-live="polite">
+          <div class="done__check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <p class="done__title" id="done-title">C'est noté.</p>
+          <p class="done__text">Tu fais partie de la liste d'attente. Je te préviens par e-mail dès que l'école ouvre.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__row">
+      <span>© <span id="year">2026</span> Isma Elipse</span>
+      <a href="/">ismael-boudjakdji.com</a>
+    </div>
+  </footer>
+
+  <script src="/ressources/data.js"></script>
+  <script>
+  (function () {
+    document.body.classList.remove('no-js');
+
+    // Webhook Make : liste d'attente + clics -> Google Sheet
+    var HOOK = 'https://hook.eu2.make.com/eugyv61ldq8cke648w5k24upyyg4ra4f';
+
+    var params = new URLSearchParams(location.search);
+    var ua = navigator.userAgent || '';
+    var source = params.get('utm_source') ||
+      (/Instagram/i.test(ua) || /instagram/i.test(document.referrer) ? 'instagram' :
+       (document.referrer ? new URL(document.referrer).hostname : 'direct'));
+    var device = /Mobi|Android|iPhone|iPad/i.test(ua) ? 'mobile' : 'ordinateur';
+
+    function send(data, useBeacon) {
+      var body = new URLSearchParams(data);
+      try {
+        if (useBeacon && navigator.sendBeacon && navigator.sendBeacon(HOOK, body)) return Promise.resolve();
+      } catch (e) {}
+      return fetch(HOOK, { method: 'POST', mode: 'no-cors', body: body, keepalive: true });
+    }
+
+    function esc(s) {
+      return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+
+    var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+    // ── Ressources (depuis data.js, la plus récente en premier)
+    var items = (window.RESSOURCES || []).slice().sort(function (a, b) {
+      return String(b.date || '').localeCompare(String(a.date || ''));
+    });
+    var list = document.getElementById('res-list');
+    var dispo = items.filter(function (r) { return r.statut !== 'bientot'; }).length;
+    document.getElementById('res-count').textContent = dispo + (dispo > 1 ? ' disponibles' : ' disponible');
+
+    list.innerHTML = items.length ? items.map(function (r, i) {
+      var num = String(i + 1).padStart(2, '0');
+      var meta = '<div class="res__meta"><span class="res__num">' + num + '</span><span class="res__bar"></span><span>Mot-clé</span></div>';
+      var body = '<p class="res__key">' + esc(r.motCle) + '</p>' +
+                 '<p class="res__title">' + esc(r.titre) + '</p>' +
+                 '<p class="res__text">' + esc(r.phrase) + '</p>';
+      if (r.statut === 'bientot' || !r.lien) {
+        return '<li class="reveal"><div class="res res--soon">' + meta + body +
+               '<span class="res__soon"><span class="dot"></span>Bientôt disponible</span></div></li>';
+      }
+      var ext = /^https?:/i.test(r.lien) && r.lien.indexOf(location.host) === -1;
+      return '<li class="reveal"><a class="res" href="' + esc(r.lien) + '"' +
+             (ext ? ' target="_blank" rel="noopener"' : '') +
+             ' data-key="' + esc(r.motCle) + '" data-title="' + esc(r.titre) + '">' + meta + body +
+             '<span class="res__cta">' + esc(r.bouton || 'Ouvrir') + '<span class="res__arrow">' + arrow + '</span></span></a></li>';
+    }).join('') : '<li class="res-empty">Les ressources arrivent bientôt.</li>';
+
+    // ── Suivi des clics
+    list.addEventListener('click', function (e) {
+      var a = e.target.closest('a.res');
+      if (!a) return;
+      var key = a.getAttribute('data-key');
+      send({ type: 'click', ressource: a.getAttribute('data-title'), mot_cle: key, appareil: device, source: source }, true);
+      if (window.gtag) gtag('event', 'ressource_click', { mot_cle: key, transport_type: 'beacon' });
+    });
+
+    // ── Apparition au scroll
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+      reveals.forEach(function (el, i) { el.style.transitionDelay = (Math.min(i % 4, 3) * 60) + 'ms'; io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    // ── Liste d'attente
+    var form = document.getElementById('waitlist');
+    var err = document.getElementById('form-error');
+    var btn = document.getElementById('submit');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.classList.remove('is-on');
+      var prenom = form.prenom.value.trim();
+      var email = form.email.value.trim();
+      if (form.site.value) return; // robot
+      if (!prenom) { err.textContent = 'Indique ton prénom.'; err.classList.add('is-on'); form.prenom.focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = 'Cet e-mail ne semble pas valide.'; err.classList.add('is-on'); form.email.focus(); return; }
+      btn.disabled = true; btn.textContent = 'Inscription…';
+      send({ type: 'waitlist', prenom: prenom, email: email, source: source }, false).then(function () {
+        if (window.gtag) gtag('event', 'waitlist_signup', { source: source });
+        document.getElementById('done-title').textContent = 'C’est noté, ' + prenom + '.';
+        form.style.display = 'none';
+        document.getElementById('done').classList.add('is-on');
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = 'Rejoindre la liste d’attente';
+        err.textContent = 'Connexion impossible. Vérifie ton réseau et réessaie.'; err.classList.add('is-on');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
