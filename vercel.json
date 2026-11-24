@@ -37,6 +37,14 @@
       "destination": "/guide-sharingan.html"
     },
     {
+      "source": "/colo",
+      "destination": "/guide-colo.html"
+    },
+    {
+      "source": "/guide-colo",
+      "destination": "/guide-colo.html"
+    },
+    {
       "source": "/da",
       "destination": "/guide-da.html"
     },

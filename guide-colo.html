@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Guide Colo — Étalonner ta vidéo log avec Claude | Isma</title>
+  <meta name="description" content="Le skill complet pour passer ta vidéo filmée en log à une colorimétrie propre avec Claude : base neutre, plusieurs looks, LUT pour tous tes logiciels.">
+
+    <link rel="stylesheet" href="design-system.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projet.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <style>
+    /* ============================================
+       LEAD MAGNET — SCOPED STYLES
+       ============================================ */
+    .lead-intro {
+      padding: var(--space-xl) 0 var(--space-lg);
+      background: var(--color-bg);
+    }
+    .lead-intro__inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .lead-intro__lead {
+      font-size: var(--text-md);
+      line-height: 1.7;
+      color: var(--color-gray-800);
+      margin-bottom: var(--space-lg);
+    }
+
+    .lead-steps {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .lead-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--space-md);
+      align-items: start;
+      padding: var(--space-md);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      transition: box-shadow var(--duration) ease, transform var(--duration) ease;
+    }
+    .lead-step:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .lead-step__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--color-accent);
+    }
+    .lead-step__body h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: 6px;
+    }
+    .lead-step__body p {
+      font-size: var(--text-base);
+      line-height: 1.7;
+      color: var(--color-gray-600);
+      margin: 0;
+    }
+
+    /* Divider */
+    .lead-divider {
+      max-width: 800px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 32px;
+    }
+    .lead-divider__line {
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    /* Visuels section */
+    .lead-visuals {
+      padding: var(--space-xl) 0;
+      background: var(--color-bg);
+    }
+    .lead-visuals__header {
+      max-width: 800px;
+      margin: 0 auto var(--space-lg);
+      padding: 0 32px;
+      text-align: center;
+    }
+    .lead-visuals__header h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin-bottom: var(--space-xs);
+    }
+    .lead-visuals__header p {
+      font-size: var(--text-base);
+      color: var(--color-gray-600);
+    }
+
+    .lead-visual {
+      max-width: 900px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 32px;
+    }
+    .lead-visual__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+    .lead-visual__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--text-md);
+      color: var(--color-accent);
+    }
+    .lead-visual__title {
+      font-size: var(--text-lg);
+      font-weight: var(--weight-medium);
+      color: var(--color-black);
+      margin: 0;
+    }
+    .lead-visual__img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      display: block;
+      box-shadow: var(--shadow-md);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Prompt box */
+    .lead-prompt {
+      background: var(--color-black);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .lead-prompt__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+    .lead-prompt__head::-webkit-details-marker { display: none; }
+    .lead-prompt__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-semibold);
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .lead-prompt__actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lead-prompt__copy {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background var(--duration) ease;
+    }
+    .lead-prompt__copy:hover { background: rgba(255,255,255,0.2); }
+    .lead-prompt__copy.is-copied {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+    .lead-prompt__chevron {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--text-xs);
+      transition: transform var(--duration) ease;
+    }
+    details[open] .lead-prompt__chevron { transform: rotate(180deg); }
+
+    .lead-prompt__body {
+      padding: 20px;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .lead-prompt__body pre {
+      font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      margin: 0;
+    }
+
+    /* Final CTA */
+    .lead-cta {
+      padding: 0 0 var(--space-2xl);
+      background: var(--color-bg);
+    }
+    .lead-cta__inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-lg);
+      background: var(--color-black);
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+    .lead-cta__inner h2 {
+      font-size: clamp(var(--text-xl), 3vw, var(--text-2xl));
+      font-weight: var(--weight-medium);
+      color: var(--color-white);
+      line-height: 1.3;
+      margin-bottom: var(--space-sm);
+    }
+    .lead-cta__inner p {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--space-md);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .lead-intro__inner,
+      .lead-visuals__header,
+      .lead-visual { padding-left: 20px; padding-right: 20px; }
+
+      .lead-step {
+        grid-template-columns: 60px 1fr;
+        padding: var(--space-sm);
+      }
+      .lead-step__num { font-size: 2.5rem; }
+      .lead-cta__inner {
+        margin: 0 20px;
+        padding: var(--space-lg) var(--space-md);
+      }
+      .lead-prompt__head {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .lead-prompt__body { padding: 16px; }
+    }
+  </style>
+
+  <style>
+    /* ===== DA ISMA ELIPSE (rouge #D92825 / bleu #142C82 / noir #0F0B0C) — fond blanc, sans dégradé ===== */
+    :root{--color-accent:#D92825;--color-accent-hover:#B81F1C;--el-blue:#142C82;--el-ink:#0F0B0C;--el-line:#E6E6EA}
+    body{background:#FFFFFF;color:#0F0B0C}
+    .projet-hero,.lead-intro,.lead-visuals,.lead-divider,.lead-cta{background:#FFFFFF!important}
+    .projet-hero__title{color:#0F0B0C}
+    .projet-hero__subtitle,.projet-hero__back{color:#55555F}
+    .projet-hero__title em,.lead-visuals__header h2 em,.lead-cta h2 em{color:#D92825}
+    .projet-hero__tag{background:#142C82;border-color:#142C82;color:#fff}
+    .projet-hero__cat{background:#fff;border-color:#D92825;color:#D92825}
+    .lead-intro__lead{color:#2A2A30}
+    .lead-intro__lead strong{color:#0F0B0C}
+    .lead-step{background:#FFFFFF;border:1px solid var(--el-line);box-shadow:none}
+    .lead-step:nth-child(odd) .lead-step__num{color:#D92825}
+    .lead-step:nth-child(even) .lead-step__num{color:#142C82}
+    .lead-step__body h3{color:#0F0B0C}
+    .lead-step__body p{color:#55555F}
+    .lead-step__body p strong{color:#0F0B0C}
+    .lead-divider__line{background:var(--el-line)}
+    .lead-visuals__header h2,.lead-visual__title{color:#0F0B0C}
+    .lead-visuals__header p{color:#55555F}
+    .lead-visual__num{color:#D92825}
+    .lead-prompt{background:#0F0B0C;border:1px solid #0F0B0C;box-shadow:none}
+    .lead-prompt__head{background:#142C82;border-bottom:1px solid #142C82}
+    .lead-prompt__label{color:#fff}
+    .lead-prompt__copy{background:#D92825;color:#fff}
+    .lead-prompt__copy:hover{background:#B81F1C}
+    .lead-prompt__chevron{color:#fff}
+    .lead-prompt pre{color:#F2F2F5}
+    .lead-cta__inner{background:#FFFFFF!important;border:1px solid var(--el-line);box-shadow:none}
+    .lead-cta h2{color:#0F0B0C}
+    .lead-cta p{color:#55555F}
+    .lead-cta .btn,.btn{background:#D92825;color:#fff;background-image:none}
+    .lead-cta .btn:hover,.btn:hover{background:#B81F1C}
+    .nav__cta,.nav__mobile-cta{background:#D92825!important;color:#fff!important}
+  </style>
+  <style>.lead-visual__note{font-size:var(--text-base);line-height:1.7;color:#55555F;margin:0 0 var(--space-sm)}.lead-visual__note strong{color:#0F0B0C}</style>
+  <link rel="stylesheet" href="/ressources/guide.css">
+  <link rel="icon" type="image/jpeg" href="/ressources/isma.jpg">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="ie-nav">
+    <div class="ie-nav__bar">
+      <a href="/ressources" class="ie-nav__logo">Isma<span>.</span></a>
+      <a href="/ressources" class="ie-nav__link">← Toutes les ressources</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="projet-hero">
+    <div class="projet-hero__inner">
+      <div class="projet-hero__meta">
+        <span class="projet-hero__tag">Guide gratuit</span>
+        <span class="projet-hero__cat">Montage vidéo avec l'IA</span>
+      </div>
+      <h1 class="projet-hero__title">Passe ta vidéo du log à une <em>colo de pro</em> avec Claude</h1>
+      <p class="projet-hero__subtitle">La méthode en 3 étapes et mon skill de colorimétrie complet, prêt à copier-coller. C'est celui que j'ai utilisé pour les 4 looks de la vidéo.</p>
+    </div>
+  </header>
+
+  <section class="lead-intro">
+    <div class="lead-intro__inner">
+      <p class="lead-intro__lead">Filmer en log, c'est garder toute l'info de l'image. Mais si tu demandes juste à Claude « fais-moi une belle colo », tu obtiens un filtre posé au hasard : peau orange, noirs bouchés, et un rendu qui ressemble à tout le monde. Pour une colo propre, Claude doit d'abord <strong>comprendre ton rush</strong>, construire une <strong>base neutre</strong>, et seulement ensuite créer tes <strong>looks</strong>.</p>
+      <div class="lead-steps">
+        <div class="lead-step">
+          <div class="lead-step__num">01</div>
+          <div class="lead-step__body">
+            <h3>Une base propre avant le look</h3>
+            <p>Claude reconnaît ton profil log (S-Log3, V-Log, D-Log…) et le convertit avec la <strong>vraie formule</strong> de ta caméra. Tu obtiens une image neutre et fidèle. C'est sur elle que tous tes looks se construisent, pas sur le log brut.</p>
+          </div>
+        </div>
+        <div class="lead-step">
+          <div class="lead-step__num">02</div>
+          <div class="lead-step__body">
+            <h3>Plusieurs looks sur une planche, pas sur la vidéo</h3>
+            <p>Il te sort 3 looks <strong>vraiment différents</strong> sur les mêmes images clés, côte à côte. Tu choisis, tu commentes, il refait seulement celui que tu corriges. Aucune vidéo rendue avant ta validation : tu <strong>économises des tokens</strong>.</p>
+          </div>
+        </div>
+        <div class="lead-step">
+          <div class="lead-step__num">03</div>
+          <div class="lead-step__body">
+            <h3>Ton look en LUT, pour tous tes logiciels</h3>
+            <p>Chaque look validé sort en fichier <strong>.cube</strong> : tu le glisses dans Premiere, DaVinci, Final Cut ou CapCut, et tu le réutilises sur toutes tes vidéos. Enregistre la méthode comme un <strong>skill</strong> : la prochaine fois, tu tapes juste <strong>« colo »</strong>.</p>
+          </div>
+        </div>
+        <div class="lead-step">
+          <div class="lead-step__num">+</div>
+          <div class="lead-step__body">
+            <h3>La règle d'or</h3>
+            <p>Le <strong>visage d'abord</strong>. Un look qui rend le décor magnifique mais la peau orange ou grise n'est pas un bon look. Tu peux faire ressortir les couleurs du décor, mais la peau reste <strong>naturelle et lumineuse</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lead-divider"><div class="lead-divider__line"></div></div>
+
+  <section class="lead-visuals">
+    <div class="lead-visuals__header">
+      <h2>Les 4 looks <em>de la vidéo</em></h2>
+      <p>Le même plan, du log brut au look final.</p>
+    </div>
+    <div class="lead-visual">
+      <img class="lead-visual__img" src="/ressources/colo-looks.jpg" alt="Le même plan en log, puis en look naturel, ciné et vibrant" loading="lazy">
+    </div>
+  </section>
+
+  <div class="lead-divider"><div class="lead-divider__line"></div></div>
+
+  <section class="lead-visuals">
+    <div class="lead-visuals__header">
+      <h2>Le skill <em>prêt à copier</em></h2>
+      <p>Copie le skill, enregistre-le dans Claude, puis utilise les prompts en dessous.</p>
+    </div>
+
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">01</span>
+        <h3 class="lead-visual__title">Le skill Colo</h3>
+      </div>
+      <p class="lead-visual__note">Enregistre ce texte comme un <strong>skill</strong> dans Claude (ou colle-le et dis-lui simplement « crée un skill avec ce texte »).</p>
+      <details class="lead-prompt" open>
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le skill</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 1)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-1">---
+name: colo
+description: Étalonner une vidéo filmée en log avec Claude : reconnaître le profil, faire une base neutre propre, créer plusieurs looks très différents, les comparer sur une planche, puis les appliquer et les exporter en LUT .cube. À utiliser quand je dis « colo » ou que je donne un rush en log.
+---
+
+# Colo : étalonner un rush log avec Claude
+
+## Étape 1 : lire le rush
+Repère la caméra, le profil log (S-Log3, V-Log, C-Log, D-Log, N-Log, HLG…), l&#x27;espace couleur, la profondeur (8 ou 10 bits) et la rotation. Si le profil n&#x27;est pas écrit dans les métadonnées, déduis-le de l&#x27;histogramme et dis-le clairement.
+Sors 3 à 5 images clés : le visage de près, un plan plus large, la zone la plus claire, la zone la plus sombre.
+
+## Étape 2 : la base neutre
+Convertis le log en Rec.709 avec la vraie formule du profil et la bonne matrice d&#x27;espace couleur, puis une courbe douce qui garde les hautes lumières. Ce n&#x27;est pas encore un look : c&#x27;est une image propre, fidèle, sur laquelle tous les looks vont se construire.
+
+## Étape 3 : les looks
+À partir de la base, construis 3 looks très différents les uns des autres. Par exemple :
+NATUREL : peau claire et propre, contraste léger, couleurs fidèles.
+CINÉ : ombres froides, peau chaude, noirs denses, saturation un peu retenue.
+VIBRANT : noirs profonds, peau lumineuse, couleurs du décor qui ressortent, fond neutre.
+Dans tous les looks, le visage reste naturel et bien éclairé : jamais orange, jamais gris.
+
+## Étape 4 : la planche de comparaison
+Mets les mêmes images clés côte à côte : le log, puis chaque look, avec son nom écrit dessus. Je choisis, je commente. Tu refais uniquement le look que je commente. Tu ne rends aucune vidéo avant ma validation : ça évite de tout recalculer et ça économise des tokens.
+
+## Étape 5 : export et application
+Exporte chaque look validé en fichier LUT .cube (33 points), utilisable dans Premiere, DaVinci, Final Cut ou CapCut. Puis applique-le sur la vidéo complète en gardant la qualité de la source (10 bits jusqu&#x27;à l&#x27;export, débit suffisant, aucun rendu pixelisé), sans toucher à mon fichier original.
+
+## Étape 6 : contrôle
+Regarde la vidéo finale aux moments clés : peau naturelle, noirs pas bouchés, blancs pas brûlés, aucune bande de couleur dans les dégradés, rendu cohérent d&#x27;un plan à l&#x27;autre.
+
+## Règles
+- Le visage d&#x27;abord : si un look abîme la peau, il n&#x27;est pas bon, même s&#x27;il est joli sur le décor.
+- Grain et vignette en dernier, et légers.
+- Si la vidéo change de look en cours de route, chaque changement tombe à l&#x27;image près sur un repère (un claquement de doigts, une coupe), sans transition sauf si je la demande.</pre>
+        </div>
+      </details>
+    </div>
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">02</span>
+        <h3 class="lead-visual__title">Le prompt pour le lancer</h3>
+      </div>
+      <p class="lead-visual__note">Remplace juste ce qui est entre crochets.</p>
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 2)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-2">Colo sur ce rush : [JOINS LE RUSH OU UNE IMAGE DU RUSH]
+
+Caméra et profil : [EXEMPLE : SONY S-LOG3, OU « JE SAIS PAS »]
+Ce que je veux : [EXEMPLE : 3 LOOKS NATUREL, CINÉ ET VIBRANT / UN SEUL LOOK COMME MON IMAGE DE RÉFÉRENCE]
+Ma référence : [JOINS UNE IMAGE DONT TU AIMES LA COLO, SI TU EN AS UNE]
+
+Commence par la base neutre et la planche de comparaison sur 3 images, sans rendre la vidéo.</pre>
+        </div>
+      </details>
+    </div>
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">03</span>
+        <h3 class="lead-visual__title">Le prompt pour corriger un look</h3>
+      </div>
+      
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 3)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-3">Le look [NOM DU LOOK] ne va pas :
+- Ce qui ne va pas : [EXEMPLE : la peau est trop orange / c&#x27;est trop sombre / il ressemble trop au look naturel]
+- Ce que je veux à la place : [EXEMPLE : noirs plus profonds, fond plus froid, peau plus claire]
+- Image de référence : [JOINS UNE CAPTURE SI TU EN AS UNE]
+
+Refais UNIQUEMENT ce look sur la planche, sans toucher aux autres.</pre>
+        </div>
+      </details>
+    </div>
+    <div class="lead-visual">
+      <div class="lead-visual__meta">
+        <span class="lead-visual__num">04</span>
+        <h3 class="lead-visual__title">Le prompt pour changer de colo sur tes claquements de doigts</h3>
+      </div>
+      <p class="lead-visual__note">C'est exactement ce que j'ai fait dans la vidéo.</p>
+      <details class="lead-prompt">
+        <summary class="lead-prompt__head">
+          <span class="lead-prompt__label">Le prompt</span>
+          <div class="lead-prompt__actions">
+            <button class="lead-prompt__copy" type="button" onclick="copyPrompt(event, 4)">Copier</button>
+            <span class="lead-prompt__chevron">▾</span>
+          </div>
+        </summary>
+        <div class="lead-prompt__body">
+<pre id="prompt-4">Applique les looks validés sur ma vidéo : [LOG → NATUREL → CINÉ → VIBRANT, OU TON ORDRE]
+
+Change de look à chaque claquement de doigts : repère les claquements dans le son, et cale chaque changement à l&#x27;image près, en direct, sans transition.
+Garde la qualité de la source à l&#x27;export et exporte aussi chaque look en LUT .cube.</pre>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA : LA SALLE DU TEMPS -->
+  <section class="lead-cta">
+    <div class="lead-cta__inner">
+      <h2>Prêt à passer <em>un cap</em>&nbsp;?</h2>
+      <p>La Salle du Temps ouvre dans quelques mois. Inscris-toi sur la liste d'attente pour être prévenu en premier.</p>
+      <a href="/ressources#ecole" class="btn">Rejoindre la liste d'attente →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="ie-foot">
+    <div class="ie-foot__inner">
+      <a href="/ressources" class="ie-foot__logo">Isma<span>.</span></a>
+      <div class="ie-foot__links">
+        <a href="/ressources">Ressources</a>
+        <a href="https://www.instagram.com/isma_elips3/" target="_blank" rel="noopener">Instagram</a>
+        <a href="/ressources#ecole">La Salle du Temps</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Copier prompt
+    function copyPrompt(event, id) {
+      event.preventDefault();
+      event.stopPropagation();
+      const pre = document.getElementById('prompt-' + id);
+      const btn = event.currentTarget;
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copié ✓';
+        btn.classList.add('is-copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('is-copied');
+        }, 1800);
+      }).catch(() => {
+        btn.textContent = 'Erreur';
+        setTimeout(() => { btn.textContent = 'Copier'; }, 1800);
+      });
+    }
+  </script>
+
+</body>
+</html>
