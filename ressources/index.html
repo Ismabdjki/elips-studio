@@ -135,6 +135,7 @@
     }
     .res__num { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
     .res__bar { width: 18px; height: 1px; background: var(--line-dark); }
+    .res__new { margin-left: auto; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .1em; }
     .res__key {
       font-family: var(--display); font-weight: 700;
       font-size: clamp(30px, 10.5vw, 44px); line-height: .95;
@@ -432,9 +433,12 @@
     var dispo = items.filter(function (r) { return r.statut !== 'bientot'; }).length;
     document.getElementById('res-count').textContent = dispo + (dispo > 1 ? ' disponibles' : ' disponible');
 
+    // ── Badge « Nouveau » : la ressource disponible la plus récente
+    var newest = items.filter(function (r) { return r.statut !== 'bientot' && r.lien; })[0];
     list.innerHTML = items.length ? items.map(function (r, i) {
       var num = String(i + 1).padStart(2, '0');
-      var meta = '<div class="res__meta"><span class="res__num">' + num + '</span><span class="res__bar"></span><span>Mot-clé</span></div>';
+      var meta = '<div class="res__meta"><span class="res__num">' + num + '</span><span class="res__bar"></span><span>Mot-clé</span>' +
+                 (r === newest ? '<span class="res__new">Nouveau</span>' : '') + '</div>';
       var body = '<p class="res__key">' + esc(r.motCle) + '</p>' +
                  '<p class="res__title">' + esc(r.titre) + '</p>' +
                  '<p class="res__text">' + esc(r.phrase) + '</p>';
