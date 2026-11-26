@@ -29,6 +29,14 @@
       "destination": "/candidature-vap.html"
     },
     {
+      "source": "/habitude",
+      "destination": "/guide-habitude.html"
+    },
+    {
+      "source": "/guide-habitude",
+      "destination": "/guide-habitude.html"
+    },
+    {
       "source": "/sharingan",
       "destination": "/guide-sharingan.html"
     },

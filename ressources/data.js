@@ -5,6 +5,7 @@
 //  Copie une ligne, change les valeurs, enregistre, pousse sur GitHub. C'est tout.
 // ─────────────────────────────────────────────────────────────
 window.RESSOURCES = [
+  { date: "2026-11-26", motCle: "HABITUDE",  titre: "Les 3 bonnes pratiques avec Claude",     phrase: "Références, tes propres sons, retours seconde par seconde : les 3 réflexes et leurs prompts.",  lien: "/habitude",  bouton: "Ouvrir le guide", statut: "dispo" },
   { date: "2026-11-24", motCle: "COLO",      titre: "Ta colo de pro avec Claude",            phrase: "Du log brut à 3 looks propres (naturel, ciné, vibrant), avec le skill complet et tes LUT.",    lien: "/colo",      bouton: "Ouvrir le guide", statut: "dispo" },
   { date: "2026-11-23", motCle: "SON",       titre: "Pack de sons faits avec Claude",        phrase: "Des sound effects gratuits, générés avec Claude, prêts à glisser dans tes montages.",           lien: "",           bouton: "Ouvrir le pack",  statut: "bientot" },
   { date: "2026-11-17", motCle: "SHARINGAN", titre: "Copie n'importe quel style de montage", phrase: "Décortique le montage d'une vidéo image par image avec Claude, puis refais-le à ta façon.",   lien: "/sharingan", bouton: "Ouvrir le guide", statut: "dispo" },
