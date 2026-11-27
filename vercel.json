@@ -37,6 +37,14 @@
       "destination": "/guide-habitude.html"
     },
     {
+      "source": "/retour",
+      "destination": "/guide-retour.html"
+    },
+    {
+      "source": "/guide-retour",
+      "destination": "/guide-retour.html"
+    },
+    {
       "source": "/sharingan",
       "destination": "/guide-sharingan.html"
     },
